@@ -1,0 +1,47 @@
+[gd_scene load_steps=9 format=3 uid="uid://by42chrsal6t4"]
+
+[ext_resource type="Shader" uid="uid://bll86fexnhido" path="res://new_shader.tres" id="1_ykrsh"]
+[ext_resource type="Texture2D" uid="uid://32d5xak6bliq" path="res://d3a05854985b3e90edfc7fa4e294daaa8fea6e15.png" id="2_g14j6"]
+[ext_resource type="ArrayMesh" uid="uid://bf3h3x3e0ii5e" path="res://suzane.obj" id="3_vbegm"]
+[ext_resource type="Shader" uid="uid://c1u5moaslpecd" path="res://print.tres" id="4_ehkex"]
+[ext_resource type="Texture2D" uid="uid://db5dydbev4knk" path="res://test_page.png" id="5_xersf"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_00tp4"]
+render_priority = 0
+shader = ExtResource("1_ykrsh")
+shader_parameter/Texture2DParameter = ExtResource("2_g14j6")
+shader_parameter/UIntParameter = 3
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_77dp3"]
+render_priority = 0
+shader = ExtResource("4_ehkex")
+shader_parameter/Dot_Count = 1000.0
+shader_parameter/C_Move = Vector2(0.375, -0.295)
+shader_parameter/Texture2DParameter = ExtResource("5_xersf")
+shader_parameter/Dot_dynamic_size = 1.45
+shader_parameter/Dot_Size = 1.0
+shader_parameter/M_Move = Vector2(0.125, 1.115)
+shader_parameter/Y_Move = Vector2(2.385, 0.265)
+shader_parameter/K_Move = Vector2(-0.42, -0.1)
+shader_parameter/Black_threshold = 0.255
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_5tkv4"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.504652, 0.681151, -0.131493)
+material_override = SubResource("ShaderMaterial_00tp4")
+mesh = ExtResource("3_vbegm")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(9.77799, 0, 0, 0, 13.9635, 0.227644, 0, -0.227644, 13.9635, -10.451, -0.0915855, 0.098216)
+material_override = SubResource("ShaderMaterial_77dp3")
+mesh = SubResource("PlaneMesh_5tkv4")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -11.0104, 27.2446, 1.57574)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.18901, 0.981975, 0, -0.981975, 0.18901, -9.65421, 32.4391, -0.278873)
+light_energy = 1.31
