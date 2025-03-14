@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://32d5xak6bliq" path="res://d3a05854985b3e90edfc7fa4e294daaa8fea6e15.png" id="2_g14j6"]
 [ext_resource type="ArrayMesh" uid="uid://bf3h3x3e0ii5e" path="res://suzane.obj" id="3_vbegm"]
 [ext_resource type="Shader" uid="uid://c1u5moaslpecd" path="res://print.tres" id="4_ehkex"]
-[ext_resource type="Texture2D" uid="uid://db5dydbev4knk" path="res://test_page.png" id="5_xersf"]
+[ext_resource type="Texture2D" uid="uid://c8cdstah8ixoi" path="res://vibrant-gradient.jpg" id="5_ykrsh"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_00tp4"]
 render_priority = 0
@@ -17,13 +17,13 @@ render_priority = 0
 shader = ExtResource("4_ehkex")
 shader_parameter/Dot_Count = 1000.0
 shader_parameter/C_Move = Vector2(0.375, -0.295)
-shader_parameter/Texture2DParameter = ExtResource("5_xersf")
-shader_parameter/Dot_dynamic_size = 1.45
-shader_parameter/Dot_Size = 1.0
+shader_parameter/Texture2DParameter = ExtResource("5_ykrsh")
+shader_parameter/Dot_dynamic_size = 0.63
+shader_parameter/Dot_Size = 0.371
 shader_parameter/M_Move = Vector2(0.125, 1.115)
 shader_parameter/Y_Move = Vector2(2.385, 0.265)
 shader_parameter/K_Move = Vector2(-0.42, -0.1)
-shader_parameter/Black_threshold = 0.255
+shader_parameter/Black_threshold = 0.055
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_5tkv4"]
 
@@ -35,7 +35,7 @@ material_override = SubResource("ShaderMaterial_00tp4")
 mesh = ExtResource("3_vbegm")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
-transform = Transform3D(9.77799, 0, 0, 0, 13.9635, 0.227644, 0, -0.227644, 13.9635, -10.451, -0.0915855, 0.098216)
+transform = Transform3D(20.8635, 0, 0, 0, 15.5401, 0.253348, 0, -0.253348, 15.5401, -24.1838, 5.70704, 0.325381)
 material_override = SubResource("ShaderMaterial_77dp3")
 mesh = SubResource("PlaneMesh_5tkv4")
 
