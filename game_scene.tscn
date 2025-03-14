@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dyf7m2jdcskx1"]
+
+[ext_resource type="Script" uid="uid://c7hbtyc3jvd43" path="res://camera_3d.gd" id="1_mlf6e"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_mlf6e"]
+
+[node name="GameScene" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+script = ExtResource("1_mlf6e")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.76744)
+mesh = SubResource("PrismMesh_mlf6e")
