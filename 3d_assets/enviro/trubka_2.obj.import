@@ -4,14 +4,11 @@ importer="wavefront_obj"
 importer_version=1
 type="Mesh"
 uid="uid://b65au1lyqimp6"
-path="res://.godot/imported/trubka_2.obj-e4713d8182af215775c6caf6ec2f3459.mesh"
+valid=false
 
 [deps]
 
-files=["res://.godot/imported/trubka_2.obj-e4713d8182af215775c6caf6ec2f3459.mesh"]
-
 source_file="res://3d_assets/enviro/trubka_2.obj"
-dest_files=["res://.godot/imported/trubka_2.obj-e4713d8182af215775c6caf6ec2f3459.mesh", "res://.godot/imported/trubka_2.obj-e4713d8182af215775c6caf6ec2f3459.mesh"]
 
 [params]
 
