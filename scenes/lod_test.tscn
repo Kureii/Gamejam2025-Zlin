@@ -2,6 +2,7 @@
 
 [ext_resource type="ArrayMesh" uid="uid://da0r2qtnx6v0v" path="res://3d_assets/enviro/podlaha.obj" id="1_cd240"]
 [ext_resource type="ArrayMesh" uid="uid://crrqjf52hkpet" path="res://3d_assets/enviro/stena_1.obj" id="2_in2js"]
+[ext_resource type="Texture2D" uid="uid://cs3xqy5waoxcm" path="res://3d_assets/textures/steny.png" id="2_myk7v"]
 [ext_resource type="ArrayMesh" uid="uid://cgn1lesd4540a" path="res://3d_assets/enviro/stul_1.obj" id="3_qy753"]
 [ext_resource type="Texture2D" uid="uid://cuj881egefc4y" path="res://3d_assets/textures/stul1_1.png" id="4_hg206"]
 [ext_resource type="ArrayMesh" uid="uid://bfqlliut68b45" path="res://3d_assets/enviro/stul_2.obj" id="4_ho58i"]
@@ -14,14 +15,13 @@
 [ext_resource type="ArrayMesh" uid="uid://bhnp2a8wbt6uq" path="res://3d_assets/enviro/svetla_3.obj" id="9_hiytu"]
 [ext_resource type="ArrayMesh" uid="uid://dlmecccknfkjj" path="res://3d_assets/enviro/trubka_1.obj" id="10_yh6ax"]
 [ext_resource type="Material" uid="uid://c6ebar5ko1o5c" path="res://materials/3d/trubky.tres" id="11_sdsmw"]
-[ext_resource type="ArrayMesh" uid="uid://b65au1lyqimp6" path="res://3d_assets/enviro/trubka_2.obj" id="12_qrv7s"]
 [ext_resource type="ArrayMesh" uid="uid://ce8n85utnva2k" path="res://3d_assets/enviro/strop_1.obj" id="13_cwshr"]
 [ext_resource type="Texture2D" uid="uid://dqw3kjv68d4pv" path="res://3d_assets/textures/kalendar.png" id="17_hg206"]
 [ext_resource type="Texture2D" uid="uid://dfkgpyxsx7u1u" path="res://3d_assets/textures/stul3.png" id="18_myk7v"]
 [ext_resource type="ArrayMesh" uid="uid://bjfcqisxv8f6t" path="res://3d_assets/TV_3.obj" id="19_u3h5q"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u3h5q"]
-albedo_color = Color(0.54146, 0.490944, 0.763882, 1)
+albedo_texture = ExtResource("2_myk7v")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_myk7v"]
 albedo_texture = ExtResource("4_hg206")
@@ -85,7 +85,7 @@ transform = Transform3D(0.67, 0, 0, 0, 0.67, 0, 0, 0, 0.67, -0.793412, 0, 0.3849
 mesh = ExtResource("1_cd240")
 
 [node name="Stena1" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.67, 0, 0, 0, 0.67, 0, 0, 0, 0.67, -0.793412, 0, 0.384972)
+transform = Transform3D(2.30388, 0, 0, 0, 2.53214, 0, 0, 0, 2.53214, -0.793412, -0.273679, -18.3877)
 material_override = SubResource("StandardMaterial3D_u3h5q")
 mesh = ExtResource("2_in2js")
 
@@ -122,8 +122,6 @@ surface_material_override/0 = ExtResource("11_sdsmw")
 
 [node name="Trubka2" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.487639, 0, -0.59248, 0, 0.767349, 0, 0.59248, 0, 0.487639, 3.9018, 3.11514, -16.6896)
-mesh = ExtResource("12_qrv7s")
-surface_material_override/0 = ExtResource("11_sdsmw")
 
 [node name="Strop1" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.66049, 0, 0, 0, 0.66049, 0, 0, 0, 0.66049, -0.730027, 0.18941, -0.17355)
@@ -153,7 +151,7 @@ mesh = ExtResource("1_cd240")
 surface_material_override/0 = ExtResource("8_myk7v")
 
 [node name="Plakat" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.216337, 0.55504, -0.0140495, -0.0541596, 0.0132467, -0.747634, -0.502525, 0.237518, 0.074528, -5.2856, 2.72078, -17.0168)
+transform = Transform3D(0.0845896, 0.91031, 0.0135289, -0.0820733, 0.020074, -1.13296, -0.824767, 0.0913667, 0.11413, -5.6716, 3.86295, -15.4146)
 mesh = SubResource("PlaneMesh_sdsmw")
 skeleton = NodePath("../Svetla3")
 surface_material_override/0 = SubResource("StandardMaterial3D_qrv7s")
