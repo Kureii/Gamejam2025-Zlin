@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://cdl1pf4dcppis"]
+
+[ext_resource type="ArrayMesh" uid="uid://cdinbpdca06mg" path="res://3d_assets/packa_1.obj" id="1_7v130"]
+[ext_resource type="Script" uid="uid://d3r5so1in5p2c" path="res://scripts/packa_a.gd" id="1_m3ck4"]
+[ext_resource type="ArrayMesh" uid="uid://c1iqgn2h1q228" path="res://3d_assets/packa_2.obj" id="2_4xnn3"]
+[ext_resource type="Script" uid="uid://d2mtxi0ri4xyk" path="res://scripts/packa_a_trigger.gd" id="4_mtd8m"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_m3ck4"]
+radius = 0.160796
+height = 0.795158
+
+[node name="PackaA" type="Node3D"]
+script = ExtResource("1_m3ck4")
+
+[node name="base" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_7v130")
+
+[node name="packa_a" type="MeshInstance3D" parent="base"]
+mesh = ExtResource("2_4xnn3")
+skeleton = NodePath("../..")
+
+[node name="Area3D" type="Area3D" parent="base/packa_a"]
+script = ExtResource("4_mtd8m")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="base/packa_a/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.350502, 0)
+shape = SubResource("CapsuleShape3D_m3ck4")
