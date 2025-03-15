@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://c633e8e8fp478"]
+[gd_scene load_steps=26 format=3 uid="uid://c633e8e8fp478"]
 
 [ext_resource type="Shader" uid="uid://bll86fexnhido" path="res://new_shader.tres" id="1_ykrsh"]
 [ext_resource type="Texture2D" uid="uid://32d5xak6bliq" path="res://d3a05854985b3e90edfc7fa4e294daaa8fea6e15.png" id="2_g14j6"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dsanndya6tjpn" path="res://ui/control.tscn" id="8_xersf"]
 [ext_resource type="Texture2D" uid="uid://bllwk3mhtqw5q" path="res://pages/page 3.png" id="9_0m0f1"]
 [ext_resource type="Texture2D" uid="uid://cq1s6fbdcldyl" path="res://pages/page 4.png" id="10_b0q6j"]
+[ext_resource type="Texture2D" uid="uid://qivl8rd6l7jn" path="res://pages/page 7.png" id="10_mhym6"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_00tp4"]
 render_priority = 0
@@ -59,6 +60,20 @@ shader_parameter/dots_scale = 50.0
 shader_parameter/dots = ExtResource("6_ehkex")
 shader_parameter/dots_smooth = 0.609
 shader_parameter/Texture = ExtResource("9_0m0f1")
+shader_parameter/black_threshold = 1.0
+shader_parameter/dots_scale_individual = 0.928
+shader_parameter/sat = 1.0
+shader_parameter/black_offset = Vector2(0, 0)
+shader_parameter/paper_texture = ExtResource("7_xersf")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uty7l"]
+render_priority = 0
+shader = ExtResource("4_vbegm")
+shader_parameter/Vector2Parameter = Vector2(1.095, 1.665)
+shader_parameter/dots_scale = 50.0
+shader_parameter/dots = ExtResource("6_ehkex")
+shader_parameter/dots_smooth = 0.609
+shader_parameter/Texture = ExtResource("10_mhym6")
 shader_parameter/black_threshold = 1.0
 shader_parameter/dots_scale_individual = 0.928
 shader_parameter/sat = 1.0
@@ -120,6 +135,11 @@ mesh = SubResource("PlaneMesh_5tkv4")
 [node name="MeshInstance3D6" type="MeshInstance3D" parent="."]
 transform = Transform3D(20.8635, 0, 0, 0, 15.5401, 0.253348, 0, -0.253348, 15.5401, 1.88425, 0.000722885, 31.2731)
 material_override = SubResource("ShaderMaterial_mhym6")
+mesh = SubResource("PlaneMesh_5tkv4")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="."]
+transform = Transform3D(20.8635, 0, 0, 0, 15.5401, 0.253348, 0, -0.253348, 15.5401, 1.88425, 0.000722885, 64.1389)
+material_override = SubResource("ShaderMaterial_uty7l")
 mesh = SubResource("PlaneMesh_5tkv4")
 
 [node name="MeshInstance3D7" type="MeshInstance3D" parent="."]
