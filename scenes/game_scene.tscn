@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dyf7m2jdcskx1"]
+[gd_scene load_steps=6 format=3 uid="uid://dyf7m2jdcskx1"]
 
 [ext_resource type="Script" uid="uid://c7hbtyc3jvd43" path="res://scripts/camera_3d.gd" id="1_ycayy"]
 [ext_resource type="PackedScene" uid="uid://cdl1pf4dcppis" path="res://prefabs/packa_a.tscn" id="2_bw6k5"]
+[ext_resource type="PackedScene" uid="uid://cfqrj1yos1m00" path="res://prefabs/packa_b.tscn" id="3_bw6k5"]
 [ext_resource type="Script" uid="uid://bd08io3mejpxx" path="res://scripts/game_handler.gd" id="3_y3j0m"]
 
 [sub_resource type="PrismMesh" id="PrismMesh_mlf6e"]
@@ -12,64 +13,73 @@
 script = ExtResource("1_ycayy")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.76744)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00054872, 0.00409555, -2.77208)
 visible = false
 mesh = SubResource("PrismMesh_mlf6e")
 
 [node name="Node3D" type="Node3D" parent="."]
 
 [node name="PackaA_01" parent="Node3D" instance=ExtResource("2_bw6k5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.08671, -1.81613, -4.02431)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.630715, -0.287061, -0.859694)
 id_ = 5
 
 [node name="PackaA_02" parent="Node3D" instance=ExtResource("2_bw6k5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.89656, -1.81613, -4.02431)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.346077, -0.287061, -0.859694)
 id_ = 4
 
 [node name="PackaA_03" parent="Node3D" instance=ExtResource("2_bw6k5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.619022, -1.81613, -4.02431)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.108915, -0.287061, -0.859694)
 id_ = 3
 
 [node name="PackaA_04" parent="Node3D" instance=ExtResource("2_bw6k5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.571124, -1.81613, -4.02431)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.146505, -0.287061, -0.859694)
 id_ = 2
 
 [node name="PackaA_05" parent="Node3D" instance=ExtResource("2_bw6k5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8722, -1.81613, -4.02431)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.40071, -0.287061, -0.867065)
 id_ = 1
 
 [node name="PackaA_06" parent="Node3D" instance=ExtResource("2_bw6k5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.06234, -1.81613, -4.02431)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.659705, -0.287061, -0.859694)
 
 [node name="ID_0" type="Label3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.05502, -2.11804, -3.66161)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.680361, -0.410629, -0.824102)
 text = "ID: 0
 "
+font_size = 8
 
 [node name="ID_1" type="Label3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.89698, -2.11804, -3.66161)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.396029, -0.410629, -0.824102)
 text = "ID: 1
 "
+font_size = 8
 
 [node name="ID_2" type="Label3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.595563, -2.11804, -3.66161)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.123172, -0.410629, -0.824102)
 text = "ID: 2
 "
+font_size = 8
 
 [node name="ID_3" type="Label3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.584535, -2.11804, -3.66161)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.127733, -0.408256, -0.826365)
 text = "ID: 3
 "
+font_size = 8
 
 [node name="ID_4" type="Label3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.88595, -2.11804, -3.66161)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.372239, -0.410629, -0.824102)
 text = "ID: 4
 "
+font_size = 8
 
 [node name="ID_5" type="Label3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.06604, -2.11804, -3.66161)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.627365, -0.410629, -0.824102)
 text = "ID: 5
 "
+font_size = 8
+
+[node name="PackaB" parent="Node3D" instance=ExtResource("3_bw6k5")]
+transform = Transform3D(-3.61614e-08, 0.561795, -0.827277, 2.45568e-08, 0.827277, 0.561795, 1, 0, -4.37114e-08, -0.875245, -0.472534, -0.0278748)
 
 [node name="GameHandler" type="Node" parent="." node_paths=PackedStringArray("sequence_text_", "end_text_")]
 script = ExtResource("3_y3j0m")
@@ -113,6 +123,9 @@ theme_override_font_sizes/font_size = 35
 text = "<palaceholder>"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.985157, -0.00193233, 0.171643, -0.171654, -0.01109, 0.985095, 0, -0.999937, -0.0112571, 0, 4.04775, 0)
 
 [connection signal="packa_a_clicked" from="Node3D/PackaA_01" to="GameHandler" method="_on_packa_a_clicked"]
 [connection signal="packa_a_clicked" from="Node3D/PackaA_02" to="GameHandler" method="_on_packa_a_clicked"]

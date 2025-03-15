@@ -6,8 +6,8 @@
 [ext_resource type="Script" uid="uid://d2mtxi0ri4xyk" path="res://scripts/packa_a_trigger.gd" id="4_mtd8m"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_m3ck4"]
-radius = 0.160796
-height = 0.795158
+radius = 0.0173198
+height = 0.0642367
 
 [sub_resource type="Animation" id="Animation_m3ck4"]
 resource_name = "packa_a_anim"
@@ -51,7 +51,7 @@ skeleton = NodePath("../..")
 script = ExtResource("4_mtd8m")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="base/packa_a/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.350502, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.044996, 0)
 shape = SubResource("CapsuleShape3D_m3ck4")
 
 [node name="Packa_a_AnimationPlayer" type="AnimationPlayer" parent="base/packa_a"]
