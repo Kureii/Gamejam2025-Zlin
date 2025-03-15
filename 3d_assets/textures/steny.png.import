@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bllwk3mhtqw5q"
-path.s3tc="res://.godot/imported/page 3.png-b5f9443b1a22af3925fb2f1d4ed86896.s3tc.ctex"
+uid="uid://cs3xqy5waoxcm"
+path.s3tc="res://.godot/imported/steny.png-260ec75a3bdb3b0ec5ef820be9fb2cbb.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Pages/page 3.png"
-dest_files=["res://.godot/imported/page 3.png-b5f9443b1a22af3925fb2f1d4ed86896.s3tc.ctex"]
+source_file="res://3d_assets/textures/steny.png"
+dest_files=["res://.godot/imported/steny.png-260ec75a3bdb3b0ec5ef820be9fb2cbb.s3tc.ctex"]
 
 [params]
 
