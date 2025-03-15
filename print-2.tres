@@ -1,4 +1,4 @@
-[gd_resource type="VisualShader" load_steps=152 format=3 uid="uid://dh618bde3kmhl"]
+[gd_resource type="VisualShader" load_steps=152 format=3 uid="uid://jiehhhtsbxp8"]
 
 [ext_resource type="Texture2D" uid="uid://beltx7eptk08o" path="res://dots.png" id="1_ilwj8"]
 [ext_resource type="Texture2D" uid="uid://buqbomjw0s5yg" path="res://dots2.png" id="2_acele"]

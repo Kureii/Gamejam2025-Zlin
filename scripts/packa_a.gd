@@ -10,8 +10,7 @@ func _ready() -> void:
 	area.packa_a_area_clicked.connect(_on_packa_a_area_clicked)
 
 func _on_packa_a_area_clicked() -> void:
-	print("send id: ", id_)
-	emit_signal("packa_a_clicked ", id_)
+	emit_signal("packa_a_clicked", id_)
 	
 func _on_get_scenario(scenario:int) -> void:
 	scenario_ = scenario

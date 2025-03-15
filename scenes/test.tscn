@@ -1,26 +1,26 @@
 [gd_scene load_steps=13 format=3 uid="uid://by42chrsal6t4"]
 
-[ext_resource type="Shader" uid="uid://bll86fexnhido" path="res://new_shader.tres" id="1_ykrsh"]
-[ext_resource type="Texture2D" uid="uid://32d5xak6bliq" path="res://d3a05854985b3e90edfc7fa4e294daaa8fea6e15.png" id="2_g14j6"]
-[ext_resource type="ArrayMesh" uid="uid://bf3h3x3e0ii5e" path="res://suzane.obj" id="3_vbegm"]
-[ext_resource type="Shader" uid="uid://c1u5moaslpecd" path="res://print.tres" id="4_ehkex"]
-[ext_resource type="Shader" uid="uid://dh618bde3kmhl" path="res://print-2.tres" id="4_vbegm"]
-[ext_resource type="Texture2D" uid="uid://db5dydbev4knk" path="res://test_page.png" id="5_xersf"]
-[ext_resource type="Texture2D" uid="uid://beltx7eptk08o" path="res://dots.png" id="6_ehkex"]
+[ext_resource type="Shader" uid="uid://bll86fexnhido" path="res://new_shader.tres" id="1_at5dv"]
+[ext_resource type="Texture2D" uid="uid://32d5xak6bliq" path="res://d3a05854985b3e90edfc7fa4e294daaa8fea6e15.png" id="2_jcd4p"]
+[ext_resource type="ArrayMesh" uid="uid://bf3h3x3e0ii5e" path="res://suzane.obj" id="3_uacia"]
+[ext_resource type="Shader" uid="uid://jiehhhtsbxp8" path="res://print-2.tres" id="4_yk7ts"]
+[ext_resource type="Texture2D" uid="uid://db5dydbev4knk" path="res://test_page.png" id="5_ajshl"]
+[ext_resource type="Texture2D" uid="uid://beltx7eptk08o" path="res://dots.png" id="6_ghpyy"]
+[ext_resource type="Shader" uid="uid://c1u5moaslpecd" path="res://print.tres" id="7_44saj"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_00tp4"]
 render_priority = 0
-shader = ExtResource("1_ykrsh")
-shader_parameter/Texture2DParameter = ExtResource("2_g14j6")
+shader = ExtResource("1_at5dv")
+shader_parameter/Texture2DParameter = ExtResource("2_jcd4p")
 shader_parameter/UIntParameter = 3
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_77dp3"]
 render_priority = 0
-shader = ExtResource("4_vbegm")
-shader_parameter/Texture2DParameter = ExtResource("5_xersf")
+shader = ExtResource("4_yk7ts")
+shader_parameter/Texture2DParameter = ExtResource("5_ajshl")
 shader_parameter/Vector2Parameter = Vector2(1.095, 1.615)
 shader_parameter/FloatParameter = 49.14
-shader_parameter/Texture2DParameter2 = ExtResource("6_ehkex")
+shader_parameter/Texture2DParameter2 = ExtResource("6_ghpyy")
 shader_parameter/sat = 0.99
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_5tkv4"]
@@ -28,10 +28,10 @@ size = Vector2(1.08, 2)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xersf"]
 render_priority = 0
-shader = ExtResource("4_ehkex")
+shader = ExtResource("7_44saj")
 shader_parameter/Dot_Count = 978.935
 shader_parameter/C_Move = Vector2(0.33, 0)
-shader_parameter/Texture2DParameter = ExtResource("5_xersf")
+shader_parameter/Texture2DParameter = ExtResource("5_ajshl")
 shader_parameter/Dot_dynamic_size = 0.0
 shader_parameter/Dot_Size = 0.0
 shader_parameter/M_Move = Vector2(0.96, 0)
@@ -40,14 +40,14 @@ shader_parameter/K_Move = Vector2(0, 0)
 shader_parameter/Black_threshold = 0.1
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_00tp4"]
-albedo_texture = ExtResource("5_xersf")
+albedo_texture = ExtResource("5_ajshl")
 
 [node name="Node3D" type="Node3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.504652, 0.681151, -0.131493)
 material_override = SubResource("ShaderMaterial_00tp4")
-mesh = ExtResource("3_vbegm")
+mesh = ExtResource("3_uacia")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
 transform = Transform3D(20.8635, 0, 0, 0, 15.5401, 0.253348, 0, -0.253348, 15.5401, 1.88425, 0.000722885, -0.905503)

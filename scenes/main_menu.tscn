@@ -1,0 +1,207 @@
+[gd_scene load_steps=3 format=3 uid="uid://l87mq0igmsgr"]
+
+[ext_resource type="Script" uid="uid://dhery2a6jf8jy" path="res://scripts/main_menu.gd" id="1_ekxnf"]
+[ext_resource type="Texture2D" uid="uid://c8pif2o4ha3g7" path="res://cross-23.svg" id="2_bqqt6"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ekxnf")
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.939
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -773.88
+offset_right = -117.0
+grow_horizontal = 0
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AspectRatioContainer"]
+layout_mode = 2
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="start_game" type="Button" parent="AspectRatioContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "Start game"
+
+[node name="create_level" type="Button" parent="AspectRatioContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "Create level"
+
+[node name="hall_of_flame" type="Button" parent="AspectRatioContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "Hall of flame"
+
+[node name="credits" type="Button" parent="AspectRatioContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "Credits"
+
+[node name="end_game" type="Button" parent="AspectRatioContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "End game"
+
+[node name="Aspect" type="AspectRatioContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.06
+anchor_bottom = 1.0
+offset_left = 116.0
+offset_right = 790.8
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Credits" type="Panel" parent="Aspect"]
+layout_mode = 2
+
+[node name="Label_hall_of_flame2" type="Label" parent="Aspect/Credits"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 59.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 24
+text = "Credits"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Aspect/Credits"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="name_01" type="Label" parent="Aspect/Credits/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 32
+text = "<name placeholder>"
+horizontal_alignment = 1
+
+[node name="name_02" type="Label" parent="Aspect/Credits/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "<name placeholder>"
+horizontal_alignment = 1
+
+[node name="name_03" type="Label" parent="Aspect/Credits/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "<name placeholder>"
+horizontal_alignment = 1
+
+[node name="hide_credits" type="TextureButton" parent="Aspect/Credits"]
+layout_mode = 2
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 1032.0
+offset_bottom = 1032.0
+scale = Vector2(0.04, 0.04)
+texture_normal = ExtResource("2_bqqt6")
+stretch_mode = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="Hall_of_flame" type="Panel" parent="Aspect"]
+visible = false
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Aspect/Hall_of_flame"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Aspect/Hall_of_flame/MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Aspect/Hall_of_flame/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Aspect/Hall_of_flame/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 2
+text = "name"
+
+[node name="Label2" type="Label" parent="Aspect/Hall_of_flame/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "score"
+horizontal_alignment = 3
+
+[node name="HSeparator" type="HSeparator" parent="Aspect/Hall_of_flame/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Aspect/Hall_of_flame/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Aspect/Hall_of_flame/MarginContainer/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Aspect/Hall_of_flame/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Aspect/Hall_of_flame/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 2
+text = "<name placeholder>"
+
+[node name="Label2" type="Label" parent="Aspect/Hall_of_flame/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "<score>"
+horizontal_alignment = 3
+
+[node name="Label_hall_of_flame" type="Label" parent="Aspect/Hall_of_flame"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 57.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 24
+text = "Hall of flame"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="hide_hall_of_flame" type="TextureButton" parent="Aspect/Hall_of_flame"]
+layout_mode = 2
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 1032.0
+offset_bottom = 1032.0
+scale = Vector2(0.04, 0.04)
+texture_normal = ExtResource("2_bqqt6")
+stretch_mode = 4
+metadata/_edit_use_anchors_ = true
+
+[connection signal="button_up" from="AspectRatioContainer/VBoxContainer/start_game" to="." method="_on_start_game_button_up"]
+[connection signal="button_up" from="AspectRatioContainer/VBoxContainer/create_level" to="." method="_on_create_level_button_up"]
+[connection signal="button_up" from="AspectRatioContainer/VBoxContainer/hall_of_flame" to="." method="_on_hall_of_flame_button_up"]
+[connection signal="button_up" from="AspectRatioContainer/VBoxContainer/credits" to="." method="_on_credits_button_up"]
+[connection signal="button_up" from="AspectRatioContainer/VBoxContainer/end_game" to="." method="_on_end_game_button_up"]
+[connection signal="button_up" from="Aspect/Credits/hide_credits" to="." method="_on_hide_credits_button_up"]
+[connection signal="button_up" from="Aspect/Hall_of_flame/hide_hall_of_flame" to="." method="_on_hide_hall_of_flame_button_up"]

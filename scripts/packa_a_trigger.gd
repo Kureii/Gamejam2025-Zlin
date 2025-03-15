@@ -11,6 +11,7 @@ func _ready() -> void:
 func _on_input_event(camera: Camera3D, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int):
 	if event is InputEventMouseButton and event.pressed:
 		emit_signal("packa_a_area_clicked")
-		print("clicked")
+		var anim = get_node("../Packa_a_AnimationPlayer")
+		anim.play("packa_a_anim")
 
 	

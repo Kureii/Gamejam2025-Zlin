@@ -1,0 +1,123 @@
+[gd_scene load_steps=5 format=3 uid="uid://dyf7m2jdcskx1"]
+
+[ext_resource type="Script" uid="uid://c7hbtyc3jvd43" path="res://scripts/camera_3d.gd" id="1_ycayy"]
+[ext_resource type="PackedScene" uid="uid://cdl1pf4dcppis" path="res://prefabs/packa_a.tscn" id="2_bw6k5"]
+[ext_resource type="Script" uid="uid://bd08io3mejpxx" path="res://scripts/game_handler.gd" id="3_y3j0m"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_mlf6e"]
+
+[node name="GameScene" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+script = ExtResource("1_ycayy")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.76744)
+visible = false
+mesh = SubResource("PrismMesh_mlf6e")
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="PackaA_01" parent="Node3D" instance=ExtResource("2_bw6k5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.08671, -1.81613, -4.02431)
+id_ = 5
+
+[node name="PackaA_02" parent="Node3D" instance=ExtResource("2_bw6k5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.89656, -1.81613, -4.02431)
+id_ = 4
+
+[node name="PackaA_03" parent="Node3D" instance=ExtResource("2_bw6k5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.619022, -1.81613, -4.02431)
+id_ = 3
+
+[node name="PackaA_04" parent="Node3D" instance=ExtResource("2_bw6k5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.571124, -1.81613, -4.02431)
+id_ = 2
+
+[node name="PackaA_05" parent="Node3D" instance=ExtResource("2_bw6k5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8722, -1.81613, -4.02431)
+id_ = 1
+
+[node name="PackaA_06" parent="Node3D" instance=ExtResource("2_bw6k5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.06234, -1.81613, -4.02431)
+
+[node name="ID_0" type="Label3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.05502, -2.11804, -3.66161)
+text = "ID: 0
+"
+
+[node name="ID_1" type="Label3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.89698, -2.11804, -3.66161)
+text = "ID: 1
+"
+
+[node name="ID_2" type="Label3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.595563, -2.11804, -3.66161)
+text = "ID: 2
+"
+
+[node name="ID_3" type="Label3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.584535, -2.11804, -3.66161)
+text = "ID: 3
+"
+
+[node name="ID_4" type="Label3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.88595, -2.11804, -3.66161)
+text = "ID: 4
+"
+
+[node name="ID_5" type="Label3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.06604, -2.11804, -3.66161)
+text = "ID: 5
+"
+
+[node name="GameHandler" type="Node" parent="." node_paths=PackedStringArray("sequence_text_", "end_text_")]
+script = ExtResource("3_y3j0m")
+sequence_text_ = NodePath("info")
+end_text_ = NodePath("end_game/VBoxContainer/GO_label")
+
+[node name="end_game" type="Panel" parent="GameHandler"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameHandler/end_game"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="GO_label" type="Label" parent="GameHandler/end_game/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "win/lose"
+horizontal_alignment = 1
+
+[node name="Reset" type="Button" parent="GameHandler/end_game/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 64
+text = "Reset"
+
+[node name="info" type="Label" parent="GameHandler"]
+offset_right = 1919.0
+offset_bottom = 99.0
+theme_override_font_sizes/font_size = 35
+text = "<palaceholder>"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="packa_a_clicked" from="Node3D/PackaA_01" to="GameHandler" method="_on_packa_a_clicked"]
+[connection signal="packa_a_clicked" from="Node3D/PackaA_02" to="GameHandler" method="_on_packa_a_clicked"]
+[connection signal="packa_a_clicked" from="Node3D/PackaA_03" to="GameHandler" method="_on_packa_a_clicked"]
+[connection signal="packa_a_clicked" from="Node3D/PackaA_04" to="GameHandler" method="_on_packa_a_clicked"]
+[connection signal="packa_a_clicked" from="Node3D/PackaA_05" to="GameHandler" method="_on_packa_a_clicked"]
+[connection signal="packa_a_clicked" from="Node3D/PackaA_06" to="GameHandler" method="_on_packa_a_clicked"]
+[connection signal="button_up" from="GameHandler/end_game/VBoxContainer/Reset" to="GameHandler" method="_on_reset_button_up"]

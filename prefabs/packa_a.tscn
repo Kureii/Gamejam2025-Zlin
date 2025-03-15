@@ -1,6 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://cdl1pf4dcppis"]
+[gd_scene load_steps=9 format=3 uid="uid://cdl1pf4dcppis"]
 
-[ext_resource type="ArrayMesh" uid="uid://cdinbpdca06mg" path="res://3d_assets/packa_1.obj" id="1_7v130"]
+[ext_resource type="ArrayMesh" uid="uid://cgif4r3qrbu6x" path="res://3d_assets/packa_1.obj" id="1_7v130"]
 [ext_resource type="Script" uid="uid://d3r5so1in5p2c" path="res://scripts/packa_a.gd" id="1_m3ck4"]
 [ext_resource type="ArrayMesh" uid="uid://c1iqgn2h1q228" path="res://3d_assets/packa_2.obj" id="2_4xnn3"]
 [ext_resource type="Script" uid="uid://d2mtxi0ri4xyk" path="res://scripts/packa_a_trigger.gd" id="4_mtd8m"]
@@ -9,6 +9,33 @@
 radius = 0.160796
 height = 0.795158
 
+[sub_resource type="Animation" id="Animation_m3ck4"]
+resource_name = "packa_a_anim"
+length = 0.7
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.3, 1, -0.0625467, 0, 0, 0.998042, 0.4, 1, -0.0625467, 0, 0, 0.998042, 0.5, 1, 0.0534863, 0, 0, 0.998569, 0.566667, 1, -0.0303641, 0, 0, 0.999539, 0.6, 1, 0.0104281, 0, 0, 0.999946, 0.633333, 1, 0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_mtd8m"]
+length = 0.001
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, -0.0625467, 0, 0, 0.998042)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_t8xyx"]
+_data = {
+&"RESET": SubResource("Animation_mtd8m"),
+&"packa_a_anim": SubResource("Animation_m3ck4")
+}
+
 [node name="PackaA" type="Node3D"]
 script = ExtResource("1_m3ck4")
 
@@ -16,6 +43,7 @@ script = ExtResource("1_m3ck4")
 mesh = ExtResource("1_7v130")
 
 [node name="packa_a" type="MeshInstance3D" parent="base"]
+transform = Transform3D(1, 0, 0, 0, 0.992176, 0.124848, 0, -0.124848, 0.992176, 0, 0, 0)
 mesh = ExtResource("2_4xnn3")
 skeleton = NodePath("../..")
 
@@ -25,3 +53,8 @@ script = ExtResource("4_mtd8m")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="base/packa_a/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.350502, 0)
 shape = SubResource("CapsuleShape3D_m3ck4")
+
+[node name="Packa_a_AnimationPlayer" type="AnimationPlayer" parent="base/packa_a"]
+libraries = {
+&"": SubResource("AnimationLibrary_t8xyx")
+}
