@@ -19,6 +19,7 @@ mesh = ExtResource("1_qpadl")
 mesh = ExtResource("2_4prpp")
 
 [node name="arrow" type="MeshInstance3D" parent="base"]
+visible = false
 material_override = ExtResource("4_s0320")
 mesh = ExtResource("4_xw78q")
 
