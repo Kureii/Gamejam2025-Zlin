@@ -1,6 +1,6 @@
 extends Node
 
-@export_range(1,10) var sequence_lenght: int
+@export_range(1,10, 1) var sequence_lenght: int
 
 var sequence_: Array
 var player_sequence_: Array
@@ -10,7 +10,7 @@ var player_sequence_: Array
 
 func _ready() -> void:
 	player_sequence_.clear()
-	sequence_ = generate_sequence(6,0,5)
+	sequence_ = generate_sequence(sequence_lenght,0,8)
 	sequence_text_.text = "Sequence is: " + str(sequence_)
 
 func generate_sequence(length: int, min_value: int, max_value: int) -> Array:
@@ -44,6 +44,7 @@ func win() -> void:
 	end.visible = true
 
 func _on_packa_a_clicked(id: int) -> void:
+	print(id)
 	add_to_sequence(id)
 
 

@@ -1,16 +1,18 @@
-[gd_scene load_steps=20 format=3 uid="uid://c633e8e8fp478"]
+[gd_scene load_steps=24 format=3 uid="uid://c633e8e8fp478"]
 
 [ext_resource type="Shader" uid="uid://bll86fexnhido" path="res://new_shader.tres" id="1_ykrsh"]
 [ext_resource type="Texture2D" uid="uid://32d5xak6bliq" path="res://d3a05854985b3e90edfc7fa4e294daaa8fea6e15.png" id="2_g14j6"]
 [ext_resource type="ArrayMesh" uid="uid://bf3h3x3e0ii5e" path="res://suzane.obj" id="3_vbegm"]
 [ext_resource type="Shader" uid="uid://jiehhhtsbxp8" path="res://print-2.tres" id="4_vbegm"]
-[ext_resource type="Texture2D" uid="uid://gaut2qcycqj3" path="res://Pages/Page 1.png" id="5_77dp3"]
+[ext_resource type="Texture2D" uid="uid://wyfxrx71nx75" path="res://Pages/Page 1.png" id="5_77dp3"]
 [ext_resource type="Texture2D" uid="uid://db5dydbev4knk" path="res://test_page.png" id="5_xersf"]
 [ext_resource type="Texture2D" uid="uid://beltx7eptk08o" path="res://dots.png" id="6_ehkex"]
 [ext_resource type="Texture2D" uid="uid://cltkb3qpawahi" path="res://ui/new_viewport_texture.tres" id="7_ehkex"]
 [ext_resource type="Texture2D" uid="uid://w4oqam4ceg" path="res://paper-tex.png" id="7_xersf"]
-[ext_resource type="Texture2D" uid="uid://kr276a0idmkq" path="res://Pages/Page 2.png" id="8_5tkv4"]
+[ext_resource type="Texture2D" uid="uid://cruhqb67dob5k" path="res://Pages/Page 2.png" id="8_5tkv4"]
 [ext_resource type="PackedScene" uid="uid://dsanndya6tjpn" path="res://ui/control.tscn" id="8_xersf"]
+[ext_resource type="Texture2D" uid="uid://bllwk3mhtqw5q" path="res://pages/page 3.png" id="9_0m0f1"]
+[ext_resource type="Texture2D" uid="uid://cq1s6fbdcldyl" path="res://pages/page 4.png" id="10_b0q6j"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_00tp4"]
 render_priority = 0
@@ -44,6 +46,34 @@ shader_parameter/dots = ExtResource("6_ehkex")
 shader_parameter/dots_smooth = 0.609
 shader_parameter/Texture = ExtResource("8_5tkv4")
 shader_parameter/black_threshold = 0.902
+shader_parameter/dots_scale_individual = 0.928
+shader_parameter/sat = 1.0
+shader_parameter/black_offset = Vector2(0, 0)
+shader_parameter/paper_texture = ExtResource("7_xersf")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mhym6"]
+render_priority = 0
+shader = ExtResource("4_vbegm")
+shader_parameter/Vector2Parameter = Vector2(1.095, 1.665)
+shader_parameter/dots_scale = 50.0
+shader_parameter/dots = ExtResource("6_ehkex")
+shader_parameter/dots_smooth = 0.609
+shader_parameter/Texture = ExtResource("9_0m0f1")
+shader_parameter/black_threshold = 1.0
+shader_parameter/dots_scale_individual = 0.928
+shader_parameter/sat = 1.0
+shader_parameter/black_offset = Vector2(0, 0)
+shader_parameter/paper_texture = ExtResource("7_xersf")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a3se8"]
+render_priority = 0
+shader = ExtResource("4_vbegm")
+shader_parameter/Vector2Parameter = Vector2(1.095, 1.665)
+shader_parameter/dots_scale = 50.0
+shader_parameter/dots = ExtResource("6_ehkex")
+shader_parameter/dots_smooth = 0.609
+shader_parameter/Texture = ExtResource("10_b0q6j")
+shader_parameter/black_threshold = 1.0
 shader_parameter/dots_scale_individual = 0.928
 shader_parameter/sat = 1.0
 shader_parameter/black_offset = Vector2(0, 0)
@@ -85,6 +115,16 @@ mesh = SubResource("PlaneMesh_5tkv4")
 [node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
 transform = Transform3D(20.8635, 0, 0, 0, 15.5401, 0.253348, 0, -0.253348, 15.5401, 24.593, 0.000722885, -0.905503)
 material_override = SubResource("ShaderMaterial_0m0f1")
+mesh = SubResource("PlaneMesh_5tkv4")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="."]
+transform = Transform3D(20.8635, 0, 0, 0, 15.5401, 0.253348, 0, -0.253348, 15.5401, 1.88425, 0.000722885, 31.2731)
+material_override = SubResource("ShaderMaterial_mhym6")
+mesh = SubResource("PlaneMesh_5tkv4")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="."]
+transform = Transform3D(20.8635, 0, 0, 0, 15.5401, 0.253348, 0, -0.253348, 15.5401, 24.593, 0.000722885, 31.2731)
+material_override = SubResource("ShaderMaterial_a3se8")
 mesh = SubResource("PlaneMesh_5tkv4")
 
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="."]

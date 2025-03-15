@@ -1,0 +1,41 @@
+[gd_scene load_steps=8 format=3 uid="uid://djucdvqhspvog"]
+
+[ext_resource type="Script" uid="uid://dpn760t452r3n" path="res://scripts/packa_p-m.gd" id="1_ww1vu"]
+[ext_resource type="ArrayMesh" uid="uid://ri3w3l7id5j0" path="res://3d_assets/paka_1.obj" id="2_ww1vu"]
+[ext_resource type="ArrayMesh" uid="uid://ck0yly7cq2y03" path="res://3d_assets/paka_2.obj" id="3_fh5b7"]
+[ext_resource type="Material" uid="uid://du4bl0gtdxgw4" path="res://materials/arrows.tres" id="4_348yn"]
+[ext_resource type="ArrayMesh" uid="uid://cl5vpmt22yer2" path="res://3d_assets/paka_3.obj" id="5_36n82"]
+[ext_resource type="Script" uid="uid://u7jgiqndaefn" path="res://scripts/drag_support_packa_b.gd" id="6_kc422"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s0320"]
+size = Vector3(1.19678, 0.685425, 0.56958)
+
+[node name="PackaB" type="Node3D"]
+script = ExtResource("1_ww1vu")
+
+[node name="base" type="MeshInstance3D" parent="."]
+mesh = ExtResource("2_ww1vu")
+
+[node name="packa_b" type="MeshInstance3D" parent="base"]
+mesh = ExtResource("3_fh5b7")
+
+[node name="arrow" type="MeshInstance3D" parent="base"]
+material_override = ExtResource("4_348yn")
+mesh = ExtResource("5_36n82")
+
+[node name="drag_support" type="Node3D" parent="." node_paths=PackedStringArray("packa_")]
+transform = Transform3D(0.111434, 0, 0, 0, 0.140053, 0, 0, 0, 0.0342592, 0, 0.137001, 0)
+script = ExtResource("6_kc422")
+movement_speed = 1.975
+return_speed = 0.605
+packa_ = NodePath("../base/packa_b")
+
+[node name="Area3D" type="Area3D" parent="drag_support"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="drag_support/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 0.285063, 0, 0, 0, 6.06698, 0.0090332, -0.0209559, 0.0196537)
+shape = SubResource("BoxShape3D_s0320")
+
+[connection signal="paka_pushed" from="drag_support" to="." method="_on_drag_support_paka_pushed"]
+[connection signal="mouse_entered" from="drag_support/Area3D" to="." method="_on_area_3d_mouse_entered"]
+[connection signal="mouse_exited" from="drag_support/Area3D" to="." method="_on_area_3d_mouse_exited"]
