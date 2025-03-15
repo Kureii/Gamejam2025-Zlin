@@ -1,11 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://dyf7m2jdcskx1"]
+[gd_scene load_steps=6 format=3 uid="uid://dyf7m2jdcskx1"]
 
-[ext_resource type="Script" uid="uid://c7hbtyc3jvd43" path="res://scripts/camera_3d.gd" id="1_ycayy"]
+[ext_resource type="Script" path="res://scripts/camera_3d.gd" id="1_ycayy"]
 [ext_resource type="PackedScene" uid="uid://cdl1pf4dcppis" path="res://prefabs/packa_a.tscn" id="2_bw6k5"]
 [ext_resource type="PackedScene" uid="uid://cfqrj1yos1m00" path="res://prefabs/packa_b.tscn" id="3_bw6k5"]
-[ext_resource type="Script" uid="uid://bd08io3mejpxx" path="res://scripts/game_handler.gd" id="3_y3j0m"]
-[ext_resource type="PackedScene" uid="uid://djucdvqhspvog" path="res://prefabs/paka.tscn" id="4_y3j0m"]
-[ext_resource type="PackedScene" uid="uid://wym6hw0mljks" path="res://prefabs/button.tscn" id="5_rurhu"]
+[ext_resource type="Script" path="res://scripts/game_handler.gd" id="3_y3j0m"]
 
 [sub_resource type="PrismMesh" id="PrismMesh_mlf6e"]
 
@@ -80,45 +78,11 @@ text = "ID: 5
 "
 font_size = 8
 
-[node name="ID_6" type="Label3D" parent="Node3D"]
-transform = Transform3D(0.758373, 0, -0.651821, 0, 1, 0, 0.651821, 0, 0.758373, 0.8765, -0.410629, -0.665892)
-text = "ID: 6
-"
-font_size = 8
-
-[node name="ID_7" type="Label3D" parent="Node3D"]
-transform = Transform3D(0.633232, 0, -0.773962, 0, 1, 0, 0.773962, 0, 0.633232, 1.02649, -0.410629, -0.440069)
-text = "ID: 7
-"
-font_size = 8
-
-[node name="ID_8" type="Label3D" parent="Node3D"]
-transform = Transform3D(0.633232, 0, -0.773962, 0, 1, 0, 0.773962, 0, 0.633232, 1.20849, -0.410629, -0.126613)
-text = "ID: 8
-"
-font_size = 8
-
 [node name="PackaB" parent="Node3D" instance=ExtResource("3_bw6k5")]
 transform = Transform3D(-3.61614e-08, 0.561795, -0.827277, 2.45568e-08, 0.827277, 0.561795, 1, 0, -4.37114e-08, -0.875245, -0.472534, -0.0278748)
 
-[node name="PackaB2" parent="Node3D" instance=ExtResource("4_y3j0m")]
-transform = Transform3D(1, 0, 0, 0, 0.690542, 0.723293, 0, -0.723293, 0.690542, 0.0278145, -0.405733, 0.699182)
-
-[node name="Button2" parent="Node3D" instance=ExtResource("5_rurhu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.02949, -0.259468, -0.428132)
-id_ = 7
-
-[node name="Button3" parent="Node3D" instance=ExtResource("5_rurhu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.21382, -0.258581, -0.120475)
-id_ = 8
-
-[node name="Button" parent="Node3D" instance=ExtResource("5_rurhu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.856083, -0.262658, -0.666662)
-id_ = 6
-
 [node name="GameHandler" type="Node" parent="." node_paths=PackedStringArray("sequence_text_", "end_text_")]
 script = ExtResource("3_y3j0m")
-sequence_lenght = 6
 sequence_text_ = NodePath("info")
 end_text_ = NodePath("end_game/VBoxContainer/GO_label")
 
@@ -169,7 +133,4 @@ transform = Transform3D(0.985157, -0.00193233, 0.171643, -0.171654, -0.01109, 0.
 [connection signal="packa_a_clicked" from="Node3D/PackaA_04" to="GameHandler" method="_on_packa_a_clicked"]
 [connection signal="packa_a_clicked" from="Node3D/PackaA_05" to="GameHandler" method="_on_packa_a_clicked"]
 [connection signal="packa_a_clicked" from="Node3D/PackaA_06" to="GameHandler" method="_on_packa_a_clicked"]
-[connection signal="paka_clicked" from="Node3D/Button2" to="GameHandler" method="_on_packa_a_clicked"]
-[connection signal="paka_clicked" from="Node3D/Button3" to="GameHandler" method="_on_packa_a_clicked"]
-[connection signal="paka_clicked" from="Node3D/Button" to="GameHandler" method="_on_packa_a_clicked"]
 [connection signal="button_up" from="GameHandler/end_game/VBoxContainer/Reset" to="GameHandler" method="_on_reset_button_up"]
