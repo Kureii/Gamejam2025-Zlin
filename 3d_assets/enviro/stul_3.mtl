@@ -1,16 +1,6 @@
 # Blender 4.3.1 MTL File: 'lod.blend'
 # www.blender.org
 
-newmtl Material
-Ns 250.000000
-Ka 1.000000 1.000000 1.000000
-Kd 0.261328 0.343408 0.183513
-Ks 0.500000 0.500000 0.500000
-Ke 0.000000 0.000000 0.000000
-Ni 1.450000
-d 1.000000
-illum 2
-
 newmtl Material.003
 Ns 250.000000
 Ka 1.000000 1.000000 1.000000
@@ -21,12 +11,12 @@ Ni 1.500000
 d 1.000000
 illum 2
 
-newmtl Material.006
+newmtl Material.011
 Ns 250.000000
 Ka 1.000000 1.000000 1.000000
-Kd 0.535583 0.136466 0.059458
 Ks 0.500000 0.500000 0.500000
 Ke 0.000000 0.000000 0.000000
 Ni 1.500000
 d 1.000000
 illum 2
+map_Kd C:/Users/marti/OneDrive/Desktop/Nová složka/ŠKOLA/vysoka/1. rok/gamejam/stul3.png

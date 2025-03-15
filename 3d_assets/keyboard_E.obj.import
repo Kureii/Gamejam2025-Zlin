@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://nrvfp8m1rp1d"
+path="res://.godot/imported/keyboard_E.obj-53b6a728b989fa640cf68fc09f68c080.mesh"
+
+[deps]
+
+files=["res://.godot/imported/keyboard_E.obj-53b6a728b989fa640cf68fc09f68c080.mesh"]
+
+source_file="res://3d_assets/keyboard_E.obj"
+dest_files=["res://.godot/imported/keyboard_E.obj-53b6a728b989fa640cf68fc09f68c080.mesh", "res://.godot/imported/keyboard_E.obj-53b6a728b989fa640cf68fc09f68c080.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

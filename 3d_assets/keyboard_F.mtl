@@ -1,12 +1,12 @@
 # Blender 4.3.1 MTL File: 'lod.blend'
 # www.blender.org
 
-newmtl Material.010
+newmtl keyboard
 Ns 250.000000
 Ka 1.000000 1.000000 1.000000
-Ks 0.000000 0.000000 0.000000
+Ks 0.500000 0.500000 0.500000
 Ke 0.000000 0.000000 0.000000
 Ni 1.500000
 d 1.000000
-illum 1
-map_Kd C:/Users/marti/OneDrive/Desktop/Nová složka/ŠKOLA/vysoka/1. rok/gamejam/stul2.png
+illum 2
+map_Kd C:/Users/marti/OneDrive/Desktop/Nová složka/ŠKOLA/vysoka/1. rok/gamejam/keyboard.png

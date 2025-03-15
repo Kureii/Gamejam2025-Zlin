@@ -1,12 +1,12 @@
-[gd_scene load_steps=25 format=3 uid="uid://ba2e5xp2bkxho"]
+[gd_scene load_steps=34 format=3 uid="uid://ba2e5xp2bkxho"]
 
 [ext_resource type="ArrayMesh" uid="uid://da0r2qtnx6v0v" path="res://3d_assets/enviro/podlaha.obj" id="1_cd240"]
 [ext_resource type="ArrayMesh" uid="uid://crrqjf52hkpet" path="res://3d_assets/enviro/stena_1.obj" id="2_in2js"]
 [ext_resource type="ArrayMesh" uid="uid://cgn1lesd4540a" path="res://3d_assets/enviro/stul_1.obj" id="3_qy753"]
-[ext_resource type="Material" uid="uid://xub4wyj5ikb6" path="res://materials/3d/stul1.tres" id="4_31in3"]
+[ext_resource type="Texture2D" uid="uid://cuj881egefc4y" path="res://3d_assets/textures/stul1_1.png" id="4_hg206"]
 [ext_resource type="ArrayMesh" uid="uid://bfqlliut68b45" path="res://3d_assets/enviro/stul_2.obj" id="4_ho58i"]
-[ext_resource type="ArrayMesh" uid="uid://cn1qx2ob7qwj5" path="res://3d_assets/enviro/stul_3.obj" id="5_31in3"]
-[ext_resource type="Material" uid="uid://cylm7i511jom8" path="res://materials/3d/stul2.tres" id="5_hg206"]
+[ext_resource type="ArrayMesh" uid="uid://e56o3cdyqfn7" path="res://3d_assets/enviro/stul_3.obj" id="5_31in3"]
+[ext_resource type="Texture2D" uid="uid://d3a86bjwum2ew" path="res://3d_assets/textures/stul2.png" id="6_31in3"]
 [ext_resource type="ArrayMesh" uid="uid://0662hxtovqrp" path="res://3d_assets/enviro/svetla_1.obj" id="6_hg206"]
 [ext_resource type="Material" uid="uid://cdeulfo4bgseu" path="res://materials/3d/svetlo_material.tres" id="7_myk7v"]
 [ext_resource type="Material" uid="uid://cw7uy6il4i7a8" path="res://materials/3d/stul3.tres" id="8_myk7v"]
@@ -16,9 +16,21 @@
 [ext_resource type="Material" uid="uid://c6ebar5ko1o5c" path="res://materials/3d/trubky.tres" id="11_sdsmw"]
 [ext_resource type="ArrayMesh" uid="uid://b65au1lyqimp6" path="res://3d_assets/enviro/trubka_2.obj" id="12_qrv7s"]
 [ext_resource type="ArrayMesh" uid="uid://ce8n85utnva2k" path="res://3d_assets/enviro/strop_1.obj" id="13_cwshr"]
+[ext_resource type="Texture2D" uid="uid://dqw3kjv68d4pv" path="res://3d_assets/textures/kalendar.png" id="17_hg206"]
+[ext_resource type="Texture2D" uid="uid://dfkgpyxsx7u1u" path="res://3d_assets/textures/stul3.png" id="18_myk7v"]
+[ext_resource type="ArrayMesh" uid="uid://bjfcqisxv8f6t" path="res://3d_assets/TV_3.obj" id="19_u3h5q"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u3h5q"]
 albedo_color = Color(0.54146, 0.490944, 0.763882, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_myk7v"]
+albedo_texture = ExtResource("4_hg206")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hiytu"]
+albedo_texture = ExtResource("4_hg206")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yh6ax"]
+albedo_texture = ExtResource("6_31in3")
 
 [sub_resource type="Curve" id="Curve_2m51a"]
 _data = [Vector2(0, 0.134832), 0.0, 0.0, 0, 0, Vector2(0.975, 1), 0.0, 0.0, 0, 0]
@@ -29,7 +41,7 @@ _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.90625, 1), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="Curve" id="Curve_b1jpx"]
-_data = [Vector2(0, 0.258427), 0.0, 0.0, 0, 0, Vector2(0.3125, 0.382023), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 0.258427), 0.0, 0.0, 0, 0, Vector2(0.95, 0.550562), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="CurveXYZTexture" id="CurveXYZTexture_uxws4"]
@@ -50,13 +62,21 @@ background_color = Color(1, 1, 1, 1)
 background_energy_multiplier = 0.0
 sky = SubResource("Sky_cxm10")
 ambient_light_source = 2
-ambient_light_color = Color(0.290101, 0.113391, 0.257277, 1)
+ambient_light_color = Color(0.260018, 0.0984778, 0.230034, 1)
 ambient_light_energy = 5.6
 tonemap_mode = 3
 adjustment_enabled = true
 adjustment_brightness = 0.75
 adjustment_contrast = 0.9
 adjustment_color_correction = SubResource("CurveXYZTexture_uxws4")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_sdsmw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qrv7s"]
+albedo_texture = ExtResource("17_hg206")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sdsmw"]
+albedo_texture = ExtResource("18_myk7v")
 
 [node name="Node3D" type="Node3D"]
 
@@ -72,34 +92,26 @@ mesh = ExtResource("2_in2js")
 [node name="Stul1" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.67, 0, 0, 0, 0.67, 0, 0, 0, 0.67, -0.793412, 0, 0.384972)
 mesh = ExtResource("3_qy753")
-surface_material_override/0 = ExtResource("4_31in3")
-surface_material_override/1 = ExtResource("5_hg206")
+surface_material_override/0 = SubResource("StandardMaterial3D_myk7v")
+surface_material_override/1 = SubResource("StandardMaterial3D_hiytu")
 
 [node name="Stul2" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.67, 0, 0, 0, 0.67, 0, 0, 0, 0.67, -0.793412, 0.13554, 0.384972)
 mesh = ExtResource("4_ho58i")
-surface_material_override/0 = ExtResource("4_31in3")
-surface_material_override/1 = ExtResource("5_hg206")
-
-[node name="Stul3" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.67, 0, 0, 0, 0.67, 0, 0, 0, 0.67, -0.793412, 0, 0.384972)
-mesh = ExtResource("5_31in3")
-surface_material_override/0 = ExtResource("4_31in3")
-surface_material_override/1 = ExtResource("8_myk7v")
-surface_material_override/2 = ExtResource("5_hg206")
+surface_material_override/0 = SubResource("StandardMaterial3D_yh6ax")
 
 [node name="Svetla1" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.67, 0, 0, 0, 0.67, 0, 0, 0, 0.67, -0.793412, 6.39657, -16.6918)
+transform = Transform3D(0.67, 0, 0, 0, 0.67, 0, 0, 0, 0.67, -0.793412, 6.46024, -16.6918)
 mesh = ExtResource("6_hg206")
 surface_material_override/0 = ExtResource("7_myk7v")
 
 [node name="Svetla2" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.67, 0, 0, 0, 0.67, 0, 0, 0, 0.67, 2.27446, 2.27617, -18.5506)
+transform = Transform3D(0.67, 0, 0, 0, 0.67, 0, 0, 0, 0.67, 2.27446, 2.46791, -18.5506)
 mesh = ExtResource("8_u3h5q")
 surface_material_override/0 = ExtResource("7_myk7v")
 
 [node name="Svetla3" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.67, 0, 0, 0, 0.67, 0, 0, 0, 0.67, -3.83473, 2.33701, -18.5496)
+transform = Transform3D(0.67, 0, 0, 0, 0.67, 0, 0, 0, 0.67, -3.83473, 2.45818, -18.5496)
 mesh = ExtResource("9_hiytu")
 surface_material_override/0 = ExtResource("7_myk7v")
 
@@ -114,14 +126,14 @@ mesh = ExtResource("12_qrv7s")
 surface_material_override/0 = ExtResource("11_sdsmw")
 
 [node name="Strop1" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.66049, 0, 0, 0, 0.66049, 0, 0, 0, 0.66049, -0.730027, 0.12574, -0.17355)
+transform = Transform3D(0.66049, 0, 0, 0, 0.66049, 0, 0, 0, 0.66049, -0.730027, 0.18941, -0.17355)
 mesh = ExtResource("13_cwshr")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.601747, 8.38331, -15.6516)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.601747, 6.07989, -15.6516)
 light_color = Color(0.97547, 0.787439, 0.907885, 1)
 light_energy = 7.436
-omni_range = 7.431
+omni_range = 11.042
 omni_attenuation = 1.286
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="."]
@@ -139,3 +151,18 @@ environment = SubResource("Environment_ixc20")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.764674, 0)
 mesh = ExtResource("1_cd240")
 surface_material_override/0 = ExtResource("8_myk7v")
+
+[node name="Plakat" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.216337, 0.55504, -0.0140495, -0.0541596, 0.0132467, -0.747634, -0.502525, 0.237518, 0.074528, -5.2856, 2.72078, -17.0168)
+mesh = SubResource("PlaneMesh_sdsmw")
+skeleton = NodePath("../Svetla3")
+surface_material_override/0 = SubResource("StandardMaterial3D_qrv7s")
+
+[node name="Stul3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.663399, 0, 0, 0, 0.663399, 0, 0, 0, 0.663399, -0.771419, 3.59362, -18.6798)
+mesh = ExtResource("5_31in3")
+surface_material_override/0 = SubResource("StandardMaterial3D_sdsmw")
+
+[node name="Tv3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.719721, 0, 0, 0, 0.719721, 0, 0, 0, 0.719721, -0.745146, 4.11962, -20.1226)
+mesh = ExtResource("19_u3h5q")
