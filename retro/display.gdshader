@@ -23,10 +23,11 @@ void fragment() {
 	super_scanline = smoothstep(.95,1.,super_scanline);
 	displayUV.x+=super_scanline*.01;
 	float scanlines = sin(displayUV.y*scanline_scale*100.-TIME*scanline_speed);
-	scanlines = scanlines * scanline_strength + 1.-scanline_strength;
+	float mixed_scanlines = scanlines * scanline_strength + 1.-scanline_strength;
 	vec4 tex = texture(display_source,displayUV).rgba;
-	EMISSION = tex.rgb *tex.a* emission_intensity * vec3(1.,1.,1.)*scanlines + (scanlines)*.05 + super_scanline * .05;
+	EMISSION = tex.rgb *tex.a* emission_intensity*mixed_scanlines + (scanlines)*.05*scanline_strength + super_scanline * .05;
 	//EMISSION = vec3(super_scanline);
+	//EMISSION = tex.rgb * emission_intensity;
 	// Called for every pixel the material is visible on.
 }
 

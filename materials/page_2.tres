@@ -1,7 +1,7 @@
 [gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://dv1mb5hlbr74h"]
 
 [ext_resource type="Shader" uid="uid://jiehhhtsbxp8" path="res://print-2.tres" id="1_e4y6g"]
-[ext_resource type="Texture2D" uid="uid://dqtxtmu1ptg1h" path="res://dots-multi.png" id="3_os44x"]
+[ext_resource type="Texture2D" uid="uid://beltx7eptk08o" path="res://dots.png" id="3_e4y6g"]
 [ext_resource type="Texture2D" uid="uid://bllwk3mhtqw5q" path="res://pages/page_2.png" id="4_e4y6g"]
 [ext_resource type="Texture2D" uid="uid://w4oqam4ceg" path="res://paper-tex.png" id="4_jnug5"]
 
@@ -10,11 +10,11 @@ render_priority = 0
 shader = ExtResource("1_e4y6g")
 shader_parameter/Vector2Parameter = Vector2(1.095, 1.615)
 shader_parameter/dots_scale = 50.0
-shader_parameter/dots = ExtResource("3_os44x")
-shader_parameter/dots_smooth = 0.2
+shader_parameter/dots = ExtResource("3_e4y6g")
+shader_parameter/dots_smooth = 0.75
 shader_parameter/Texture = ExtResource("4_e4y6g")
-shader_parameter/black_threshold = 0.8
-shader_parameter/dots_scale_individual = 1.0
+shader_parameter/black_threshold = 1.0
+shader_parameter/dots_scale_individual = 0.8
 shader_parameter/sat = 1.0
 shader_parameter/black_offset = Vector2(0, 0)
 shader_parameter/paper_texture = ExtResource("4_jnug5")

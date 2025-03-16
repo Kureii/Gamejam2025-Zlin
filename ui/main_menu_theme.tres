@@ -1,0 +1,36 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://bmkuis4wx80p4"]
+
+[ext_resource type="FontFile" uid="uid://bl40g8nwv0am1" path="res://ui/monogram-extended.ttf" id="1_j7pqa"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uidfo"]
+bg_color = Color(0.239216, 0.396078, 0.239216, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l2jd3"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0yuv6"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 1, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_exdea"]
+bg_color = Color(0, 0, 0, 1)
+
+[resource]
+Button/colors/font_color = Color(0.28, 1, 0.04, 1)
+Button/fonts/font = ExtResource("1_j7pqa")
+Button/styles/focus = SubResource("StyleBoxFlat_uidfo")
+Button/styles/hover = SubResource("StyleBoxFlat_l2jd3")
+Button/styles/normal = SubResource("StyleBoxFlat_0yuv6")
+Panel/styles/panel = SubResource("StyleBoxFlat_exdea")

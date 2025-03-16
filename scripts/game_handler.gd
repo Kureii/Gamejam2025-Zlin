@@ -7,6 +7,7 @@ var player_sequence_: Array
 @export var sequence_text_: Label
 @export var end_text_: Label
 
+
 var trans_dict = {
 	0 : "p-1",
 	1 : "p-2",
