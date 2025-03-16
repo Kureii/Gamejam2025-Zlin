@@ -25,7 +25,8 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if not end_book:
 		anim.play("book_armature|idle")
 	else:
-		emit_signal("close_book")
+		end_book = false
+		get_parent_node_3d().visible = false
 
 func close():
 	anim.play("book_armature|book_open", -1, -1, true)
@@ -140,3 +141,10 @@ func change_page_texture(material_number, texture_number):
 	else:
 		print("Failed to load texture at path: " + texture_path)
 		print("Make sure the file exists and the path is correct!")
+
+
+func _on_book_visibility_changed() -> void:
+	anim.play("book_armature|book_open")
+	page_count = count_available_pages()
+	change_page_texture(0,actual_left_page)
+	change_page_texture(3,actual_right_page)

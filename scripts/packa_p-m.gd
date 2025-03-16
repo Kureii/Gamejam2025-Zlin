@@ -7,6 +7,8 @@ var mouse_position_
 var do_drag: bool = false
 var drag_support_: MeshInstance3D
 
+signal direction_lever(id: int)
+
 func _ready() -> void:
 	arrow_ = $base/arrow
 		
@@ -21,4 +23,4 @@ func _on_area_3d_mouse_exited() -> void:
 
 
 func _on_drag_support_paka_pushed(pose: int) -> void:
-	print("direction: ", pose)
+	emit_signal("direction_lever", pose * id)

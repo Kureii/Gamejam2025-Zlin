@@ -7,32 +7,4 @@
 [node name="book_anim" parent="." instance=ExtResource("1_ble1a")]
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0.241, 0.048, 0)
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 24
-theme_override_constants/margin_top = 24
-theme_override_constants/margin_right = 24
-theme_override_constants/margin_bottom = 24
-
-[node name="prew_button" type="Button" parent="MarginContainer"]
-custom_minimum_size = Vector2(120, 50)
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-theme_override_font_sizes/font_size = 24
-text = "prev"
-
-[node name="next_button" type="Button" parent="MarginContainer"]
-custom_minimum_size = Vector2(120, 50)
-layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 0
-theme_override_font_sizes/font_size = 24
-text = "next"
-
-[connection signal="button_up" from="MarginContainer/prew_button" to="book_anim" method="_on_prew_button_button_up"]
-[connection signal="button_up" from="MarginContainer/next_button" to="book_anim" method="_on_next_button_button_up"]
+[connection signal="visibility_changed" from="." to="book_anim" method="_on_book_visibility_changed"]

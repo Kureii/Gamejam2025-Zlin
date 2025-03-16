@@ -1,39 +1,46 @@
-[gd_scene load_steps=8 format=3 uid="uid://djucdvqhspvog"]
+[gd_scene load_steps=10 format=3 uid="uid://djucdvqhspvog"]
 
 [ext_resource type="Script" uid="uid://dpn760t452r3n" path="res://scripts/packa_p-m.gd" id="1_ww1vu"]
-[ext_resource type="ArrayMesh" uid="uid://ri3w3l7id5j0" path="res://3d_assets/paka_1.obj" id="2_ww1vu"]
-[ext_resource type="ArrayMesh" uid="uid://ck0yly7cq2y03" path="res://3d_assets/paka_2.obj" id="3_fh5b7"]
+[ext_resource type="Material" uid="uid://cjtp1nmk7bpf2" path="res://materials/tv_box.tres" id="2_36n82"]
+[ext_resource type="ArrayMesh" uid="uid://cjxmskyjy4rlc" path="res://3d_assets/new/lever_02_base.obj" id="2_ww1vu"]
+[ext_resource type="ArrayMesh" uid="uid://b7vnm2vtywr3f" path="res://3d_assets/new/lever_02.obj" id="3_fh5b7"]
 [ext_resource type="Material" uid="uid://du4bl0gtdxgw4" path="res://materials/arrows.tres" id="4_348yn"]
-[ext_resource type="ArrayMesh" uid="uid://cl5vpmt22yer2" path="res://3d_assets/paka_3.obj" id="5_36n82"]
+[ext_resource type="Material" uid="uid://1xcxah4iuqe3" path="res://materials/interactive.tres" id="4_oxeyl"]
+[ext_resource type="ArrayMesh" uid="uid://bts07ph6rs6lg" path="res://3d_assets/new/lever_02_arrow.obj" id="5_36n82"]
 [ext_resource type="Script" uid="uid://u7jgiqndaefn" path="res://scripts/drag_support_packa_b.gd" id="6_kc422"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_s0320"]
-size = Vector3(1.19678, 0.685425, 0.56958)
+size = Vector3(1.71703, 2.54593, 0.662401)
 
 [node name="PackaB" type="Node3D"]
 script = ExtResource("1_ww1vu")
 
 [node name="base" type="MeshInstance3D" parent="."]
+material_override = ExtResource("2_36n82")
 mesh = ExtResource("2_ww1vu")
 
 [node name="packa_b" type="MeshInstance3D" parent="base"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000305474, -0.000576384, -0.000488877)
+material_override = ExtResource("4_oxeyl")
 mesh = ExtResource("3_fh5b7")
 
 [node name="arrow" type="MeshInstance3D" parent="base"]
+visible = false
 material_override = ExtResource("4_348yn")
 mesh = ExtResource("5_36n82")
 
 [node name="drag_support" type="Node3D" parent="." node_paths=PackedStringArray("packa_")]
-transform = Transform3D(0.111434, 0, 0, 0, 0.140053, 0, 0, 0, 0.0342592, 0, 0.137001, 0)
+transform = Transform3D(0.111434, 0, 0, 0, 0.140053, 0, 0, 0, 0.0342592, -0.000583939, 0.193843, 0.00114249)
 script = ExtResource("6_kc422")
-movement_speed = 1.975
+movement_speed = 1.905
 return_speed = 0.605
 packa_ = NodePath("../base/packa_b")
 
 [node name="Area3D" type="Area3D" parent="drag_support"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0269768, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="drag_support/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 0.285063, 0, 0, 0, 6.06698, 0.0090332, -0.0209559, 0.0196537)
+transform = Transform3D(1, 0, 0, 0, 0.285063, 0, 0, 0, 6.06698, 0.00467632, -0.0728431, 0.0339854)
 shape = SubResource("BoxShape3D_s0320")
 
 [connection signal="paka_pushed" from="drag_support" to="." method="_on_drag_support_paka_pushed"]

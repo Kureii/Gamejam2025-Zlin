@@ -1,11 +1,10 @@
-[gd_scene load_steps=33 format=3 uid="uid://dyf7m2jdcskx1"]
+[gd_scene load_steps=35 format=3 uid="uid://dyf7m2jdcskx1"]
 
 [ext_resource type="Script" uid="uid://c7hbtyc3jvd43" path="res://scripts/camera_3d.gd" id="1_ycayy"]
-[ext_resource type="PackedScene" uid="uid://cdl1pf4dcppis" path="res://prefabs/packa_a.tscn" id="2_bw6k5"]
 [ext_resource type="PackedScene" uid="uid://8qnhlvs44g0a" path="res://scenes/book.tscn" id="2_rw4oa"]
-[ext_resource type="PackedScene" uid="uid://cfqrj1yos1m00" path="res://prefabs/packa_b.tscn" id="3_bw6k5"]
 [ext_resource type="Script" uid="uid://bd08io3mejpxx" path="res://scripts/game_handler.gd" id="3_y3j0m"]
 [ext_resource type="ArrayMesh" uid="uid://bghaaukoptge8" path="res://3d_assets/new/floor.obj" id="5_5ay1a"]
+[ext_resource type="Texture2D" uid="uid://cs3xqy5waoxcm" path="res://3d_assets/textures/steny.png" id="5_gqftm"]
 [ext_resource type="ArrayMesh" uid="uid://bjf2urd64r4x5" path="res://3d_assets/new/cocpit.obj" id="6_ldkr4"]
 [ext_resource type="ArrayMesh" uid="uid://bnd4proe5jpg1" path="res://3d_assets/new/ceil.obj" id="7_liy57"]
 [ext_resource type="ArrayMesh" uid="uid://bk66opkbtydi0" path="res://3d_assets/new/main_table.obj" id="8_mwyo0"]
@@ -28,8 +27,12 @@
 [ext_resource type="Material" uid="uid://cjtp1nmk7bpf2" path="res://materials/tv_box.tres" id="23_r47aq"]
 [ext_resource type="Texture2D" uid="uid://dqw3kjv68d4pv" path="res://3d_assets/textures/kalendar.png" id="26_ttvoq"]
 [ext_resource type="PackedScene" uid="uid://wym6hw0mljks" path="res://prefabs/button.tscn" id="28_r47aq"]
+[ext_resource type="PackedScene" uid="uid://djucdvqhspvog" path="res://prefabs/paka.tscn" id="29_6irsn"]
+[ext_resource type="ArrayMesh" uid="uid://djwcnja2a6uos" path="res://3d_assets/new/fuel_diluter_base.obj" id="30_gqftm"]
+[ext_resource type="Script" uid="uid://c5n7umji3stt" path="res://scripts/book_controls.gd" id="31_5dk4p"]
 
-[sub_resource type="PrismMesh" id="PrismMesh_mlf6e"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5dk4p"]
+albedo_texture = ExtResource("5_gqftm")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rw4oa"]
 albedo_texture = ExtResource("26_ttvoq")
@@ -48,134 +51,6 @@ fov = 66.1
 far = 41.24
 script = ExtResource("1_ycayy")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00054872, 0.00409555, -2.77208)
-visible = false
-mesh = SubResource("PrismMesh_mlf6e")
-
-[node name="Node3D" type="Node3D" parent="."]
-visible = false
-
-[node name="PackaA_01" parent="Node3D" instance=ExtResource("2_bw6k5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.630715, -0.287061, -0.859694)
-id_ = 5
-
-[node name="PackaA_02" parent="Node3D" instance=ExtResource("2_bw6k5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.346077, -0.287061, -0.859694)
-id_ = 4
-
-[node name="PackaA_03" parent="Node3D" instance=ExtResource("2_bw6k5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.108915, -0.287061, -0.859694)
-id_ = 3
-
-[node name="PackaA_04" parent="Node3D" instance=ExtResource("2_bw6k5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.146505, -0.287061, -0.859694)
-id_ = 2
-
-[node name="PackaA_05" parent="Node3D" instance=ExtResource("2_bw6k5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.40071, -0.287061, -0.867065)
-id_ = 1
-
-[node name="PackaA_06" parent="Node3D" instance=ExtResource("2_bw6k5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.659705, -0.287061, -0.859694)
-
-[node name="ID_0" type="Label3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.680361, -0.410629, -0.824102)
-text = "ID: 0
-"
-font_size = 8
-
-[node name="ID_1" type="Label3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.396029, -0.410629, -0.824102)
-text = "ID: 1
-"
-font_size = 8
-
-[node name="ID_2" type="Label3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.123172, -0.410629, -0.824102)
-text = "ID: 2
-"
-font_size = 8
-
-[node name="ID_3" type="Label3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.127733, -0.408256, -0.826365)
-text = "ID: 3
-"
-font_size = 8
-
-[node name="ID_4" type="Label3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.372239, -0.410629, -0.824102)
-text = "ID: 4
-"
-font_size = 8
-
-[node name="ID_5" type="Label3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.627365, -0.410629, -0.824102)
-text = "ID: 5
-"
-font_size = 8
-
-[node name="PackaB" parent="Node3D" instance=ExtResource("3_bw6k5")]
-transform = Transform3D(0.983304, -0.00295528, 0.181945, 0.00281197, 0.999996, 0.00104563, -0.181948, -0.000516556, 0.983309, 0.839493, 0.0579948, -0.927445)
-
-[node name="GameHandler" type="Node" parent="." node_paths=PackedStringArray("sequence_text_", "end_text_")]
-script = ExtResource("3_y3j0m")
-sequence_text_ = NodePath("info")
-end_text_ = NodePath("end_game/VBoxContainer/GO_label")
-
-[node name="end_game" type="Panel" parent="GameHandler"]
-visible = false
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="GameHandler/end_game"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 24
-alignment = 1
-
-[node name="GO_label" type="Label" parent="GameHandler/end_game/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 64
-text = "win/lose"
-horizontal_alignment = 1
-
-[node name="Reset" type="Button" parent="GameHandler/end_game/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 64
-text = "Reset"
-
-[node name="info" type="Label" parent="GameHandler"]
-offset_right = 1919.0
-offset_bottom = 99.0
-theme_override_font_sizes/font_size = 35
-text = "<palaceholder>"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="MarginContainer" type="MarginContainer" parent="GameHandler"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Button" type="Button" parent="GameHandler/MarginContainer"]
-custom_minimum_size = Vector2(150, 64)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 8
-size_flags_stretch_ratio = 2.17
-text = "kniha"
-
 [node name="lod" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.152397, 0.166719)
 
@@ -186,7 +61,6 @@ mesh = ExtResource("19_6aqbo")
 skeleton = NodePath("../..")
 
 [node name="main_object" type="Node3D" parent="lod"]
-visible = false
 
 [node name="floor" type="MeshInstance3D" parent="lod/main_object"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.55161, 0, 3.12691)
@@ -195,6 +69,7 @@ skeleton = NodePath("../..")
 
 [node name="Cocpit" type="MeshInstance3D" parent="lod/main_object"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.48046, 0, 1.49939)
+material_override = SubResource("StandardMaterial3D_5dk4p")
 mesh = ExtResource("6_ldkr4")
 skeleton = NodePath("../..")
 
@@ -420,7 +295,8 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.086
 light_energy = 0.1
 
 [node name="Book" parent="." instance=ExtResource("2_rw4oa")]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.54641, -1.63252)
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.00827837, 1.54251, -1.62946)
 visible = false
 
 [node name="controls" type="Node3D" parent="."]
@@ -471,13 +347,102 @@ id_ = 2
 [node name="p1" parent="controls/buttons/MeshInstance3D" instance=ExtResource("28_r47aq")]
 transform = Transform3D(2.27974, 0, 0, 0, 2.27974, 5.96046e-08, 0, -5.96046e-08, 2.27974, 0.314617, 0.128092, 0.123542)
 
-[connection signal="packa_a_clicked" from="Node3D/PackaA_01" to="GameHandler" method="_on_packa_a_clicked"]
-[connection signal="packa_a_clicked" from="Node3D/PackaA_02" to="GameHandler" method="_on_packa_a_clicked"]
-[connection signal="packa_a_clicked" from="Node3D/PackaA_03" to="GameHandler" method="_on_packa_a_clicked"]
-[connection signal="packa_a_clicked" from="Node3D/PackaA_04" to="GameHandler" method="_on_packa_a_clicked"]
-[connection signal="packa_a_clicked" from="Node3D/PackaA_05" to="GameHandler" method="_on_packa_a_clicked"]
-[connection signal="packa_a_clicked" from="Node3D/PackaA_06" to="GameHandler" method="_on_packa_a_clicked"]
-[connection signal="button_up" from="GameHandler/end_game/VBoxContainer/Reset" to="GameHandler" method="_on_reset_button_up"]
+[node name="PackaB" parent="controls" instance=ExtResource("29_6irsn")]
+transform = Transform3D(-2.07798, 0.0425571, 0.0243468, 0.039588, 0.847424, 1.89756, 0.0289251, 1.89749, -0.847999, -0.934426, 1.09475, -3.05143)
+id = 10
+
+[node name="Cube_058Export" type="MeshInstance3D" parent="controls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.85009, 0.776288, -2.50955)
+mesh = ExtResource("30_gqftm")
+
+[node name="GameHandler" type="Node" parent="." node_paths=PackedStringArray("sequence_text_", "end_text_")]
+script = ExtResource("3_y3j0m")
+sequence_text_ = NodePath("info")
+end_text_ = NodePath("end_game/VBoxContainer/GO_label")
+
+[node name="MarginContainer2" type="MarginContainer" parent="GameHandler"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+script = ExtResource("31_5dk4p")
+
+[node name="prew_button" type="Button" parent="GameHandler/MarginContainer2"]
+custom_minimum_size = Vector2(120, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 24
+text = "prev"
+
+[node name="next_button" type="Button" parent="GameHandler/MarginContainer2"]
+custom_minimum_size = Vector2(120, 50)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 24
+text = "next"
+
+[node name="end_game" type="Panel" parent="GameHandler"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameHandler/end_game"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="GO_label" type="Label" parent="GameHandler/end_game/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "win/lose"
+horizontal_alignment = 1
+
+[node name="Reset" type="Button" parent="GameHandler/end_game/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 64
+text = "Reset"
+
+[node name="info" type="Label" parent="GameHandler"]
+offset_right = 1919.0
+offset_bottom = 99.0
+theme_override_font_sizes/font_size = 35
+text = "<palaceholder>"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="GameHandler"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="GameHandler/MarginContainer"]
+custom_minimum_size = Vector2(150, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+size_flags_stretch_ratio = 2.17
+text = "Manual"
+
+[connection signal="visibility_changed" from="Book" to="GameHandler/MarginContainer2" method="_on_book_visibility_changed"]
 [connection signal="paka_clicked" from="controls/buttons/MeshInstance3D/p10" to="GameHandler" method="_on_button_clicked"]
 [connection signal="paka_clicked" from="controls/buttons/MeshInstance3D/p8" to="GameHandler" method="_on_button_clicked"]
 [connection signal="paka_clicked" from="controls/buttons/MeshInstance3D/p6" to="GameHandler" method="_on_button_clicked"]
@@ -488,3 +453,6 @@ transform = Transform3D(2.27974, 0, 0, 0, 2.27974, 5.96046e-08, 0, -5.96046e-08,
 [connection signal="paka_clicked" from="controls/buttons/MeshInstance3D/p5" to="GameHandler" method="_on_button_clicked"]
 [connection signal="paka_clicked" from="controls/buttons/MeshInstance3D/p3" to="GameHandler" method="_on_button_clicked"]
 [connection signal="paka_clicked" from="controls/buttons/MeshInstance3D/p1" to="GameHandler" method="_on_button_clicked"]
+[connection signal="direction_lever" from="controls/PackaB" to="GameHandler" method="_on_button_clicked"]
+[connection signal="button_up" from="GameHandler/end_game/VBoxContainer/Reset" to="GameHandler" method="_on_reset_button_up"]
+[connection signal="button_up" from="GameHandler/MarginContainer/Button" to="GameHandler" method="_on_manual_button_up"]

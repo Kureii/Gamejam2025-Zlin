@@ -1,6 +1,6 @@
 extends Node
 
-@export_range(1,10, 1) var sequence_lenght: int
+@export_range(1,10, 1) var sequence_lenght: int = 6
 
 var sequence_: Array
 var player_sequence_: Array
@@ -17,12 +17,14 @@ var trans_dict = {
 	6 : "p-7",
 	7 : "p-8",
 	8 : "p-9",
-	9 : "p-10"
+	9 : "p-10",
+	10 : "sp+",
+	-10 : "sp-"
 }
 
 func _ready() -> void:
 	player_sequence_.clear()
-	sequence_ = generate_sequence(sequence_lenght,0,8)
+	sequence_ = generate_sequence(sequence_lenght,0,10)
 	sequence_text_.text = "Sequence is: " + str(sequence_)
 
 func generate_sequence(length: int, min_value: int, max_value: int) -> Array:
@@ -32,7 +34,10 @@ func generate_sequence(length: int, min_value: int, max_value: int) -> Array:
 	for i in range(length):
 		var random_value = randi() % (max_value - min_value + 1) + min_value
 		sequence.append(random_value)
-	
+	for i in range(sequence.size()):
+		if i == 10:
+			if randf() > 0.5:
+				sequence[i] *= -1
 	return sequence
 	
 func add_to_sequence(id:int) -> void:
@@ -70,3 +75,11 @@ func _on_reset_button_up() -> void:
 func translator(id: int) -> String:
 	return trans_dict[id]
 	
+
+
+func _on_manual_button_up() -> void:
+	var manual = %Book
+	if manual.visible:
+		manual.get_child(0).close()
+	else:
+		manual.visible = true
