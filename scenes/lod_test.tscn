@@ -181,7 +181,7 @@ mesh = ExtResource("1_cd240")
 surface_material_override/0 = ExtResource("8_myk7v")
 
 [node name="Plakat" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.0845896, 0.91031, 0.0135289, -0.0820733, 0.020074, -1.13296, -0.824767, 0.0913667, 0.11413, -5.6716, 3.86295, -15.4146)
+transform = Transform3D(0.10445, 1.25683, -0.147853, -0.124722, -0.106203, -1.56265, -1.14258, 0.126489, 0.157061, -5.98803, 3.62844, -15.4146)
 mesh = SubResource("PlaneMesh_sdsmw")
 skeleton = NodePath("../Svetla3")
 surface_material_override/0 = SubResource("StandardMaterial3D_qrv7s")
