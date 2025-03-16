@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://ba2e5xp2bkxho"]
+[gd_scene load_steps=33 format=3 uid="uid://ba2e5xp2bkxho"]
 
 [ext_resource type="ArrayMesh" uid="uid://da0r2qtnx6v0v" path="res://3d_assets/enviro/podlaha.obj" id="1_cd240"]
 [ext_resource type="ArrayMesh" uid="uid://crrqjf52hkpet" path="res://3d_assets/enviro/stena_1.obj" id="2_in2js"]
@@ -16,6 +16,7 @@
 [ext_resource type="ArrayMesh" uid="uid://dlmecccknfkjj" path="res://3d_assets/enviro/trubka_1.obj" id="10_yh6ax"]
 [ext_resource type="Material" uid="uid://c6ebar5ko1o5c" path="res://materials/3d/trubky.tres" id="11_sdsmw"]
 [ext_resource type="ArrayMesh" uid="uid://ce8n85utnva2k" path="res://3d_assets/enviro/strop_1.obj" id="13_cwshr"]
+[ext_resource type="Environment" uid="uid://kte4spmm34qe" path="res://scenes/lod_test.tres" id="15_sdsmw"]
 [ext_resource type="Texture2D" uid="uid://dqw3kjv68d4pv" path="res://3d_assets/textures/kalendar.png" id="17_hg206"]
 [ext_resource type="Texture2D" uid="uid://bo3b57wjmkro1" path="res://pasta_logo_alpha.png" id="17_yh6ax"]
 [ext_resource type="Texture2D" uid="uid://dfkgpyxsx7u1u" path="res://3d_assets/textures/stul3.png" id="18_myk7v"]
@@ -34,54 +35,6 @@ albedo_texture = ExtResource("4_hg206")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yh6ax"]
 albedo_texture = ExtResource("6_31in3")
-
-[sub_resource type="Curve" id="Curve_2m51a"]
-_data = [Vector2(0, 0.134832), 0.0, 0.0, 0, 0, Vector2(0.975, 1), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="Curve" id="Curve_ayxyd"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.90625, 1), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="Curve" id="Curve_b1jpx"]
-_data = [Vector2(0, 0.258427), 0.0, 0.0, 0, 0, Vector2(0.95, 0.550562), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_uxws4"]
-curve_x = SubResource("Curve_2m51a")
-curve_y = SubResource("Curve_ayxyd")
-curve_z = SubResource("Curve_b1jpx")
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rh8wj"]
-sky_top_color = Color(0.86767, 0.501352, 0.891237, 1)
-sky_horizon_color = Color(0.760601, 0.750511, 0.387208, 1)
-
-[sub_resource type="Sky" id="Sky_cxm10"]
-sky_material = SubResource("ProceduralSkyMaterial_rh8wj")
-
-[sub_resource type="Environment" id="Environment_ixc20"]
-background_mode = 1
-background_color = Color(1, 1, 1, 1)
-background_energy_multiplier = 0.0
-sky = SubResource("Sky_cxm10")
-ambient_light_source = 2
-ambient_light_color = Color(0.274981, 0.112757, 0.250522, 1)
-ambient_light_energy = 5.6
-tonemap_mode = 3
-ssao_enabled = true
-glow_enabled = true
-glow_strength = 0.81
-glow_blend_mode = 1
-glow_hdr_threshold = 0.44
-fog_light_color = Color(0.481855, 0.500528, 0.896412, 1)
-fog_sun_scatter = 6.5
-volumetric_fog_density = 0.1411
-volumetric_fog_anisotropy = 0.3
-adjustment_enabled = true
-adjustment_brightness = 0.75
-adjustment_contrast = 0.9
-adjustment_saturation = 1.12
-adjustment_color_correction = SubResource("CurveXYZTexture_uxws4")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_sdsmw"]
 
@@ -173,7 +126,7 @@ omni_range = 15.158
 omni_attenuation = 1.381
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_ixc20")
+environment = ExtResource("15_sdsmw")
 
 [node name="Podlaha2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.764674, 0)
