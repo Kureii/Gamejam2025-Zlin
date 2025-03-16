@@ -1,18 +1,32 @@
-[gd_scene load_steps=49 format=3 uid="uid://4p1bkum06la0"]
+[gd_scene load_steps=84 format=3 uid="uid://4p1bkum06la0"]
 
+[ext_resource type="Texture2D" uid="uid://b8p2ur1i6eiup" path="res://pages/page_4.png" id="1_43lhj"]
 [ext_resource type="Script" uid="uid://bd08io3mejpxx" path="res://scripts/game_handler.gd" id="1_n2a3o"]
+[ext_resource type="Texture2D" uid="uid://7gd70s8h4s7b" path="res://pages/page_5.png" id="2_huteb"]
 [ext_resource type="Script" uid="uid://c5n7umji3stt" path="res://scripts/book_controls.gd" id="2_qko2w"]
+[ext_resource type="Texture2D" uid="uid://djdlw44o5466g" path="res://pages/page_8.png" id="3_wveoc"]
 [ext_resource type="Script" uid="uid://c7hbtyc3jvd43" path="res://scripts/camera_3d.gd" id="3_yi16n"]
 [ext_resource type="PackedScene" uid="uid://8qnhlvs44g0a" path="res://scenes/book.tscn" id="4_0yui4"]
+[ext_resource type="Texture2D" uid="uid://d1i80qf0mmhtu" path="res://pages/page_9.png" id="4_bfvxq"]
 [ext_resource type="Shader" uid="uid://c8vtjramkh5gu" path="res://retro/display.gdshader" id="5_a4nrk"]
+[ext_resource type="Texture2D" uid="uid://dr4cqbswqo6t4" path="res://pages/page_12.png" id="5_tvpng"]
 [ext_resource type="Texture2D" uid="uid://b0gqxb1nbjppw" path="res://display_test.png" id="6_646uv"]
+[ext_resource type="Texture2D" uid="uid://bxmehlbh1se8c" path="res://pages/page_13.png" id="6_omjy2"]
+[ext_resource type="Texture2D" uid="uid://dwlmtoimmoh7q" path="res://pages/page_6.png" id="7_4uwai"]
 [ext_resource type="ArrayMesh" uid="uid://15d0a6h2icpa" path="res://3d_assets/new/tv_big.obj" id="7_b4d5j"]
+[ext_resource type="Texture2D" uid="uid://ump5uiqlkdlo" path="res://pages/page_7.png" id="8_b7qx2"]
 [ext_resource type="ArrayMesh" uid="uid://bghaaukoptge8" path="res://3d_assets/new/floor.obj" id="8_s1687"]
+[ext_resource type="Texture2D" uid="uid://dvl1k4hxcev3s" path="res://pages/page_10.png" id="9_fb748"]
 [ext_resource type="Texture2D" uid="uid://cs3xqy5waoxcm" path="res://3d_assets/textures/steny.png" id="9_v02m1"]
+[ext_resource type="Texture2D" uid="uid://8hmpjwy1unfb" path="res://pages/page_11.png" id="10_aq8sk"]
 [ext_resource type="ArrayMesh" uid="uid://bjf2urd64r4x5" path="res://3d_assets/new/cocpit.obj" id="10_i0xd5"]
 [ext_resource type="ArrayMesh" uid="uid://bnd4proe5jpg1" path="res://3d_assets/new/ceil.obj" id="11_dxxrn"]
+[ext_resource type="Texture2D" uid="uid://bn5jtyv2snjgy" path="res://pages/page_2.png" id="11_g6hb5"]
+[ext_resource type="Texture2D" uid="uid://vtenoqtxv75q" path="res://pages/page_3.png" id="12_eandj"]
 [ext_resource type="ArrayMesh" uid="uid://crrqjf52hkpet" path="res://3d_assets/enviro/stena_1.obj" id="12_kjgvl"]
+[ext_resource type="Texture2D" uid="uid://75m66v3na5t2" path="res://pages/page_0.png" id="13_ird30"]
 [ext_resource type="Material" uid="uid://xub4wyj5ikb6" path="res://materials/3d/stul1.tres" id="13_nxw5x"]
+[ext_resource type="Texture2D" uid="uid://c23aijljr1ja4" path="res://pages/page_1.png" id="14_4qmc1"]
 [ext_resource type="ArrayMesh" uid="uid://bk66opkbtydi0" path="res://3d_assets/new/main_table.obj" id="14_pdk7i"]
 [ext_resource type="Material" uid="uid://cylm7i511jom8" path="res://materials/3d/stul2.tres" id="15_nkkbq"]
 [ext_resource type="ArrayMesh" uid="uid://c6yso8wui2dh0" path="res://3d_assets/new/control_panel_holder.obj" id="16_pvyty"]
@@ -29,17 +43,64 @@
 [ext_resource type="ArrayMesh" uid="uid://cgrgyu0qr4f1x" path="res://3d_assets/new/tv_right.obj" id="27_aq8sk"]
 [ext_resource type="ArrayMesh" uid="uid://bf7pukvsulpv1" path="res://3d_assets/new/tv_box.obj" id="28_g6hb5"]
 [ext_resource type="Texture2D" uid="uid://dqw3kjv68d4pv" path="res://3d_assets/textures/kalendar.png" id="29_eandj"]
-[ext_resource type="PackedScene" path="res://prefabs/led.tscn" id="30_ird30"]
+[ext_resource type="PackedScene" uid="uid://jdos8xuicc6v" path="res://prefabs/led.tscn" id="30_ird30"]
 [ext_resource type="PackedScene" path="res://prefabs/fuel_d.tscn" id="31_4qmc1"]
-[ext_resource type="PackedScene" path="res://prefabs/keyboard.tscn" id="32_diroa"]
+[ext_resource type="PackedScene" uid="uid://s0130yfcyrsp" path="res://prefabs/keyboard.tscn" id="32_diroa"]
 [ext_resource type="PackedScene" uid="uid://wym6hw0mljks" path="res://prefabs/button.tscn" id="33_2n8u4"]
 [ext_resource type="PackedScene" uid="uid://djucdvqhspvog" path="res://prefabs/paka.tscn" id="34_i1v2r"]
 [ext_resource type="PackedScene" path="res://prefabs/valve.tscn" id="35_ixlas"]
 [ext_resource type="PackedScene" path="res://prefabs/joystick.tscn" id="36_w1wq6"]
 [ext_resource type="ArrayMesh" uid="uid://cutyjwstpjs7b" path="res://3d_assets/book/book.obj" id="37_6ht4o"]
 [ext_resource type="Material" uid="uid://bg1lrplmdliry" path="res://materials/book_cover.tres" id="38_wthen"]
-[ext_resource type="Material" path="res://materials/paper.tres" id="39_8oirv"]
+[ext_resource type="Material" uid="uid://cmjo501tc0jv" path="res://materials/paper.tres" id="39_8oirv"]
 [ext_resource type="Environment" uid="uid://kte4spmm34qe" path="res://scenes/lod_test.tres" id="40_avapy"]
+[ext_resource type="Texture2D" uid="uid://jet2ky6t4u1q" path="res://3d_assets/textures/dveře.png" id="41_0yui4"]
+[ext_resource type="ArrayMesh" uid="uid://cj7uuvn4likba" path="res://3d_assets/enviro/dvere.obj" id="41_yi16n"]
+[ext_resource type="Texture2D" uid="uid://cwkjnmcm0yr4b" path="res://3d_assets/textures/podlaha.png" id="42_0yui4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_diroa"]
+albedo_texture = ExtResource("1_43lhj")
+
+[sub_resource type="BoxMesh" id="BoxMesh_2n8u4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i1v2r"]
+albedo_texture = ExtResource("2_huteb")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ixlas"]
+albedo_texture = ExtResource("3_wveoc")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w1wq6"]
+albedo_texture = ExtResource("4_bfvxq")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6ht4o"]
+albedo_texture = ExtResource("5_tvpng")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wthen"]
+albedo_texture = ExtResource("6_omjy2")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8oirv"]
+albedo_texture = ExtResource("7_4uwai")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_avapy"]
+albedo_texture = ExtResource("8_b7qx2")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g2r5f"]
+albedo_texture = ExtResource("9_fb748")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4gfs0"]
+albedo_texture = ExtResource("10_aq8sk")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_21dj8"]
+albedo_texture = ExtResource("11_g6hb5")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x6sow"]
+albedo_texture = ExtResource("12_eandj")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rkyu5"]
+albedo_texture = ExtResource("13_ird30")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_leyu1"]
+albedo_texture = ExtResource("14_4qmc1")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4fjq2"]
 render_priority = 0
@@ -81,7 +142,87 @@ size = Vector3(0.81, 0.225, 0.37)
 [sub_resource type="BoxMesh" id="BoxMesh_yhpmq"]
 size = Vector3(0.66, 0.14, 0.435)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a4nrk"]
+albedo_texture = ExtResource("41_0yui4")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_a4nrk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_646uv"]
+albedo_texture = ExtResource("42_0yui4")
+
 [node name="GameScene" type="Node3D"]
+
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(2.83486, 0, 0, 0, 1, 0, 0, 0, 3.1721, 5.81983, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D"]
+material_override = SubResource("StandardMaterial3D_diroa")
+mesh = SubResource("BoxMesh_2n8u4")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.13556, 0, 0)
+material_override = SubResource("StandardMaterial3D_i1v2r")
+mesh = SubResource("BoxMesh_2n8u4")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00648999, 4.76837e-07, 1.10602)
+material_override = SubResource("StandardMaterial3D_ixlas")
+mesh = SubResource("BoxMesh_2n8u4")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.12907, 4.76837e-07, 1.10602)
+material_override = SubResource("StandardMaterial3D_w1wq6")
+mesh = SubResource("BoxMesh_2n8u4")
+
+[node name="MeshInstance3D13" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.103871, 4.76837e-07, 2.10684)
+material_override = SubResource("StandardMaterial3D_6ht4o")
+mesh = SubResource("BoxMesh_2n8u4")
+
+[node name="MeshInstance3D14" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.03168, 4.76837e-07, 2.10684)
+material_override = SubResource("StandardMaterial3D_wthen")
+mesh = SubResource("BoxMesh_2n8u4")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.28788, 9.53674e-07, -0.161275)
+material_override = SubResource("StandardMaterial3D_8oirv")
+mesh = SubResource("BoxMesh_2n8u4")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.42344, 9.53674e-07, -0.161275)
+material_override = SubResource("StandardMaterial3D_avapy")
+mesh = SubResource("BoxMesh_2n8u4")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.30526, 4.76837e-07, 0.978869)
+material_override = SubResource("StandardMaterial3D_g2r5f")
+mesh = SubResource("BoxMesh_2n8u4")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.44082, 4.76837e-07, 0.978869)
+material_override = SubResource("StandardMaterial3D_4gfs0")
+mesh = SubResource("BoxMesh_2n8u4")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.41698, -0.311756, -1.5876)
+material_override = SubResource("StandardMaterial3D_21dj8")
+mesh = SubResource("BoxMesh_2n8u4")
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.55253, -0.311756, -1.5876)
+material_override = SubResource("StandardMaterial3D_x6sow")
+mesh = SubResource("BoxMesh_2n8u4")
+
+[node name="MeshInstance3D11" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0370247, -0.311756, -1.50927)
+material_override = SubResource("StandardMaterial3D_rkyu5")
+mesh = SubResource("BoxMesh_2n8u4")
+
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.17258, -0.311756, -1.50927)
+material_override = SubResource("StandardMaterial3D_leyu1")
+mesh = SubResource("BoxMesh_2n8u4")
 
 [node name="GameHandler" type="Node" parent="." node_paths=PackedStringArray("sequence_text_", "end_text_")]
 script = ExtResource("1_n2a3o")
@@ -264,155 +405,28 @@ intensity = 0.3
 temperature = 6500.0
 temperature_intensity = 1.136
 
-[node name="Node3D" type="Node3D" parent="lod/lights/lights_objects/LightObjectCeil"]
-
-[node name="OmniLight3D" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
+[node name="OmniLight3D" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.115198, -0.125845)
 light_color = Color(0.249244, 0.081541, 0, 1)
 omni_range = 3.41979
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.115198, 0.198371)
-light_color = Color(0.249244, 0.081541, 0, 1)
-omni_range = 3.41979
-
-[node name="OmniLight3D3" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
+[node name="OmniLight3D3" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.115198, 0.573091)
 light_color = Color(0.249244, 0.081541, 0, 1)
 omni_range = 3.41979
 
-[node name="OmniLight3D4" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.115198, 0.962336)
-light_color = Color(0.249244, 0.081541, 0, 1)
-omni_range = 3.41979
-
-[node name="OmniLight3D5" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
+[node name="OmniLight3D5" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.115198, 1.33996)
 light_color = Color(0.249244, 0.081541, 0, 1)
 omni_range = 3.41979
 
-[node name="OmniLight3D6" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.115198, 1.7263)
-light_color = Color(0.249244, 0.081541, 0, 1)
-omni_range = 3.41979
-
-[node name="OmniLight3D7" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
+[node name="OmniLight3D7" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.115198, 2.11264)
 light_color = Color(0.249244, 0.081541, 0, 1)
 omni_range = 3.41979
 
-[node name="OmniLight3D8" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.115198, 2.48155)
-light_color = Color(0.249244, 0.081541, 0, 1)
-omni_range = 3.41979
-
-[node name="OmniLight3D9" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
+[node name="OmniLight3D9" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.115198, 2.86499)
-light_color = Color(0.249244, 0.081541, 0, 1)
-omni_range = 3.41979
-
-[node name="OmniLight3D10" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.115198, 3.22518)
-light_color = Color(0.249244, 0.081541, 0, 1)
-omni_range = 3.41979
-
-[node name="OmniLight3D11" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.646212, -0.164304, -0.125845)
-light_color = Color(0.249244, 0.081541, 0, 1)
-omni_range = 3.41979
-
-[node name="OmniLight3D12" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.646212, -0.164304, 0.198371)
-light_color = Color(0.249244, 0.081541, 0, 1)
-omni_range = 3.41979
-
-[node name="OmniLight3D13" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.646212, -0.164304, 0.573091)
-light_color = Color(0.249244, 0.081541, 0, 1)
-omni_range = 3.41979
-
-[node name="OmniLight3D14" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.646212, -0.164304, 0.962336)
-light_color = Color(0.249244, 0.081541, 0, 1)
-omni_range = 3.41979
-
-[node name="OmniLight3D15" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.646212, -0.164304, 1.33996)
-light_color = Color(0.249244, 0.081541, 0, 1)
-omni_range = 3.41979
-
-[node name="OmniLight3D16" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.646212, -0.164304, 1.7263)
-light_color = Color(0.249244, 0.081541, 0, 1)
-omni_range = 3.41979
-
-[node name="OmniLight3D17" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.646212, -0.164304, 2.11264)
-light_color = Color(0.249244, 0.081541, 0, 1)
-omni_range = 3.41979
-
-[node name="OmniLight3D18" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.646212, -0.164304, 2.48155)
-light_color = Color(0.249244, 0.081541, 0, 1)
-omni_range = 3.41979
-
-[node name="OmniLight3D19" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.646212, -0.164304, 2.86499)
-light_color = Color(0.249244, 0.081541, 0, 1)
-omni_range = 3.41979
-
-[node name="OmniLight3D20" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.646212, -0.164304, 3.22518)
-light_color = Color(0.249244, 0.081541, 0, 1)
-omni_range = 3.41979
-
-[node name="OmniLight3D21" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.656313, -0.164304, -0.125845)
-light_color = Color(0.249244, 0.081541, 0, 1)
-omni_range = 3.41979
-
-[node name="OmniLight3D22" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.656313, -0.164304, 0.198371)
-light_color = Color(0.249244, 0.081541, 0, 1)
-omni_range = 3.41979
-
-[node name="OmniLight3D23" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.656313, -0.164304, 0.573091)
-light_color = Color(0.249244, 0.081541, 0, 1)
-omni_range = 3.41979
-
-[node name="OmniLight3D24" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.656313, -0.164304, 0.962336)
-light_color = Color(0.249244, 0.081541, 0, 1)
-omni_range = 3.41979
-
-[node name="OmniLight3D25" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.656313, -0.164304, 1.33996)
-light_color = Color(0.249244, 0.081541, 0, 1)
-omni_range = 3.41979
-
-[node name="OmniLight3D26" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.656313, -0.164304, 1.7263)
-light_color = Color(0.249244, 0.081541, 0, 1)
-omni_range = 3.41979
-
-[node name="OmniLight3D27" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.656313, -0.164304, 2.11264)
-light_color = Color(0.249244, 0.081541, 0, 1)
-omni_range = 3.41979
-
-[node name="OmniLight3D28" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.656313, -0.164304, 2.48155)
-light_color = Color(0.249244, 0.081541, 0, 1)
-omni_range = 3.41979
-
-[node name="OmniLight3D29" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.656313, -0.164304, 2.86499)
-light_color = Color(0.249244, 0.081541, 0, 1)
-omni_range = 3.41979
-
-[node name="OmniLight3D30" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.656313, -0.164304, 3.22518)
 light_color = Color(0.249244, 0.081541, 0, 1)
 omni_range = 3.41979
 
@@ -492,7 +506,7 @@ mesh = ExtResource("28_g6hb5")
 skeleton = NodePath("../../game_space")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="lod"]
-transform = Transform3D(0.0531182, 0.0661935, 1.66774, -0.00210652, 1.66914, -0.066138, -1.2976, -9.72104e-11, 0.0683789, -2.29588, 2.14585, -1.43849)
+transform = Transform3D(0.0448931, 0.0559437, 1.4095, -0.00178033, 1.41068, -0.0558968, -1.09667, -8.21578e-11, 0.0577907, -2.21448, 2.14585, -1.55472)
 material_override = SubResource("StandardMaterial3D_rw4oa")
 mesh = SubResource("QuadMesh_r47aq")
 
@@ -502,7 +516,7 @@ mesh = SubResource("QuadMesh_r47aq")
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.42011, 1.24956, -2.25406)
 
 [node name="FuelD" parent="controls" instance=ExtResource("31_4qmc1")]
-transform = Transform3D(-4.35218e-08, 0.995662, -0.0930483, -1, -4.37114e-08, 0, -4.06727e-09, 0.0930483, 0.995662, -2.29857, 1.81755, -2.22361)
+transform = Transform3D(-4.35218e-08, 0.995662, -0.0930483, -1, -4.37114e-08, 0, -4.06727e-09, 0.0930483, 0.995662, -2.21509, 1.81755, -2.22361)
 drag_speed = 0.025
 drag_limit = 0.43
 step_size = 0.01
@@ -630,6 +644,16 @@ surface_material_override/1 = ExtResource("39_8oirv")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("40_avapy")
+
+[node name="Dvere" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.948728, 0, 8.29404e-08, 0, 0.948728, 0, -8.29404e-08, 0, -0.948728, -0.0295026, 1.59302, 1.81959)
+material_override = SubResource("StandardMaterial3D_a4nrk")
+mesh = ExtResource("41_yi16n")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.83486, 0, 0, 0, 1, 0, 0, 0, 3.1721, 0, 0, 0)
+mesh = SubResource("PlaneMesh_a4nrk")
+surface_material_override/0 = SubResource("StandardMaterial3D_646uv")
 
 [connection signal="button_up" from="GameHandler/MarginContainer2/MarginContainer/HBoxContainer/prew_button" to="Camera3D" method="_on_prew_button_button_up"]
 [connection signal="button_up" from="GameHandler/MarginContainer2/MarginContainer/HBoxContainer/next_button" to="Camera3D" method="_on_next_button_button_up"]

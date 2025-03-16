@@ -28,7 +28,7 @@
 [ext_resource type="ArrayMesh" uid="uid://bf7pukvsulpv1" path="res://3d_assets/new/tv_box.obj" id="21_103ce"]
 [ext_resource type="Material" uid="uid://cjtp1nmk7bpf2" path="res://materials/tv_box.tres" id="23_r47aq"]
 [ext_resource type="Texture2D" uid="uid://dqw3kjv68d4pv" path="res://3d_assets/textures/kalendar.png" id="26_ttvoq"]
-[ext_resource type="Shader" path="res://retro/display.gdshader" id="27_y55j0"]
+[ext_resource type="Shader" uid="uid://c8vtjramkh5gu" path="res://retro/display.gdshader" id="27_y55j0"]
 [ext_resource type="PackedScene" uid="uid://wym6hw0mljks" path="res://prefabs/button.tscn" id="28_r47aq"]
 [ext_resource type="Texture2D" uid="uid://b0gqxb1nbjppw" path="res://display_test.png" id="28_twkf6"]
 [ext_resource type="PackedScene" uid="uid://s0130yfcyrsp" path="res://prefabs/keyboard.tscn" id="28_yhpmq"]

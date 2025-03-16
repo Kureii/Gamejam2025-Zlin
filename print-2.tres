@@ -1,4 +1,4 @@
-[gd_resource type="VisualShader" load_steps=82 format=3 uid="uid://jiehhhtsbxp8"]
+[gd_resource type="VisualShader" load_steps=88 format=3 uid="uid://jiehhhtsbxp8"]
 
 [ext_resource type="Texture2D" uid="uid://beltx7eptk08o" path="res://dots.png" id="1_ilwj8"]
 [ext_resource type="Texture2D" uid="uid://buqbomjw0s5yg" path="res://dots2.png" id="2_acele"]
@@ -155,7 +155,7 @@ parameter_name = "dots_scale_individual"
 hint = 1
 min = 0.5
 default_value_enabled = true
-default_value = 1.0
+default_value = 0.8
 
 [sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_hpyns"]
 default_input_values = [0, 0.0, 1, -1.0]
@@ -165,7 +165,7 @@ operator = 2
 parameter_name = "black_threshold"
 hint = 1
 default_value_enabled = true
-default_value = 0.8
+default_value = 1.0
 
 [sub_resource type="VisualShaderNodeMultiplyAdd" id="VisualShaderNodeMultiplyAdd_4vb81"]
 default_input_values = [0, 0.0, 1, 1.0, 2, -0.08]
@@ -195,7 +195,7 @@ linked_parent_graph_frame = 143
 parameter_name = "dots_smooth"
 hint = 1
 default_value_enabled = true
-default_value = 0.2
+default_value = 0.75
 
 [sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_fsmjo"]
 default_input_values = [0, 0.0, 1, -0.25]
@@ -324,22 +324,69 @@ operator = 2
 [sub_resource type="VisualShaderNodeFloatConstant" id="VisualShaderNodeFloatConstant_uatwl"]
 constant = 0.8
 
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_ua020"]
+input_name = "vertex"
+
+[sub_resource type="VisualShaderNodeMultiplyAdd" id="VisualShaderNodeMultiplyAdd_acele"]
+default_input_values = [0, Vector3(-1.3, 0, 0.705), 1, Vector3(1, 1, 1), 2, Vector3(0, 0, 0)]
+op_type = 2
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_kt415"]
+input_name = "normal"
+
+[sub_resource type="VisualShaderNodeFloatParameter" id="VisualShaderNodeFloatParameter_uatwl"]
+parameter_name = "offset_geometry"
+default_value_enabled = true
+
+[sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_lfbdd"]
+default_input_values = [0, 0.0, 1, 0.001]
+operator = 2
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_uatwl"]
+input_name = "camera_direction_world"
+
 [resource]
 code = "shader_type spatial;
 render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_lambert, specular_schlick_ggx;
 
+uniform float offset_geometry = 0.0;
 uniform vec2 Vector2Parameter = vec2(1.000000, 1.000000);
 uniform float dots_scale = 50.0;
 uniform sampler2D dots : source_color, repeat_enable;
-uniform float dots_smooth : hint_range(0.0, 1.0) = 0.20000000298023;
+uniform float dots_smooth : hint_range(0.0, 1.0) = 0.75;
 uniform sampler2D Texture : source_color;
-uniform float black_threshold : hint_range(0.0, 1.0) = 0.80000001192093;
-uniform float dots_scale_individual : hint_range(0.5, 1.0) = 1.0;
+uniform float black_threshold : hint_range(0.0, 1.0) = 1.0;
+uniform float dots_scale_individual : hint_range(0.5, 1.0) = 0.80000001192093;
 uniform float sat : hint_range(0.80000001192093, 1.20000004768372) = 1.0;
 uniform vec2 black_offset = vec2(0.000000, 0.000000);
 uniform sampler2D paper_texture : source_color;
 
 
+
+void vertex() {
+// FloatParameter:5
+	float n_out5p0 = offset_geometry;
+
+
+// FloatOp:6
+	float n_in6p1 = 0.00100;
+	float n_out6p0 = n_out5p0 * n_in6p1;
+
+
+// Input:2
+	vec3 n_out2p0 = VERTEX;
+
+
+// MultiplyAdd:3
+	vec3 n_in3p0 = vec3(-1.30000, 0.00000, 0.70500);
+	vec3 n_out3p0 = fma(n_in3p0, vec3(n_out6p0), n_out2p0);
+
+
+// Output:0
+	VERTEX = n_out3p0;
+
+
+}
 
 void fragment() {
 // Vector3Constant:239
@@ -738,6 +785,19 @@ void fragment() {
 }
 "
 preview_params/dots_smooth = "0.55"
+nodes/vertex/2/node = SubResource("VisualShaderNodeInput_ua020")
+nodes/vertex/2/position = Vector2(-260, 200)
+nodes/vertex/3/node = SubResource("VisualShaderNodeMultiplyAdd_acele")
+nodes/vertex/3/position = Vector2(80, 180)
+nodes/vertex/4/node = SubResource("VisualShaderNodeInput_kt415")
+nodes/vertex/4/position = Vector2(-900, 160)
+nodes/vertex/5/node = SubResource("VisualShaderNodeFloatParameter_uatwl")
+nodes/vertex/5/position = Vector2(-700, 420)
+nodes/vertex/6/node = SubResource("VisualShaderNodeFloatOp_lfbdd")
+nodes/vertex/6/position = Vector2(-340, 480)
+nodes/vertex/7/node = SubResource("VisualShaderNodeInput_uatwl")
+nodes/vertex/7/position = Vector2(-680, 280)
+nodes/vertex/connections = PackedInt32Array(5, 0, 6, 0, 3, 0, 0, 0, 2, 0, 3, 2, 6, 0, 3, 1)
 nodes/fragment/0/position = Vector2(4480, -3060)
 nodes/fragment/16/node = SubResource("VisualShaderNodeTexture2DParameter_fsldn")
 nodes/fragment/16/position = Vector2(-3440, -1120)
@@ -938,4 +998,4 @@ nodes/fragment/240/node = SubResource("VisualShaderNodeVectorOp_acele")
 nodes/fragment/240/position = Vector2(4120, -2700)
 nodes/fragment/241/node = SubResource("VisualShaderNodeFloatConstant_uatwl")
 nodes/fragment/241/position = Vector2(3880, -2500)
-nodes/fragment/connections = PackedInt32Array(16, 0, 18, 2, 125, 0, 126, 0, 132, 0, 126, 1, 162, 1, 144, 0, 160, 0, 166, 0, 126, 0, 169, 0, 130, 0, 169, 1, 126, 0, 171, 0, 130, 0, 171, 1, 126, 0, 172, 0, 130, 0, 172, 1, 129, 0, 133, 2, 129, 0, 170, 2, 129, 0, 173, 2, 179, 0, 178, 0, 180, 0, 179, 0, 16, 0, 178, 2, 181, 0, 179, 1, 184, 0, 160, 0, 185, 0, 160, 1, 186, 0, 160, 2, 183, 0, 186, 1, 183, 0, 185, 1, 183, 0, 184, 1, 18, 0, 167, 0, 169, 0, 190, 0, 190, 0, 133, 0, 171, 0, 191, 0, 191, 0, 170, 0, 192, 0, 193, 0, 170, 0, 198, 0, 198, 0, 199, 0, 200, 0, 201, 0, 144, 0, 200, 2, 199, 0, 200, 0, 198, 0, 200, 1, 168, 0, 162, 0, 202, 0, 184, 0, 201, 0, 203, 0, 203, 0, 185, 0, 204, 0, 186, 0, 205, 0, 160, 3, 206, 0, 205, 0, 207, 0, 208, 0, 211, 0, 209, 0, 210, 0, 213, 0, 212, 0, 210, 2, 209, 0, 210, 0, 211, 0, 210, 1, 216, 0, 215, 0, 219, 0, 218, 0, 217, 0, 219, 2, 215, 0, 219, 0, 216, 0, 219, 1, 133, 0, 211, 0, 173, 0, 216, 0, 208, 0, 221, 0, 221, 0, 198, 2, 221, 0, 216, 2, 221, 0, 211, 2, 207, 0, 222, 0, 222, 0, 199, 1, 222, 0, 209, 1, 222, 0, 215, 1, 162, 0, 212, 0, 193, 0, 223, 0, 223, 0, 144, 1, 223, 0, 217, 1, 223, 0, 212, 1, 162, 2, 217, 0, 218, 0, 204, 0, 213, 0, 202, 0, 178, 0, 225, 0, 225, 3, 224, 0, 194, 0, 162, 1, 226, 0, 225, 1, 227, 0, 181, 0, 229, 0, 230, 0, 228, 0, 232, 0, 231, 0, 228, 2, 230, 0, 228, 0, 229, 0, 228, 1, 224, 0, 234, 0, 234, 0, 231, 0, 223, 0, 231, 1, 221, 0, 229, 2, 222, 0, 230, 1, 232, 0, 206, 0, 137, 0, 0, 0, 235, 0, 137, 0, 236, 0, 235, 1, 237, 0, 236, 2, 172, 0, 238, 0, 238, 0, 173, 0, 173, 0, 229, 0, 18, 0, 168, 0, 160, 0, 235, 0, 239, 0, 0, 0, 239, 0, 0, 4, 235, 0, 240, 0, 240, 0, 0, 5, 241, 0, 240, 1)
+nodes/fragment/connections = PackedInt32Array(16, 0, 18, 2, 125, 0, 126, 0, 132, 0, 126, 1, 162, 1, 144, 0, 160, 0, 166, 0, 126, 0, 169, 0, 130, 0, 169, 1, 126, 0, 171, 0, 130, 0, 171, 1, 126, 0, 172, 0, 130, 0, 172, 1, 129, 0, 133, 2, 129, 0, 170, 2, 129, 0, 173, 2, 179, 0, 178, 0, 180, 0, 179, 0, 16, 0, 178, 2, 181, 0, 179, 1, 184, 0, 160, 0, 185, 0, 160, 1, 186, 0, 160, 2, 183, 0, 186, 1, 183, 0, 185, 1, 183, 0, 184, 1, 18, 0, 167, 0, 169, 0, 190, 0, 190, 0, 133, 0, 171, 0, 191, 0, 191, 0, 170, 0, 192, 0, 193, 0, 170, 0, 198, 0, 198, 0, 199, 0, 200, 0, 201, 0, 144, 0, 200, 2, 199, 0, 200, 0, 198, 0, 200, 1, 168, 0, 162, 0, 202, 0, 184, 0, 201, 0, 203, 0, 203, 0, 185, 0, 204, 0, 186, 0, 205, 0, 160, 3, 206, 0, 205, 0, 207, 0, 208, 0, 211, 0, 209, 0, 210, 0, 213, 0, 212, 0, 210, 2, 209, 0, 210, 0, 211, 0, 210, 1, 216, 0, 215, 0, 219, 0, 218, 0, 217, 0, 219, 2, 215, 0, 219, 0, 216, 0, 219, 1, 133, 0, 211, 0, 173, 0, 216, 0, 208, 0, 221, 0, 221, 0, 198, 2, 221, 0, 216, 2, 221, 0, 211, 2, 207, 0, 222, 0, 222, 0, 199, 1, 222, 0, 209, 1, 222, 0, 215, 1, 162, 0, 212, 0, 193, 0, 223, 0, 223, 0, 144, 1, 223, 0, 217, 1, 223, 0, 212, 1, 162, 2, 217, 0, 218, 0, 204, 0, 213, 0, 202, 0, 178, 0, 225, 0, 225, 3, 224, 0, 194, 0, 162, 1, 226, 0, 225, 1, 227, 0, 181, 0, 229, 0, 230, 0, 228, 0, 232, 0, 231, 0, 228, 2, 230, 0, 228, 0, 229, 0, 228, 1, 224, 0, 234, 0, 234, 0, 231, 0, 223, 0, 231, 1, 221, 0, 229, 2, 222, 0, 230, 1, 232, 0, 206, 0, 235, 0, 137, 0, 236, 0, 235, 1, 237, 0, 236, 2, 172, 0, 238, 0, 238, 0, 173, 0, 173, 0, 229, 0, 18, 0, 168, 0, 160, 0, 235, 0, 239, 0, 0, 4, 235, 0, 240, 0, 240, 0, 0, 5, 241, 0, 240, 1, 239, 0, 0, 0)
