@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://dyf7m2jdcskx1"]
+[gd_scene load_steps=43 format=3 uid="uid://dyf7m2jdcskx1"]
 
 [ext_resource type="Script" uid="uid://c7hbtyc3jvd43" path="res://scripts/camera_3d.gd" id="1_ycayy"]
 [ext_resource type="PackedScene" uid="uid://8qnhlvs44g0a" path="res://scenes/book.tscn" id="2_rw4oa"]
@@ -36,6 +36,7 @@
 [ext_resource type="ArrayMesh" uid="uid://cutyjwstpjs7b" path="res://3d_assets/book/book.obj" id="31_ngbhp"]
 [ext_resource type="Material" uid="uid://bg1lrplmdliry" path="res://materials/book_cover.tres" id="32_yhpmq"]
 [ext_resource type="Material" uid="uid://cmjo501tc0jv" path="res://materials/paper.tres" id="33_qlma2"]
+[ext_resource type="PackedScene" uid="uid://jdos8xuicc6v" path="res://prefabs/led.tscn" id="37_lm11r"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5dk4p"]
 albedo_texture = ExtResource("5_gqftm")
@@ -55,6 +56,95 @@ size = Vector3(0.81, 0.225, 0.37)
 size = Vector3(0.66, 0.14, 0.435)
 
 [node name="GameScene" type="Node3D"]
+
+[node name="GameHandler" type="Node" parent="." node_paths=PackedStringArray("sequence_text_", "end_text_")]
+script = ExtResource("3_y3j0m")
+sequence_text_ = NodePath("info")
+end_text_ = NodePath("end_game/VBoxContainer/GO_label")
+
+[node name="MarginContainer2" type="MarginContainer" parent="GameHandler"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+script = ExtResource("31_5dk4p")
+
+[node name="MarginContainer" type="MarginContainer" parent="GameHandler/MarginContainer2"]
+layout_mode = 2
+theme_override_constants/margin_left = 400
+theme_override_constants/margin_top = 135
+theme_override_constants/margin_right = 400
+theme_override_constants/margin_bottom = 160
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GameHandler/MarginContainer2/MarginContainer"]
+layout_mode = 2
+
+[node name="prew_button" type="Button" parent="GameHandler/MarginContainer2/MarginContainer/HBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(120, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 24
+text = "
+"
+
+[node name="next_button" type="Button" parent="GameHandler/MarginContainer2/MarginContainer/HBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(120, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 24
+
+[node name="Button" type="Button" parent="GameHandler/MarginContainer2"]
+custom_minimum_size = Vector2(150, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+size_flags_stretch_ratio = 2.17
+text = "Manual"
+
+[node name="info" type="Label" parent="GameHandler"]
+offset_right = 1919.0
+offset_bottom = 99.0
+theme_override_font_sizes/font_size = 35
+text = "<palaceholder>"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="end_game" type="Panel" parent="GameHandler"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameHandler/end_game"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="GO_label" type="Label" parent="GameHandler/end_game/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "win/lose"
+horizontal_alignment = 1
+
+[node name="Reset" type="Button" parent="GameHandler/end_game/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 64
+text = "Reset"
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5359, -0.90271)
@@ -309,6 +399,9 @@ mesh = SubResource("QuadMesh_r47aq")
 
 [node name="controls" type="Node3D" parent="."]
 
+[node name="Led" parent="controls" instance=ExtResource("37_lm11r")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.42011, 1.24956, -2.25406)
+
 [node name="FuelD" parent="controls" instance=ExtResource("30_gqftm")]
 transform = Transform3D(-4.35218e-08, 0.995662, -0.0930483, -1, -4.37114e-08, 0, -4.06727e-09, 0.0930483, 0.995662, -2.29857, 1.81755, -2.22361)
 drag_speed = 0.025
@@ -430,99 +523,16 @@ transform = Transform3D(-1.19209e-07, 1.93249e-08, -1, 2.98023e-08, 1, -4.70318e
 [node name="Joystick" parent="controls" instance=ExtResource("31_hfwyp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.715316, -2.41113)
 
-[node name="GameHandler" type="Node" parent="." node_paths=PackedStringArray("sequence_text_", "end_text_")]
-script = ExtResource("3_y3j0m")
-sequence_text_ = NodePath("info")
-end_text_ = NodePath("end_game/VBoxContainer/GO_label")
-
-[node name="MarginContainer2" type="MarginContainer" parent="GameHandler"]
-visible = false
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 24
-theme_override_constants/margin_top = 24
-theme_override_constants/margin_right = 24
-theme_override_constants/margin_bottom = 24
-script = ExtResource("31_5dk4p")
-
-[node name="prew_button" type="Button" parent="GameHandler/MarginContainer2"]
-custom_minimum_size = Vector2(120, 50)
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-theme_override_font_sizes/font_size = 24
-text = "prev"
-
-[node name="next_button" type="Button" parent="GameHandler/MarginContainer2"]
-custom_minimum_size = Vector2(120, 50)
-layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 0
-theme_override_font_sizes/font_size = 24
-text = "next"
-
-[node name="end_game" type="Panel" parent="GameHandler"]
-visible = false
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="GameHandler/end_game"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 24
-alignment = 1
-
-[node name="GO_label" type="Label" parent="GameHandler/end_game/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 64
-text = "win/lose"
-horizontal_alignment = 1
-
-[node name="Reset" type="Button" parent="GameHandler/end_game/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 64
-text = "Reset"
-
-[node name="info" type="Label" parent="GameHandler"]
-offset_right = 1919.0
-offset_bottom = 99.0
-theme_override_font_sizes/font_size = 35
-text = "<palaceholder>"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="MarginContainer" type="MarginContainer" parent="GameHandler"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Button" type="Button" parent="GameHandler/MarginContainer"]
-custom_minimum_size = Vector2(150, 64)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 8
-size_flags_stretch_ratio = 2.17
-text = "Manual"
-
 [node name="Book" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.455626, 0, 0, 0, 0.0968758, -0.445208, 0, 0.445208, 0.0968758, 0.693195, 0.976938, -2.99391)
 mesh = ExtResource("31_ngbhp")
 surface_material_override/0 = ExtResource("32_yhpmq")
 surface_material_override/1 = ExtResource("33_qlma2")
 
+[connection signal="button_up" from="GameHandler/MarginContainer2/MarginContainer/HBoxContainer/prew_button" to="Camera3D" method="_on_prew_button_button_up"]
+[connection signal="button_up" from="GameHandler/MarginContainer2/MarginContainer/HBoxContainer/next_button" to="Camera3D" method="_on_next_button_button_up"]
+[connection signal="button_up" from="GameHandler/MarginContainer2/Button" to="GameHandler" method="_on_manual_button_up"]
+[connection signal="button_up" from="GameHandler/end_game/VBoxContainer/Reset" to="GameHandler" method="_on_reset_button_up"]
 [connection signal="visibility_changed" from="Camera3D/Book" to="GameHandler/MarginContainer2" method="_on_book_visibility_changed"]
 [connection signal="paka_clicked" from="controls/buttons/MeshInstance3D/p10" to="GameHandler" method="_on_button_clicked"]
 [connection signal="paka_clicked" from="controls/buttons/MeshInstance3D/p8" to="GameHandler" method="_on_button_clicked"]
@@ -547,5 +557,3 @@ surface_material_override/1 = ExtResource("33_qlma2")
 [connection signal="paka_clicked" from="controls/buttons/MeshInstance3D2/a11" to="GameHandler" method="_on_button_clicked"]
 [connection signal="paka_clicked" from="controls/buttons/MeshInstance3D2/a12" to="GameHandler" method="_on_button_clicked"]
 [connection signal="direction_lever" from="controls/PackaB" to="GameHandler" method="_on_button_clicked"]
-[connection signal="button_up" from="GameHandler/end_game/VBoxContainer/Reset" to="GameHandler" method="_on_reset_button_up"]
-[connection signal="button_up" from="GameHandler/MarginContainer/Button" to="GameHandler" method="_on_manual_button_up"]

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://jdos8xuicc6v"]
+
+[ext_resource type="ArrayMesh" uid="uid://d2rs45fs36lcu" path="res://3d_assets/new/led.obj" id="1_q5wl6"]
+[ext_resource type="ArrayMesh" uid="uid://daej6a3lyued2" path="res://3d_assets/new/led_base.obj" id="2_ptoae"]
+
+[node name="Led" type="Node3D"]
+
+[node name="Led" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+mesh = ExtResource("1_q5wl6")
+
+[node name="LedBase" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.3, 0, 0, 0, 1.5, 0, 0, 0, 2.3, 0, 0, 0)
+mesh = ExtResource("2_ptoae")
