@@ -9,10 +9,10 @@ extends MeshInstance3D
 func _ready() -> void:
 	for i in range(get_child_count()):
 		get_child(i).light_energy = intensity
-		if use_temperature:
-			get_child(i).light_color = kelvin_to_rgb(temperature, temperature_intensity)
-		else:
-			get_child(i).light_color = color
+		# if use_temperature:
+		# 	get_child(i).light_color = kelvin_to_rgb(temperature, temperature_intensity)
+		# else:
+		# 	get_child(i).light_color = color
 
 static func kelvin_to_rgb(kelvin: float, temperature_intensity: float = 1.0) -> Color:
 	kelvin = clamp(kelvin, 1000.0, 40000.0)
