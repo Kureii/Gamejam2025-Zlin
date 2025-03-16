@@ -1,14 +1,25 @@
-[gd_scene load_steps=3 format=3 uid="uid://jdos8xuicc6v"]
+[gd_scene load_steps=6 format=3 uid="uid://jdos8xuicc6v"]
 
 [ext_resource type="ArrayMesh" uid="uid://d2rs45fs36lcu" path="res://3d_assets/new/led.obj" id="1_q5wl6"]
+[ext_resource type="Material" uid="uid://d07iyyngqe3sl" path="res://materials/led_light.tres" id="1_xyv5u"]
+[ext_resource type="Script" uid="uid://cvwy8rqf8vcmm" path="res://scripts/led.gd" id="1_yuw4o"]
 [ext_resource type="ArrayMesh" uid="uid://daej6a3lyued2" path="res://3d_assets/new/led_base.obj" id="2_ptoae"]
+[ext_resource type="Material" uid="uid://cjtp1nmk7bpf2" path="res://materials/tv_box.tres" id="3_yuw4o"]
 
 [node name="Led" type="Node3D"]
+script = ExtResource("1_yuw4o")
 
 [node name="Led" type="MeshInstance3D" parent="."]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+material_override = ExtResource("1_xyv5u")
 mesh = ExtResource("1_q5wl6")
 
 [node name="LedBase" type="MeshInstance3D" parent="."]
 transform = Transform3D(2.3, 0, 0, 0, 1.5, 0, 0, 0, 2.3, 0, 0, 0)
+material_override = ExtResource("3_yuw4o")
 mesh = ExtResource("2_ptoae")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.015625, 0)
+light_color = Color(0.152941, 0.862745, 0.180392, 1)
+omni_range = 0.131981

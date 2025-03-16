@@ -8,6 +8,12 @@ var player_sequence_: Array
 @export var end_text_: Label
 
 
+@export var c1: Node3D
+@export var c2: Node3D
+@export var c3: Node3D
+@export var c4: Node3D
+@export var c5: Node3D
+
 var trans_dict = {
 	0 : "p-1",	1 : "p-2",	2 : "p-3",	3 : "p-4",	4 : "p-5",	
 	5 : "p-6",	6 : "p-7",	7 : "p-8",	8 : "p-9",	9 : "p-10",
@@ -15,6 +21,7 @@ var trans_dict = {
 	11 : "fd-0",	12 : "fd-1",	13 : "fd-2",	14 : "fd-3",	15 : "fd-4",
 	16 : "a-1",	17 : "a-2",	18 : "a-3",	19 : "a-4",	20 : "a-5",	21 : "a-6",
 	22 : "a-7",	23 : "a-8",	24 : "a-9",	25 : "a-10",	26 : "a-11",	27 : "a-12",
+	28 : "pi-a", 29 : "pi-c", 30 : "pi-d", 31 : "pi-e", 32 : "pi-f", 33 : "pi-g", 34 : "pi-h"
 }
 
 func _ready() -> void:
