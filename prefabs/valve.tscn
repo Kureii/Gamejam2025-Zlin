@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bbnsjqladdwiw"]
+
+[ext_resource type="Material" uid="uid://1xcxah4iuqe3" path="res://materials/interactive.tres" id="1_1ukfu"]
+[ext_resource type="ArrayMesh" uid="uid://bhihwodxlsp5j" path="res://3d_assets/new/valve.obj" id="2_w7ay7"]
+
+[node name="Valve" type="Node3D"]
+
+[node name="Valve" type="MeshInstance3D" parent="."]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+material_override = ExtResource("1_1ukfu")
+mesh = ExtResource("2_w7ay7")
