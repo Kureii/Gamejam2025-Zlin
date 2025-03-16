@@ -7,7 +7,6 @@ var player_sequence_: Array
 @export var sequence_text_: Label
 @export var end_text_: Label
 
-
 @export var c1: Node3D
 @export var c2: Node3D
 @export var c3: Node3D

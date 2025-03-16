@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://dyf7m2jdcskx1"]
+[gd_scene load_steps=48 format=3 uid="uid://dyf7m2jdcskx1"]
 
 [ext_resource type="Script" uid="uid://c7hbtyc3jvd43" path="res://scripts/camera_3d.gd" id="1_ycayy"]
 [ext_resource type="PackedScene" uid="uid://8qnhlvs44g0a" path="res://scenes/book.tscn" id="2_rw4oa"]
@@ -26,20 +26,19 @@
 [ext_resource type="ArrayMesh" uid="uid://bf7pukvsulpv1" path="res://3d_assets/new/tv_box.obj" id="21_103ce"]
 [ext_resource type="Material" uid="uid://cjtp1nmk7bpf2" path="res://materials/tv_box.tres" id="23_r47aq"]
 [ext_resource type="Texture2D" uid="uid://dqw3kjv68d4pv" path="res://3d_assets/textures/kalendar.png" id="26_ttvoq"]
-[ext_resource type="Shader" uid="uid://c8vtjramkh5gu" path="res://retro/display.gdshader" id="27_y55j0"]
+[ext_resource type="Shader" path="res://retro/display.gdshader" id="27_y55j0"]
 [ext_resource type="PackedScene" uid="uid://wym6hw0mljks" path="res://prefabs/button.tscn" id="28_r47aq"]
 [ext_resource type="Texture2D" uid="uid://b0gqxb1nbjppw" path="res://display_test.png" id="28_twkf6"]
-[ext_resource type="PackedScene" path="res://prefabs/keyboard.tscn" id="28_yhpmq"]
+[ext_resource type="PackedScene" uid="uid://s0130yfcyrsp" path="res://prefabs/keyboard.tscn" id="28_yhpmq"]
 [ext_resource type="PackedScene" uid="uid://djucdvqhspvog" path="res://prefabs/paka.tscn" id="29_6irsn"]
-[ext_resource type="PackedScene" path="res://prefabs/fuel_d.tscn" id="30_gqftm"]
-[ext_resource type="PackedScene" path="res://prefabs/valve.tscn" id="30_qlma2"]
+[ext_resource type="PackedScene" uid="uid://ddkth6ge77w1t" path="res://prefabs/fuel_d.tscn" id="30_gqftm"]
+[ext_resource type="PackedScene" uid="uid://bbnsjqladdwiw" path="res://prefabs/valve.tscn" id="30_qlma2"]
 [ext_resource type="Script" uid="uid://c5n7umji3stt" path="res://scripts/book_controls.gd" id="31_5dk4p"]
-[ext_resource type="PackedScene" path="res://prefabs/joystick.tscn" id="31_hfwyp"]
+[ext_resource type="PackedScene" uid="uid://brdttvf4uf4nt" path="res://prefabs/joystick.tscn" id="31_hfwyp"]
 [ext_resource type="ArrayMesh" uid="uid://cutyjwstpjs7b" path="res://3d_assets/book/book.obj" id="31_ngbhp"]
 [ext_resource type="Material" uid="uid://bg1lrplmdliry" path="res://materials/book_cover.tres" id="32_yhpmq"]
-[ext_resource type="Material" path="res://materials/paper.tres" id="33_qlma2"]
-[ext_resource type="PackedScene" path="res://prefabs/led.tscn" id="37_lm11r"]
-[ext_resource type="Environment" uid="uid://kte4spmm34qe" path="res://scenes/lod_test.tres" id="38_ct2tn"]
+[ext_resource type="Material" uid="uid://cmjo501tc0jv" path="res://materials/paper.tres" id="33_qlma2"]
+[ext_resource type="PackedScene" uid="uid://jdos8xuicc6v" path="res://prefabs/led.tscn" id="37_lm11r"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4fjq2"]
 render_priority = 0
@@ -193,6 +192,7 @@ mesh = ExtResource("19_6aqbo")
 skeleton = NodePath("../..")
 
 [node name="main_object" type="Node3D" parent="lod"]
+visible = false
 
 [node name="floor" type="MeshInstance3D" parent="lod/main_object"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.55161, 0, 3.12691)
@@ -264,154 +264,152 @@ intensity = 0.3
 temperature = 6500.0
 temperature_intensity = 1.136
 
-[node name="Node3D" type="Node3D" parent="lod/lights/lights_objects/LightObjectCeil"]
-
-[node name="OmniLight3D" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
+[node name="OmniLight3D" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.115198, -0.125845)
 light_color = Color(0.249244, 0.081541, 0, 1)
 omni_range = 3.41979
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
+[node name="OmniLight3D2" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.115198, 0.198371)
 light_color = Color(0.249244, 0.081541, 0, 1)
 omni_range = 3.41979
 
-[node name="OmniLight3D3" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
+[node name="OmniLight3D3" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.115198, 0.573091)
 light_color = Color(0.249244, 0.081541, 0, 1)
 omni_range = 3.41979
 
-[node name="OmniLight3D4" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
+[node name="OmniLight3D4" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.115198, 0.962336)
 light_color = Color(0.249244, 0.081541, 0, 1)
 omni_range = 3.41979
 
-[node name="OmniLight3D5" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
+[node name="OmniLight3D5" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.115198, 1.33996)
 light_color = Color(0.249244, 0.081541, 0, 1)
 omni_range = 3.41979
 
-[node name="OmniLight3D6" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
+[node name="OmniLight3D6" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.115198, 1.7263)
 light_color = Color(0.249244, 0.081541, 0, 1)
 omni_range = 3.41979
 
-[node name="OmniLight3D7" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
+[node name="OmniLight3D7" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.115198, 2.11264)
 light_color = Color(0.249244, 0.081541, 0, 1)
 omni_range = 3.41979
 
-[node name="OmniLight3D8" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
+[node name="OmniLight3D8" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.115198, 2.48155)
 light_color = Color(0.249244, 0.081541, 0, 1)
 omni_range = 3.41979
 
-[node name="OmniLight3D9" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
+[node name="OmniLight3D9" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.115198, 2.86499)
 light_color = Color(0.249244, 0.081541, 0, 1)
 omni_range = 3.41979
 
-[node name="OmniLight3D10" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
+[node name="OmniLight3D10" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.115198, 3.22518)
 light_color = Color(0.249244, 0.081541, 0, 1)
 omni_range = 3.41979
 
-[node name="OmniLight3D11" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
+[node name="OmniLight3D11" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.646212, -0.164304, -0.125845)
 light_color = Color(0.249244, 0.081541, 0, 1)
 omni_range = 3.41979
 
-[node name="OmniLight3D12" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
+[node name="OmniLight3D12" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.646212, -0.164304, 0.198371)
 light_color = Color(0.249244, 0.081541, 0, 1)
 omni_range = 3.41979
 
-[node name="OmniLight3D13" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
+[node name="OmniLight3D13" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.646212, -0.164304, 0.573091)
 light_color = Color(0.249244, 0.081541, 0, 1)
 omni_range = 3.41979
 
-[node name="OmniLight3D14" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
+[node name="OmniLight3D14" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.646212, -0.164304, 0.962336)
 light_color = Color(0.249244, 0.081541, 0, 1)
 omni_range = 3.41979
 
-[node name="OmniLight3D15" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
+[node name="OmniLight3D15" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.646212, -0.164304, 1.33996)
 light_color = Color(0.249244, 0.081541, 0, 1)
 omni_range = 3.41979
 
-[node name="OmniLight3D16" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
+[node name="OmniLight3D16" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.646212, -0.164304, 1.7263)
 light_color = Color(0.249244, 0.081541, 0, 1)
 omni_range = 3.41979
 
-[node name="OmniLight3D17" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
+[node name="OmniLight3D17" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.646212, -0.164304, 2.11264)
 light_color = Color(0.249244, 0.081541, 0, 1)
 omni_range = 3.41979
 
-[node name="OmniLight3D18" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
+[node name="OmniLight3D18" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.646212, -0.164304, 2.48155)
 light_color = Color(0.249244, 0.081541, 0, 1)
 omni_range = 3.41979
 
-[node name="OmniLight3D19" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
+[node name="OmniLight3D19" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.646212, -0.164304, 2.86499)
 light_color = Color(0.249244, 0.081541, 0, 1)
 omni_range = 3.41979
 
-[node name="OmniLight3D20" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
+[node name="OmniLight3D20" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.646212, -0.164304, 3.22518)
 light_color = Color(0.249244, 0.081541, 0, 1)
 omni_range = 3.41979
 
-[node name="OmniLight3D21" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
+[node name="OmniLight3D21" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.656313, -0.164304, -0.125845)
 light_color = Color(0.249244, 0.081541, 0, 1)
 omni_range = 3.41979
 
-[node name="OmniLight3D22" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
+[node name="OmniLight3D22" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.656313, -0.164304, 0.198371)
 light_color = Color(0.249244, 0.081541, 0, 1)
 omni_range = 3.41979
 
-[node name="OmniLight3D23" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
+[node name="OmniLight3D23" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.656313, -0.164304, 0.573091)
 light_color = Color(0.249244, 0.081541, 0, 1)
 omni_range = 3.41979
 
-[node name="OmniLight3D24" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
+[node name="OmniLight3D24" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.656313, -0.164304, 0.962336)
 light_color = Color(0.249244, 0.081541, 0, 1)
 omni_range = 3.41979
 
-[node name="OmniLight3D25" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
+[node name="OmniLight3D25" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.656313, -0.164304, 1.33996)
 light_color = Color(0.249244, 0.081541, 0, 1)
 omni_range = 3.41979
 
-[node name="OmniLight3D26" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
+[node name="OmniLight3D26" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.656313, -0.164304, 1.7263)
 light_color = Color(0.249244, 0.081541, 0, 1)
 omni_range = 3.41979
 
-[node name="OmniLight3D27" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
+[node name="OmniLight3D27" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.656313, -0.164304, 2.11264)
 light_color = Color(0.249244, 0.081541, 0, 1)
 omni_range = 3.41979
 
-[node name="OmniLight3D28" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
+[node name="OmniLight3D28" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.656313, -0.164304, 2.48155)
 light_color = Color(0.249244, 0.081541, 0, 1)
 omni_range = 3.41979
 
-[node name="OmniLight3D29" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
+[node name="OmniLight3D29" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.656313, -0.164304, 2.86499)
 light_color = Color(0.249244, 0.081541, 0, 1)
 omni_range = 3.41979
 
-[node name="OmniLight3D30" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
+[node name="OmniLight3D30" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.656313, -0.164304, 3.22518)
 light_color = Color(0.249244, 0.081541, 0, 1)
 omni_range = 3.41979
@@ -498,11 +496,46 @@ mesh = SubResource("QuadMesh_r47aq")
 
 [node name="controls" type="Node3D" parent="."]
 
-[node name="Led" parent="controls" instance=ExtResource("37_lm11r")]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.42011, 1.24956, -2.25406)
+[node name="lleds" type="Node3D" parent="controls"]
+
+[node name="Led" parent="controls/lleds" instance=ExtResource("37_lm11r")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.40812, 1.24956, -3.03983)
+
+[node name="Led2" parent="controls/lleds" instance=ExtResource("37_lm11r")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.28727, 1.24956, -3.03983)
+
+[node name="Led3" parent="controls/lleds" instance=ExtResource("37_lm11r")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.16735, 1.24956, -3.03983)
+
+[node name="Led4" parent="controls/lleds" instance=ExtResource("37_lm11r")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.0465, 1.24956, -3.03983)
+
+[node name="Led5" parent="controls/lleds" instance=ExtResource("37_lm11r")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.40812, 1.11949, -3.01578)
+
+[node name="Led6" parent="controls/lleds" instance=ExtResource("37_lm11r")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.28727, 1.11949, -3.01578)
+
+[node name="Led7" parent="controls/lleds" instance=ExtResource("37_lm11r")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.16735, 1.11949, -3.01578)
+
+[node name="Led8" parent="controls/lleds" instance=ExtResource("37_lm11r")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.0465, 1.11949, -3.01578)
+
+[node name="Led9" parent="controls/lleds" instance=ExtResource("37_lm11r")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.40812, 0.989205, -2.98685)
+
+[node name="Led10" parent="controls/lleds" instance=ExtResource("37_lm11r")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.28727, 0.989205, -2.98685)
+
+[node name="Led11" parent="controls/lleds" instance=ExtResource("37_lm11r")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.16735, 0.989205, -2.98685)
+
+[node name="Led12" parent="controls/lleds" instance=ExtResource("37_lm11r")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.0465, 0.989205, -2.98685)
 
 [node name="FuelD" parent="controls" instance=ExtResource("30_gqftm")]
-transform = Transform3D(-4.35218e-08, 0.995662, -0.0930483, -1, -4.37114e-08, 0, -4.06727e-09, 0.0930483, 0.995662, -2.29857, 1.81755, -2.22361)
+transform = Transform3D(-4.35218e-08, 0.995662, -0.0930483, -1, -4.37114e-08, 0, -4.06727e-09, 0.0930483, 0.995662, -2.22734, 1.82123, -2.22324)
 drag_speed = 0.025
 drag_limit = 0.43
 step_size = 0.01
@@ -511,6 +544,13 @@ step_size = 0.01
 
 [node name="Keyboard" parent="controls/buttons" instance=ExtResource("28_yhpmq")]
 transform = Transform3D(0.767812, -1.51193e-08, 0.208121, -3.72529e-09, 0.795519, 4.38905e-17, -0.208121, -7.30506e-08, 0.767812, -1.08386, 0.77923, -2.62754)
+id_a = 28
+id_c = 29
+id_d = 30
+id_e = 31
+id_f = 32
+id_g = 33
+id_h = 34
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="controls/buttons"]
 transform = Transform3D(0.926272, -0.118074, -0.35788, 0, 0.94965, -0.313313, 0.376855, 0.290213, 0.879634, 1.3125, 0.692455, -2.60739)
@@ -602,7 +642,7 @@ transform = Transform3D(2.372, -3.31985e-09, 8.9407e-08, 1.77237e-07, 2.372, -1.
 id_ = 25
 
 [node name="a11" parent="controls/buttons/MeshInstance3D2" instance=ExtResource("28_r47aq")]
-transform = Transform3D(2.372, -3.84889e-09, 1.19209e-07, 2.07039e-07, 2.372, -1.98704e-08, 3.27826e-07, -2.86739e-08, 2.372, -0.0476682, 0.0625923, -0.13659)
+transform = Transform3D(2.372, -4.37795e-09, 1.78814e-07, 2.06408e-07, 2.372, -1.54831e-08, 2.98023e-07, -2.78658e-08, 2.372, -0.0456419, 0.0651664, -0.136833)
 id_ = 26
 
 [node name="a12" parent="controls/buttons/MeshInstance3D2" instance=ExtResource("28_r47aq")]
@@ -629,7 +669,6 @@ surface_material_override/0 = ExtResource("32_yhpmq")
 surface_material_override/1 = ExtResource("33_qlma2")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = ExtResource("38_ct2tn")
 
 [connection signal="button_up" from="GameHandler/MarginContainer2/MarginContainer/HBoxContainer/prew_button" to="Camera3D" method="_on_prew_button_button_up"]
 [connection signal="button_up" from="GameHandler/MarginContainer2/MarginContainer/HBoxContainer/next_button" to="Camera3D" method="_on_next_button_button_up"]
