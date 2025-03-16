@@ -6,7 +6,7 @@ func _on_end_game_button_up() -> void:
 
 
 func _on_start_game_button_up() -> void:
-	get_tree().change_scene_to_file("res://scenes/game_scene.tscn")
+	get_tree().change_scene_to_file("res://scenes/game_scene_new.tscn")
 
 
 func _on_create_level_button_up() -> void:
