@@ -1,15 +1,47 @@
-[gd_scene load_steps=6 format=3 uid="uid://dyf7m2jdcskx1"]
+[gd_scene load_steps=31 format=3 uid="uid://dyf7m2jdcskx1"]
 
-[ext_resource type="Script" path="res://scripts/camera_3d.gd" id="1_ycayy"]
+[ext_resource type="Script" uid="uid://c7hbtyc3jvd43" path="res://scripts/camera_3d.gd" id="1_ycayy"]
 [ext_resource type="PackedScene" uid="uid://cdl1pf4dcppis" path="res://prefabs/packa_a.tscn" id="2_bw6k5"]
+[ext_resource type="PackedScene" uid="uid://8qnhlvs44g0a" path="res://scenes/book.tscn" id="2_rw4oa"]
 [ext_resource type="PackedScene" uid="uid://cfqrj1yos1m00" path="res://prefabs/packa_b.tscn" id="3_bw6k5"]
-[ext_resource type="Script" path="res://scripts/game_handler.gd" id="3_y3j0m"]
+[ext_resource type="Script" uid="uid://bd08io3mejpxx" path="res://scripts/game_handler.gd" id="3_y3j0m"]
+[ext_resource type="ArrayMesh" uid="uid://bghaaukoptge8" path="res://3d_assets/new/floor.obj" id="5_5ay1a"]
+[ext_resource type="ArrayMesh" uid="uid://bjf2urd64r4x5" path="res://3d_assets/new/cocpit.obj" id="6_ldkr4"]
+[ext_resource type="ArrayMesh" uid="uid://bnd4proe5jpg1" path="res://3d_assets/new/ceil.obj" id="7_liy57"]
+[ext_resource type="ArrayMesh" uid="uid://bk66opkbtydi0" path="res://3d_assets/new/main_table.obj" id="8_mwyo0"]
+[ext_resource type="ArrayMesh" uid="uid://c6yso8wui2dh0" path="res://3d_assets/new/control_panel_holder.obj" id="9_s76x2"]
+[ext_resource type="ArrayMesh" uid="uid://2bamefv28gn0" path="res://3d_assets/new/tv_big_holder.obj" id="10_77hjl"]
+[ext_resource type="Material" uid="uid://xub4wyj5ikb6" path="res://materials/3d/stul1.tres" id="10_xgstd"]
+[ext_resource type="Material" uid="uid://doq0n3vhob6ud" path="res://materials/light.tres" id="11_6aqbo"]
+[ext_resource type="Material" uid="uid://nwtjadtjj5j2" path="res://materials/metal.tres" id="11_mwyo0"]
+[ext_resource type="ArrayMesh" uid="uid://c5pjcaosn7twx" path="res://3d_assets/new/light_object_ceil.obj" id="12_ro0ie"]
+[ext_resource type="ArrayMesh" uid="uid://bcwtclhjsmw5e" path="res://3d_assets/new/pipe_01.obj" id="12_s76x2"]
+[ext_resource type="Material" uid="uid://cylm7i511jom8" path="res://materials/3d/stul2.tres" id="12_ttvoq"]
+[ext_resource type="ArrayMesh" uid="uid://0pov20xc2vsy" path="res://3d_assets/new/pipe_02.obj" id="13_77hjl"]
+[ext_resource type="Script" uid="uid://d1bprshwb784p" path="res://scripts/light_object_ceil.gd" id="13_103ce"]
+[ext_resource type="PackedScene" uid="uid://dgay77gybnsut" path="res://prefabs/light_wall.tscn" id="14_pb36m"]
+[ext_resource type="Material" uid="uid://cw7uy6il4i7a8" path="res://materials/3d/stul3.tres" id="14_rw4oa"]
+[ext_resource type="Material" uid="uid://bbel5l8ifc4af" path="res://materials/tv.tres" id="18_77hjl"]
+[ext_resource type="ArrayMesh" uid="uid://15d0a6h2icpa" path="res://3d_assets/new/tv_big.obj" id="19_6aqbo"]
+[ext_resource type="ArrayMesh" uid="uid://cgrgyu0qr4f1x" path="res://3d_assets/new/tv_right.obj" id="20_ro0ie"]
+[ext_resource type="ArrayMesh" uid="uid://bf7pukvsulpv1" path="res://3d_assets/new/tv_box.obj" id="21_103ce"]
+[ext_resource type="Material" uid="uid://cjtp1nmk7bpf2" path="res://materials/tv_box.tres" id="23_r47aq"]
+[ext_resource type="Texture2D" uid="uid://dqw3kjv68d4pv" path="res://3d_assets/textures/kalendar.png" id="26_ttvoq"]
 
 [sub_resource type="PrismMesh" id="PrismMesh_mlf6e"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rw4oa"]
+albedo_texture = ExtResource("26_ttvoq")
+clearcoat_enabled = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_r47aq"]
 
 [node name="GameScene" type="Node3D"]
 
 [node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5359, -0.90271)
+fov = 87.8545
+far = 41.24
 script = ExtResource("1_ycayy")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
@@ -18,6 +50,7 @@ visible = false
 mesh = SubResource("PrismMesh_mlf6e")
 
 [node name="Node3D" type="Node3D" parent="."]
+visible = false
 
 [node name="PackaA_01" parent="Node3D" instance=ExtResource("2_bw6k5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.630715, -0.287061, -0.859694)
@@ -79,7 +112,7 @@ text = "ID: 5
 font_size = 8
 
 [node name="PackaB" parent="Node3D" instance=ExtResource("3_bw6k5")]
-transform = Transform3D(-3.61614e-08, 0.561795, -0.827277, 2.45568e-08, 0.827277, 0.561795, 1, 0, -4.37114e-08, -0.875245, -0.472534, -0.0278748)
+transform = Transform3D(0.983304, -0.00295528, 0.181945, 0.00281197, 0.999996, 0.00104563, -0.181948, -0.000516556, 0.983309, 0.839493, 0.0579948, -0.927445)
 
 [node name="GameHandler" type="Node" parent="." node_paths=PackedStringArray("sequence_text_", "end_text_")]
 script = ExtResource("3_y3j0m")
@@ -124,8 +157,265 @@ text = "<palaceholder>"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.985157, -0.00193233, 0.171643, -0.171654, -0.01109, 0.985095, 0, -0.999937, -0.0112571, 0, 4.04775, 0)
+[node name="MarginContainer" type="MarginContainer" parent="GameHandler"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="GameHandler/MarginContainer"]
+custom_minimum_size = Vector2(150, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+size_flags_stretch_ratio = 2.17
+text = "kniha"
+
+[node name="lod" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.152397, 0.166719)
+
+[node name="tv_big" type="MeshInstance3D" parent="lod"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.363, -3.39071)
+material_override = ExtResource("18_77hjl")
+mesh = ExtResource("19_6aqbo")
+skeleton = NodePath("../..")
+
+[node name="main_object" type="Node3D" parent="lod"]
+
+[node name="floor" type="MeshInstance3D" parent="lod/main_object"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.55161, 0, 3.12691)
+mesh = ExtResource("5_5ay1a")
+skeleton = NodePath("../..")
+
+[node name="Cocpit" type="MeshInstance3D" parent="lod/main_object"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.48046, 0, 1.49939)
+mesh = ExtResource("6_ldkr4")
+skeleton = NodePath("../..")
+
+[node name="Ceil" type="MeshInstance3D" parent="lod/main_object"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.48046, 0, 1.49939)
+mesh = ExtResource("7_liy57")
+skeleton = NodePath("../..")
+
+[node name="game_space" type="Node3D" parent="lod"]
+
+[node name="MainTable" type="MeshInstance3D" parent="lod/game_space"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, -2.933)
+material_override = ExtResource("10_xgstd")
+mesh = ExtResource("8_mwyo0")
+skeleton = NodePath("../..")
+
+[node name="ControlPanelHolder" type="MeshInstance3D" parent="lod/game_space"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.628505, -2.91086)
+material_override = ExtResource("12_ttvoq")
+mesh = ExtResource("9_s76x2")
+skeleton = NodePath("../..")
+
+[node name="TvBigHolder" type="MeshInstance3D" parent="lod/game_space"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.08039, -3.44861)
+material_override = ExtResource("14_rw4oa")
+mesh = ExtResource("10_77hjl")
+skeleton = NodePath("../../..")
+
+[node name="Pipe01" type="MeshInstance3D" parent="lod/game_space"]
+transform = Transform3D(0.32918, 0, -0.944267, 0, 1, 0, 0.944267, 0, 0.32918, 2.0334, 0.874369, -2.10571)
+material_override = ExtResource("11_mwyo0")
+mesh = ExtResource("12_s76x2")
+
+[node name="Pipe02" type="MeshInstance3D" parent="lod/game_space"]
+transform = Transform3D(0.0231931, 0, -0.999731, 0, 1, 0, 0.999731, 0, 0.0231931, 1.81763, 0.152397, -2.35365)
+material_override = ExtResource("11_mwyo0")
+mesh = ExtResource("13_77hjl")
+
+[node name="lights" type="Node3D" parent="lod"]
+
+[node name="lights_objects" type="Node3D" parent="lod/lights"]
+
+[node name="LightObjectCeil" type="MeshInstance3D" parent="lod/lights/lights_objects"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0010376, 3.3185, -2.80986)
+material_override = ExtResource("11_6aqbo")
+mesh = ExtResource("12_ro0ie")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = ExtResource("11_6aqbo")
+script = ExtResource("13_103ce")
+use_temperature = true
+color = Color(2, 0.65, 0.079, 1)
+intensity = 0.3
+temperature = 6500.0
+temperature_intensity = 1.136
+
+[node name="OmniLight3D" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.115198, -0.125845)
+omni_range = 3.41979
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.115198, 0.198371)
+omni_range = 3.41979
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.115198, 0.573091)
+light_energy = 0.0
+omni_range = 3.41979
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.115198, 0.962336)
+omni_range = 3.41979
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.115198, 1.33996)
+omni_range = 3.41979
+
+[node name="OmniLight3D6" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.115198, 1.7263)
+omni_range = 3.41979
+
+[node name="OmniLight3D7" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.115198, 2.11264)
+omni_range = 3.41979
+
+[node name="OmniLight3D8" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.115198, 2.48155)
+omni_range = 3.41979
+
+[node name="OmniLight3D9" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.115198, 2.86499)
+omni_range = 3.41979
+
+[node name="OmniLight3D10" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.115198, 3.22518)
+omni_range = 3.41979
+
+[node name="OmniLight3D11" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.646212, -0.164304, -0.125845)
+omni_range = 3.41979
+
+[node name="OmniLight3D12" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.646212, -0.164304, 0.198371)
+omni_range = 3.41979
+
+[node name="OmniLight3D13" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.646212, -0.164304, 0.573091)
+light_energy = 0.0
+omni_range = 3.41979
+
+[node name="OmniLight3D14" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.646212, -0.164304, 0.962336)
+omni_range = 3.41979
+
+[node name="OmniLight3D15" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.646212, -0.164304, 1.33996)
+omni_range = 3.41979
+
+[node name="OmniLight3D16" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.646212, -0.164304, 1.7263)
+omni_range = 3.41979
+
+[node name="OmniLight3D17" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.646212, -0.164304, 2.11264)
+omni_range = 3.41979
+
+[node name="OmniLight3D18" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.646212, -0.164304, 2.48155)
+omni_range = 3.41979
+
+[node name="OmniLight3D19" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.646212, -0.164304, 2.86499)
+omni_range = 3.41979
+
+[node name="OmniLight3D20" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.646212, -0.164304, 3.22518)
+omni_range = 3.41979
+
+[node name="OmniLight3D21" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.656313, -0.164304, -0.125845)
+omni_range = 3.41979
+
+[node name="OmniLight3D22" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.656313, -0.164304, 0.198371)
+omni_range = 3.41979
+
+[node name="OmniLight3D23" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.656313, -0.164304, 0.573091)
+light_energy = 0.0
+omni_range = 3.41979
+
+[node name="OmniLight3D24" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.656313, -0.164304, 0.962336)
+omni_range = 3.41979
+
+[node name="OmniLight3D25" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.656313, -0.164304, 1.33996)
+omni_range = 3.41979
+
+[node name="OmniLight3D26" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.656313, -0.164304, 1.7263)
+omni_range = 3.41979
+
+[node name="OmniLight3D27" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.656313, -0.164304, 2.11264)
+omni_range = 3.41979
+
+[node name="OmniLight3D28" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.656313, -0.164304, 2.48155)
+omni_range = 3.41979
+
+[node name="OmniLight3D29" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.656313, -0.164304, 2.86499)
+omni_range = 3.41979
+
+[node name="OmniLight3D30" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.656313, -0.164304, 3.22518)
+omni_range = 3.41979
+
+[node name="LightObjectWall2" parent="lod/lights/lights_objects" instance=ExtResource("14_pb36m")]
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 1.25133, 1.63274, -3.42322)
+intensity = 0.3
+temperature = 3400.0
+temperature_intensity = 0.5
+
+[node name="LightObjectWall3" parent="lod/lights/lights_objects" instance=ExtResource("14_pb36m")]
+transform = Transform3D(1, 0, -8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -1.2462, 1.63274, -3.42322)
+intensity = 0.3
+temperature = 3400.0
+temperature_intensity = 0.5
+
+[node name="TvRight" type="MeshInstance3D" parent="lod"]
+transform = Transform3D(0.621257, 0, -0.322552, 0, 0.7, 0, 0.322552, 0, 0.621257, 1.42223, 2.22798, -2.57309)
+material_override = ExtResource("23_r47aq")
+material_overlay = ExtResource("11_mwyo0")
+mesh = ExtResource("20_ro0ie")
+
+[node name="TvBox" type="MeshInstance3D" parent="lod/TvRight"]
+transform = Transform3D(0.928571, 0, 0.000615835, 0, 0.928571, 0, -0.000615835, 0, 0.928571, -0.00782454, -0.00663662, 0.175539)
+material_override = ExtResource("18_77hjl")
+mesh = ExtResource("21_103ce")
+skeleton = NodePath("../../game_space")
+
+[node name="TvRight2" type="MeshInstance3D" parent="lod"]
+transform = Transform3D(0.573112, 0, 0.401924, 0, 0.7, 0, -0.401924, 0, 0.573112, -1.34841, 2.52489, -2.85791)
+material_override = ExtResource("23_r47aq")
+mesh = ExtResource("20_ro0ie")
+
+[node name="TvBox" type="MeshInstance3D" parent="lod/TvRight2"]
+transform = Transform3D(-0.928571, 0, -8.11783e-08, 0, 0.928571, 0, 8.11783e-08, 0, -0.928571, -0.00782454, -0.00663662, 0.175539)
+material_override = ExtResource("18_77hjl")
+mesh = ExtResource("21_103ce")
+skeleton = NodePath("../../game_space")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="lod"]
+transform = Transform3D(0.305612, 0, 0.627626, 0, 0.740568, 0, -0.487944, 0, 0.393099, -1.95973, 1.80962, -3.13287)
+material_override = SubResource("StandardMaterial3D_rw4oa")
+mesh = SubResource("QuadMesh_r47aq")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.0865141, 0.455021, -0.663796)
+light_energy = 0.1
+
+[node name="Book" parent="." instance=ExtResource("2_rw4oa")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.39903, -1.78884)
 
 [connection signal="packa_a_clicked" from="Node3D/PackaA_01" to="GameHandler" method="_on_packa_a_clicked"]
 [connection signal="packa_a_clicked" from="Node3D/PackaA_02" to="GameHandler" method="_on_packa_a_clicked"]

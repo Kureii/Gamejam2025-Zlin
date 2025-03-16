@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://nwtjadtjj5j2"]
+
+[resource]
+diffuse_mode = 3
+specular_mode = 1
+metallic = 0.87
+metallic_specular = 0.61
+roughness = 0.19

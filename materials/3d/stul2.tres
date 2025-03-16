@@ -1,4 +1,9 @@
-[gd_resource type="StandardMaterial3D" format=3 uid="uid://cylm7i511jom8"]
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cylm7i511jom8"]
+
+[ext_resource type="Texture2D" uid="uid://d3a86bjwum2ew" path="res://3d_assets/textures/stul2.png" id="1_50lho"]
 
 [resource]
-albedo_color = Color(0.437231, 0.224185, 0.226553, 1)
+diffuse_mode = 3
+specular_mode = 1
+albedo_texture = ExtResource("1_50lho")
+roughness = 0.7

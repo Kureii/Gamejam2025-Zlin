@@ -9,6 +9,16 @@
 radius = 0.0173198
 height = 0.0642367
 
+[sub_resource type="Animation" id="Animation_mtd8m"]
+length = 0.001
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, -0.0625467, 0, 0, 0.998042)
+
 [sub_resource type="Animation" id="Animation_m3ck4"]
 resource_name = "packa_a_anim"
 length = 0.7
@@ -19,16 +29,6 @@ tracks/0/path = NodePath(".")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.3, 1, -0.0625467, 0, 0, 0.998042, 0.4, 1, -0.0625467, 0, 0, 0.998042, 0.5, 1, 0.0534863, 0, 0, 0.998569, 0.566667, 1, -0.0303641, 0, 0, 0.999539, 0.6, 1, 0.0104281, 0, 0, 0.999946, 0.633333, 1, 0, 0, 0, 1)
-
-[sub_resource type="Animation" id="Animation_mtd8m"]
-length = 0.001
-tracks/0/type = "rotation_3d"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, -0.0625467, 0, 0, 0.998042)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_t8xyx"]
 _data = {

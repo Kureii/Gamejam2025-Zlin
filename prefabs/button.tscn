@@ -1,10 +1,20 @@
 [gd_scene load_steps=7 format=3 uid="uid://wym6hw0mljks"]
 
-[ext_resource type="Script" uid="uid://b5ydjho4hap21" path="res://3d_assets/button.gd" id="1_f40y1"]
+[ext_resource type="Script" uid="uid://b5ydjho4hap21" path="res://scripts/button.gd" id="1_f40y1"]
 [ext_resource type="ArrayMesh" uid="uid://dhkjnc0a2vh3o" path="res://3d_assets/tlacitko_1.obj" id="2_uqs03"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2ure8"]
 size = Vector3(1, 1, 1.01648)
+
+[sub_resource type="Animation" id="Animation_uqs03"]
+length = 0.001
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("button")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0)
 
 [sub_resource type="Animation" id="Animation_f40y1"]
 resource_name = "button_anim"
@@ -16,16 +26,6 @@ tracks/0/path = NodePath("button")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.166667, 1, 0, -0.010101, 0, 0.266667, 1, 0, -0.010101, 0, 0.354005, 1, 0, 0, 0)
-
-[sub_resource type="Animation" id="Animation_uqs03"]
-length = 0.001
-tracks/0/type = "position_3d"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("button")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2ure8"]
 _data = {
