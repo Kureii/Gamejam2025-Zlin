@@ -34,7 +34,7 @@ default_input_values = [0, Vector3(0, 0, 0)]
 port_type = 4
 
 [sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_uatwl"]
-size = Vector2(932, 606)
+size = Vector2(932, 462)
 title = "Dots M"
 attached_nodes = PackedInt32Array(144, 198, 199, 200, 201, 214)
 
@@ -220,7 +220,7 @@ linked_parent_graph_frame = 214
 linked_parent_graph_frame = 214
 
 [sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_go5t5"]
-size = Vector2(932, 606)
+size = Vector2(932, 462)
 title = "Dots C"
 attached_nodes = PackedInt32Array(210, 213, 212, 211, 209)
 
@@ -243,7 +243,7 @@ linked_parent_graph_frame = 220
 linked_parent_graph_frame = 220
 
 [sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_e2uu5"]
-size = Vector2(932, 606)
+size = Vector2(932, 462)
 title = "Dots Y"
 attached_nodes = PackedInt32Array(215, 219, 218, 217, 216)
 
@@ -296,7 +296,7 @@ linked_parent_graph_frame = 233
 linked_parent_graph_frame = 233
 
 [sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_scs4h"]
-size = Vector2(932, 606)
+size = Vector2(932, 462)
 title = "Dots K"
 attached_nodes = PackedInt32Array(229, 228, 232, 231, 230)
 
@@ -737,7 +737,6 @@ void fragment() {
 
 }
 "
-graph_offset = Vector2(-1388.07, -2661.72)
 preview_params/dots_smooth = "0.55"
 nodes/fragment/0/position = Vector2(4480, -3060)
 nodes/fragment/16/node = SubResource("VisualShaderNodeTexture2DParameter_fsldn")

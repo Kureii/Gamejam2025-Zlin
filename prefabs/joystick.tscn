@@ -1,9 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://brdttvf4uf4nt"]
+[gd_scene load_steps=5 format=3 uid="uid://brdttvf4uf4nt"]
 
 [ext_resource type="ArrayMesh" uid="uid://b10llu13w0m5d" path="res://3d_assets/new/joistic_base.obj" id="1_0s7ww"]
+[ext_resource type="Script" uid="uid://bl8xa4k3dfk3w" path="res://scripts/joystick.gd" id="1_wtkjn"]
 [ext_resource type="ArrayMesh" uid="uid://b732tsgcb24ev" path="res://3d_assets/new/joystic.obj" id="2_wtkjn"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_wtkjn"]
+size = Vector3(0.14, 0.34, 0.135)
+
 [node name="Joystick" type="Node3D"]
+script = ExtResource("1_wtkjn")
 
 [node name="j_base" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.154086, 0)
@@ -11,3 +16,11 @@ mesh = ExtResource("1_0s7ww")
 
 [node name="j" type="MeshInstance3D" parent="j_base"]
 mesh = ExtResource("2_wtkjn")
+
+[node name="Area3D" type="Area3D" parent="j_base/j"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.211746, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="j_base/j/Area3D"]
+shape = SubResource("BoxShape3D_wtkjn")
+
+[connection signal="input_event" from="j_base/j/Area3D" to="." method="_on_area_3d_input_event"]

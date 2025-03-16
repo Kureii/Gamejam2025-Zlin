@@ -1,8 +1,10 @@
-[gd_scene load_steps=48 format=3 uid="uid://dyf7m2jdcskx1"]
+[gd_scene load_steps=50 format=3 uid="uid://dyf7m2jdcskx1"]
 
 [ext_resource type="Script" uid="uid://c7hbtyc3jvd43" path="res://scripts/camera_3d.gd" id="1_ycayy"]
 [ext_resource type="PackedScene" uid="uid://8qnhlvs44g0a" path="res://scenes/book.tscn" id="2_rw4oa"]
+[ext_resource type="PackedScene" uid="uid://da2dyrlfo88td" path="res://prefabs/joystick_minigame.tscn" id="3_twkf6"]
 [ext_resource type="Script" uid="uid://bd08io3mejpxx" path="res://scripts/game_handler.gd" id="3_y3j0m"]
+[ext_resource type="PackedScene" uid="uid://blt1anu8bert2" path="res://prefabs/valve_minigame.tscn" id="4_4fjq2"]
 [ext_resource type="ArrayMesh" uid="uid://bghaaukoptge8" path="res://3d_assets/new/floor.obj" id="5_5ay1a"]
 [ext_resource type="Texture2D" uid="uid://cs3xqy5waoxcm" path="res://3d_assets/textures/steny.png" id="5_gqftm"]
 [ext_resource type="ArrayMesh" uid="uid://bjf2urd64r4x5" path="res://3d_assets/new/cocpit.obj" id="6_ldkr4"]
@@ -82,10 +84,17 @@ size = Vector3(0.66, 0.14, 0.435)
 
 [node name="GameScene" type="Node3D"]
 
-[node name="GameHandler" type="Node" parent="." node_paths=PackedStringArray("sequence_text_", "end_text_")]
+[node name="GameHandler" type="Node" parent="." node_paths=PackedStringArray("sequence_text_", "end_text_", "c1", "c2", "c3", "c4", "c5")]
 script = ExtResource("3_y3j0m")
 sequence_text_ = NodePath("info")
 end_text_ = NodePath("end_game/VBoxContainer/GO_label")
+c1 = NodePath("../controls/lleds/Led4")
+c2 = NodePath("../controls/lleds/Led3")
+c3 = NodePath("../controls/lleds/Led2")
+c4 = NodePath("../controls/lleds/Led")
+c5 = NodePath("../controls/lleds/Led5")
+minigame_joystick_scene = ExtResource("3_twkf6")
+minigame_valve_scene = ExtResource("4_4fjq2")
 
 [node name="MarginContainer2" type="MarginContainer" parent="GameHandler"]
 anchors_preset = 15
@@ -107,6 +116,7 @@ theme_override_constants/margin_right = 400
 theme_override_constants/margin_bottom = 160
 
 [node name="HBoxContainer" type="HBoxContainer" parent="GameHandler/MarginContainer2/MarginContainer"]
+visible = false
 layout_mode = 2
 
 [node name="prew_button" type="Button" parent="GameHandler/MarginContainer2/MarginContainer/HBoxContainer"]
@@ -180,7 +190,6 @@ script = ExtResource("1_ycayy")
 [node name="Book" parent="Camera3D" instance=ExtResource("2_rw4oa")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.00827837, 0.00660646, -0.726749)
-visible = false
 
 [node name="lod" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.152397, 0.166719)
@@ -499,16 +508,16 @@ mesh = SubResource("QuadMesh_r47aq")
 [node name="lleds" type="Node3D" parent="controls"]
 
 [node name="Led" parent="controls/lleds" instance=ExtResource("37_lm11r")]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.40812, 1.24956, -3.03983)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.39368, 1.24449, -3.03568)
 
 [node name="Led2" parent="controls/lleds" instance=ExtResource("37_lm11r")]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.28727, 1.24956, -3.03983)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.27284, 1.24449, -3.03568)
 
 [node name="Led3" parent="controls/lleds" instance=ExtResource("37_lm11r")]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.16735, 1.24956, -3.03983)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.15291, 1.24449, -3.03568)
 
 [node name="Led4" parent="controls/lleds" instance=ExtResource("37_lm11r")]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.0465, 1.24956, -3.03983)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.03207, 1.24449, -3.03568)
 
 [node name="Led5" parent="controls/lleds" instance=ExtResource("37_lm11r")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.40812, 1.11949, -3.01578)
@@ -675,6 +684,8 @@ surface_material_override/1 = ExtResource("33_qlma2")
 [connection signal="button_up" from="GameHandler/MarginContainer2/Button" to="GameHandler" method="_on_manual_button_up"]
 [connection signal="button_up" from="GameHandler/end_game/VBoxContainer/Reset" to="GameHandler" method="_on_reset_button_up"]
 [connection signal="visibility_changed" from="Camera3D/Book" to="GameHandler/MarginContainer2" method="_on_book_visibility_changed"]
+[connection signal="slider_released" from="controls/FuelD" to="GameHandler" method="_on_fuel_d_slider_released"]
+[connection signal="click" from="controls/buttons/Keyboard" to="GameHandler" method="_on_button_clicked"]
 [connection signal="paka_clicked" from="controls/buttons/MeshInstance3D/p10" to="GameHandler" method="_on_button_clicked"]
 [connection signal="paka_clicked" from="controls/buttons/MeshInstance3D/p8" to="GameHandler" method="_on_button_clicked"]
 [connection signal="paka_clicked" from="controls/buttons/MeshInstance3D/p6" to="GameHandler" method="_on_button_clicked"]
@@ -698,3 +709,6 @@ surface_material_override/1 = ExtResource("33_qlma2")
 [connection signal="paka_clicked" from="controls/buttons/MeshInstance3D2/a11" to="GameHandler" method="_on_button_clicked"]
 [connection signal="paka_clicked" from="controls/buttons/MeshInstance3D2/a12" to="GameHandler" method="_on_button_clicked"]
 [connection signal="direction_lever" from="controls/PackaB" to="GameHandler" method="_on_button_clicked"]
+[connection signal="clicked_on_valve" from="controls/Valve" to="GameHandler" method="_on_valve_clicked_on_valve"]
+[connection signal="clicked_on_valve" from="controls/Valve2" to="GameHandler" method="_on_valve_clicked_on_valve"]
+[connection signal="clicked_on_joystic" from="controls/Joystick" to="GameHandler" method="_on_joystick_clicked_on_joystic"]
