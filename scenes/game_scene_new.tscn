@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://4p1bkum06la0"]
+[gd_scene load_steps=53 format=3 uid="uid://4p1bkum06la0"]
 
 [ext_resource type="Script" uid="uid://bd08io3mejpxx" path="res://scripts/game_handler.gd" id="1_n2a3o"]
 [ext_resource type="Script" uid="uid://c5n7umji3stt" path="res://scripts/book_controls.gd" id="2_qko2w"]
@@ -30,16 +30,18 @@
 [ext_resource type="ArrayMesh" uid="uid://bf7pukvsulpv1" path="res://3d_assets/new/tv_box.obj" id="28_g6hb5"]
 [ext_resource type="Texture2D" uid="uid://dqw3kjv68d4pv" path="res://3d_assets/textures/kalendar.png" id="29_eandj"]
 [ext_resource type="PackedScene" uid="uid://jdos8xuicc6v" path="res://prefabs/led.tscn" id="30_ird30"]
-[ext_resource type="PackedScene" path="res://prefabs/fuel_d.tscn" id="31_4qmc1"]
+[ext_resource type="PackedScene" uid="uid://ddkth6ge77w1t" path="res://prefabs/fuel_d.tscn" id="31_4qmc1"]
 [ext_resource type="PackedScene" uid="uid://s0130yfcyrsp" path="res://prefabs/keyboard.tscn" id="32_diroa"]
 [ext_resource type="PackedScene" uid="uid://wym6hw0mljks" path="res://prefabs/button.tscn" id="33_2n8u4"]
 [ext_resource type="PackedScene" uid="uid://djucdvqhspvog" path="res://prefabs/paka.tscn" id="34_i1v2r"]
-[ext_resource type="PackedScene" path="res://prefabs/valve.tscn" id="35_ixlas"]
-[ext_resource type="PackedScene" path="res://prefabs/joystick.tscn" id="36_w1wq6"]
+[ext_resource type="PackedScene" uid="uid://bbnsjqladdwiw" path="res://prefabs/valve.tscn" id="35_ixlas"]
+[ext_resource type="PackedScene" uid="uid://brdttvf4uf4nt" path="res://prefabs/joystick.tscn" id="36_w1wq6"]
 [ext_resource type="ArrayMesh" uid="uid://cutyjwstpjs7b" path="res://3d_assets/book/book.obj" id="37_6ht4o"]
 [ext_resource type="Material" uid="uid://bg1lrplmdliry" path="res://materials/book_cover.tres" id="38_wthen"]
 [ext_resource type="Material" uid="uid://cmjo501tc0jv" path="res://materials/paper.tres" id="39_8oirv"]
 [ext_resource type="Environment" uid="uid://kte4spmm34qe" path="res://scenes/lod_test.tres" id="40_avapy"]
+[ext_resource type="ArrayMesh" uid="uid://cj7uuvn4likba" path="res://3d_assets/enviro/dvere.obj" id="41_yi16n"]
+[ext_resource type="Texture2D" uid="uid://cwkjnmcm0yr4b" path="res://3d_assets/textures/podlaha.png" id="42_0yui4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4fjq2"]
 render_priority = 0
@@ -80,6 +82,11 @@ size = Vector3(0.81, 0.225, 0.37)
 
 [sub_resource type="BoxMesh" id="BoxMesh_yhpmq"]
 size = Vector3(0.66, 0.14, 0.435)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_a4nrk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_646uv"]
+albedo_texture = ExtResource("42_0yui4")
 
 [node name="GameScene" type="Node3D"]
 
@@ -502,6 +509,15 @@ surface_material_override/1 = ExtResource("39_8oirv")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("40_avapy")
+
+[node name="Dvere" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.948728, 0, 8.29404e-08, 0, 0.948728, 0, -8.29404e-08, 0, -0.948728, -0.0295026, 1.47796, 1.81959)
+mesh = ExtResource("41_yi16n")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.6256, 0, 0, 0, 1, 0, 0, 0, 3.42203, 0, 0, 0)
+mesh = SubResource("PlaneMesh_a4nrk")
+surface_material_override/0 = SubResource("StandardMaterial3D_646uv")
 
 [connection signal="button_up" from="GameHandler/MarginContainer2/MarginContainer/HBoxContainer/prew_button" to="Camera3D" method="_on_prew_button_button_up"]
 [connection signal="button_up" from="GameHandler/MarginContainer2/MarginContainer/HBoxContainer/next_button" to="Camera3D" method="_on_next_button_button_up"]
