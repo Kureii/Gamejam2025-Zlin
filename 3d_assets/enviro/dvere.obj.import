@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cj7uuvn4likba"
+path="res://.godot/imported/dvere.obj-66ed87c66482ee365ac37437d5317772.mesh"
+
+[deps]
+
+files=["res://.godot/imported/dvere.obj-66ed87c66482ee365ac37437d5317772.mesh"]
+
+source_file="res://3d_assets/enviro/dvere.obj"
+dest_files=["res://.godot/imported/dvere.obj-66ed87c66482ee365ac37437d5317772.mesh", "res://.godot/imported/dvere.obj-66ed87c66482ee365ac37437d5317772.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false
