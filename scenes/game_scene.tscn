@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://dyf7m2jdcskx1"]
+[gd_scene load_steps=49 format=3 uid="uid://dyf7m2jdcskx1"]
 
 [ext_resource type="Script" uid="uid://c7hbtyc3jvd43" path="res://scripts/camera_3d.gd" id="1_ycayy"]
 [ext_resource type="PackedScene" uid="uid://8qnhlvs44g0a" path="res://scenes/book.tscn" id="2_rw4oa"]
@@ -16,6 +16,7 @@
 [ext_resource type="ArrayMesh" uid="uid://c5pjcaosn7twx" path="res://3d_assets/new/light_object_ceil.obj" id="12_ro0ie"]
 [ext_resource type="ArrayMesh" uid="uid://bcwtclhjsmw5e" path="res://3d_assets/new/pipe_01.obj" id="12_s76x2"]
 [ext_resource type="Material" uid="uid://cylm7i511jom8" path="res://materials/3d/stul2.tres" id="12_ttvoq"]
+[ext_resource type="ArrayMesh" uid="uid://crrqjf52hkpet" path="res://3d_assets/enviro/stena_1.obj" id="12_y55j0"]
 [ext_resource type="ArrayMesh" uid="uid://0pov20xc2vsy" path="res://3d_assets/new/pipe_02.obj" id="13_77hjl"]
 [ext_resource type="Script" uid="uid://d1bprshwb784p" path="res://scripts/light_object_ceil.gd" id="13_103ce"]
 [ext_resource type="PackedScene" uid="uid://dgay77gybnsut" path="res://prefabs/light_wall.tscn" id="14_pb36m"]
@@ -51,6 +52,9 @@ shader_parameter/scanline_speed = 4.0
 shader_parameter/emission_intensity = 1.295
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5dk4p"]
+albedo_texture = ExtResource("5_gqftm")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_twkf6"]
 albedo_texture = ExtResource("5_gqftm")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_p5o0s"]
@@ -197,6 +201,7 @@ skeleton = NodePath("../..")
 
 [node name="Cocpit" type="MeshInstance3D" parent="lod/main_object"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.48046, 0, 1.49939)
+visible = false
 material_override = SubResource("StandardMaterial3D_5dk4p")
 mesh = ExtResource("6_ldkr4")
 skeleton = NodePath("../..")
@@ -205,6 +210,12 @@ skeleton = NodePath("../..")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.48046, 0, 1.49939)
 mesh = ExtResource("7_liy57")
 skeleton = NodePath("../..")
+
+[node name="Stena1" type="MeshInstance3D" parent="lod/main_object"]
+transform = Transform3D(0.952706, 0, 0, 0, 1.0471, 0, 0, 0, 1.0471, -0.0203524, 0.479451, -3.63277)
+material_override = SubResource("StandardMaterial3D_twkf6")
+mesh = ExtResource("12_y55j0")
+skeleton = NodePath("../Cocpit")
 
 [node name="game_space" type="Node3D" parent="lod"]
 
@@ -612,7 +623,7 @@ transform = Transform3D(-1.19209e-07, 1.93249e-08, -1, 2.98023e-08, 1, -4.70318e
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.715316, -2.41113)
 
 [node name="Book" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.687143, 0, 0, 0, 0.146101, -0.671432, 0, 0.671432, 0.146101, 0.604378, 1.08032, -2.99991)
+transform = Transform3D(0.687143, 0, 0, 0, 0.146101, -0.671432, 0, 0.671432, 0.146101, 0.604378, 1.05446, -2.96962)
 mesh = ExtResource("31_ngbhp")
 surface_material_override/0 = ExtResource("32_yhpmq")
 surface_material_override/1 = ExtResource("33_qlma2")
