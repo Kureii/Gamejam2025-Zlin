@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://wym6hw0mljks"]
+[gd_scene load_steps=8 format=3 uid="uid://wym6hw0mljks"]
 
 [ext_resource type="Script" uid="uid://b5ydjho4hap21" path="res://scripts/button.gd" id="1_f40y1"]
+[ext_resource type="Material" uid="uid://1xcxah4iuqe3" path="res://materials/interactive.tres" id="2_2ure8"]
 [ext_resource type="ArrayMesh" uid="uid://dhkjnc0a2vh3o" path="res://3d_assets/tlacitko_1.obj" id="2_uqs03"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2ure8"]
@@ -37,6 +38,7 @@ _data = {
 script = ExtResource("1_f40y1")
 
 [node name="button" type="MeshInstance3D" parent="."]
+material_override = ExtResource("2_2ure8")
 mesh = ExtResource("2_uqs03")
 
 [node name="Area3D" type="Area3D" parent="button"]

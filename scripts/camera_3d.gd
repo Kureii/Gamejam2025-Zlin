@@ -18,3 +18,7 @@ func cam_rotate(delta: float) -> void:
 		rot_vector_ += Vector3(delta * rotate_speed * -0.5,0,0)
 	
 	rotation = rot_vector_ 
+
+
+func _on_button_clicked(id: int) -> void:
+	pass # Replace with function body.

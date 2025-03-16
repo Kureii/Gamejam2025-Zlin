@@ -7,6 +7,18 @@ var player_sequence_: Array
 @export var sequence_text_: Label
 @export var end_text_: Label
 
+var trans_dict = {
+	0 : "p-1",
+	1 : "p-2",
+	2 : "p-3",
+	3 : "p-4",
+	4 : "p-5",
+	5 : "p-6",
+	6 : "p-7",
+	7 : "p-8",
+	8 : "p-9",
+	9 : "p-10"
+}
 
 func _ready() -> void:
 	player_sequence_.clear()
@@ -43,7 +55,7 @@ func win() -> void:
 	end_text_.text = "You win"
 	end.visible = true
 
-func _on_packa_a_clicked(id: int) -> void:
+func _on_button_clicked(id: int) -> void:
 	print(id)
 	add_to_sequence(id)
 
@@ -54,3 +66,7 @@ func _on_reset_button_up() -> void:
 	player_sequence_.clear()
 	var end = get_node("end_game")
 	end.visible = false
+	
+func translator(id: int) -> String:
+	return trans_dict[id]
+	

@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://dyf7m2jdcskx1"]
+[gd_scene load_steps=33 format=3 uid="uid://dyf7m2jdcskx1"]
 
 [ext_resource type="Script" uid="uid://c7hbtyc3jvd43" path="res://scripts/camera_3d.gd" id="1_ycayy"]
 [ext_resource type="PackedScene" uid="uid://cdl1pf4dcppis" path="res://prefabs/packa_a.tscn" id="2_bw6k5"]
@@ -27,6 +27,7 @@
 [ext_resource type="ArrayMesh" uid="uid://bf7pukvsulpv1" path="res://3d_assets/new/tv_box.obj" id="21_103ce"]
 [ext_resource type="Material" uid="uid://cjtp1nmk7bpf2" path="res://materials/tv_box.tres" id="23_r47aq"]
 [ext_resource type="Texture2D" uid="uid://dqw3kjv68d4pv" path="res://3d_assets/textures/kalendar.png" id="26_ttvoq"]
+[ext_resource type="PackedScene" uid="uid://wym6hw0mljks" path="res://prefabs/button.tscn" id="28_r47aq"]
 
 [sub_resource type="PrismMesh" id="PrismMesh_mlf6e"]
 
@@ -36,11 +37,14 @@ clearcoat_enabled = true
 
 [sub_resource type="QuadMesh" id="QuadMesh_r47aq"]
 
+[sub_resource type="BoxMesh" id="BoxMesh_rw4oa"]
+size = Vector3(0.81, 0.275, 0.58)
+
 [node name="GameScene" type="Node3D"]
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5359, -0.90271)
-fov = 87.8545
+fov = 66.1
 far = 41.24
 script = ExtResource("1_ycayy")
 
@@ -182,6 +186,7 @@ mesh = ExtResource("19_6aqbo")
 skeleton = NodePath("../..")
 
 [node name="main_object" type="Node3D" parent="lod"]
+visible = false
 
 [node name="floor" type="MeshInstance3D" parent="lod/main_object"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.55161, 0, 3.12691)
@@ -415,7 +420,56 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.086
 light_energy = 0.1
 
 [node name="Book" parent="." instance=ExtResource("2_rw4oa")]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.39903, -1.78884)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.54641, -1.63252)
+visible = false
+
+[node name="controls" type="Node3D" parent="."]
+
+[node name="buttons" type="Node3D" parent="controls"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="controls/buttons"]
+transform = Transform3D(1, 0, 0, 0, 0.94965, -0.313313, 0, 0.313313, 0.94965, 0.883085, 0.692455, -2.81235)
+material_override = ExtResource("23_r47aq")
+mesh = SubResource("BoxMesh_rw4oa")
+
+[node name="p10" parent="controls/buttons/MeshInstance3D" instance=ExtResource("28_r47aq")]
+transform = Transform3D(2.27974, 0, 0, 0, 2.27974, 5.96046e-08, 0, -5.96046e-08, 2.27974, -0.301298, 0.12683, -0.108034)
+id_ = 9
+
+[node name="p8" parent="controls/buttons/MeshInstance3D" instance=ExtResource("28_r47aq")]
+transform = Transform3D(2.27974, 0, 0, 0, 2.27974, 5.96046e-08, 0, -5.96046e-08, 2.27974, -0.153466, 0.12683, -0.108033)
+id_ = 7
+
+[node name="p6" parent="controls/buttons/MeshInstance3D" instance=ExtResource("28_r47aq")]
+transform = Transform3D(2.27974, 0, 0, 0, 2.27974, 5.96046e-08, 0, -5.96046e-08, 2.27974, -0.00647336, 0.12683, -0.108033)
+id_ = 5
+
+[node name="p4" parent="controls/buttons/MeshInstance3D" instance=ExtResource("28_r47aq")]
+transform = Transform3D(2.27974, 0, 0, 0, 2.27974, 5.96046e-08, 0, -5.96046e-08, 2.27974, 0.154207, 0.12683, -0.108033)
+id_ = 3
+
+[node name="p2" parent="controls/buttons/MeshInstance3D" instance=ExtResource("28_r47aq")]
+transform = Transform3D(2.27974, 0, 0, 0, 2.27974, 5.96046e-08, 0, -5.96046e-08, 2.27974, 0.314617, 0.127361, -0.108918)
+id_ = 1
+
+[node name="p9" parent="controls/buttons/MeshInstance3D" instance=ExtResource("28_r47aq")]
+transform = Transform3D(2.27974, 0, 0, 0, 2.27974, 5.96046e-08, 0, -5.96046e-08, 2.27974, -0.301298, 0.127561, 0.124426)
+id_ = 8
+
+[node name="p7" parent="controls/buttons/MeshInstance3D" instance=ExtResource("28_r47aq")]
+transform = Transform3D(2.27974, 0, 0, 0, 2.27974, 5.96046e-08, 0, -5.96046e-08, 2.27974, -0.153466, 0.127562, 0.124426)
+id_ = 6
+
+[node name="p5" parent="controls/buttons/MeshInstance3D" instance=ExtResource("28_r47aq")]
+transform = Transform3D(2.27974, 0, 0, 0, 2.27974, 5.96046e-08, 0, -5.96046e-08, 2.27974, -0.00647336, 0.127562, 0.124426)
+id_ = 4
+
+[node name="p3" parent="controls/buttons/MeshInstance3D" instance=ExtResource("28_r47aq")]
+transform = Transform3D(2.27974, 0, 0, 0, 2.27974, 5.96046e-08, 0, -5.96046e-08, 2.27974, 0.154207, 0.127562, 0.124427)
+id_ = 2
+
+[node name="p1" parent="controls/buttons/MeshInstance3D" instance=ExtResource("28_r47aq")]
+transform = Transform3D(2.27974, 0, 0, 0, 2.27974, 5.96046e-08, 0, -5.96046e-08, 2.27974, 0.314617, 0.128092, 0.123542)
 
 [connection signal="packa_a_clicked" from="Node3D/PackaA_01" to="GameHandler" method="_on_packa_a_clicked"]
 [connection signal="packa_a_clicked" from="Node3D/PackaA_02" to="GameHandler" method="_on_packa_a_clicked"]
@@ -424,3 +478,13 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.3
 [connection signal="packa_a_clicked" from="Node3D/PackaA_05" to="GameHandler" method="_on_packa_a_clicked"]
 [connection signal="packa_a_clicked" from="Node3D/PackaA_06" to="GameHandler" method="_on_packa_a_clicked"]
 [connection signal="button_up" from="GameHandler/end_game/VBoxContainer/Reset" to="GameHandler" method="_on_reset_button_up"]
+[connection signal="paka_clicked" from="controls/buttons/MeshInstance3D/p10" to="GameHandler" method="_on_button_clicked"]
+[connection signal="paka_clicked" from="controls/buttons/MeshInstance3D/p8" to="GameHandler" method="_on_button_clicked"]
+[connection signal="paka_clicked" from="controls/buttons/MeshInstance3D/p6" to="GameHandler" method="_on_button_clicked"]
+[connection signal="paka_clicked" from="controls/buttons/MeshInstance3D/p4" to="GameHandler" method="_on_button_clicked"]
+[connection signal="paka_clicked" from="controls/buttons/MeshInstance3D/p2" to="GameHandler" method="_on_button_clicked"]
+[connection signal="paka_clicked" from="controls/buttons/MeshInstance3D/p9" to="GameHandler" method="_on_button_clicked"]
+[connection signal="paka_clicked" from="controls/buttons/MeshInstance3D/p7" to="GameHandler" method="_on_button_clicked"]
+[connection signal="paka_clicked" from="controls/buttons/MeshInstance3D/p5" to="GameHandler" method="_on_button_clicked"]
+[connection signal="paka_clicked" from="controls/buttons/MeshInstance3D/p3" to="GameHandler" method="_on_button_clicked"]
+[connection signal="paka_clicked" from="controls/buttons/MeshInstance3D/p1" to="GameHandler" method="_on_button_clicked"]

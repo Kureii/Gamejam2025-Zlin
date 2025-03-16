@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://doxwjphiphlhi"]
+
+[ext_resource type="Script" uid="uid://k0iply5tw44p" path="res://db/fill_db.gd" id="1_swiad"]
+
+[node name="FillDb" type="Node2D"]
+script = ExtResource("1_swiad")

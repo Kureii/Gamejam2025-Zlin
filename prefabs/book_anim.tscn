@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://ir08jnx3y1tj"]
+[gd_scene load_steps=21 format=4 uid="uid://ir08jnx3y1tj"]
 
 [ext_resource type="Script" uid="uid://dmkaq3i15nelr" path="res://scripts/book_anim.gd" id="1_d2488"]
 [ext_resource type="Material" uid="uid://u4bro5rokmyu" path="res://materials/page_3.tres" id="1_kkc3a"]
@@ -222,7 +222,7 @@ tracks/5/keys = PackedFloat32Array(0, 1, -2.96168e-07, 2.08105e-08, -0.707107, 0
 
 [sub_resource type="Animation" id="Animation_pih4s"]
 resource_name = "book_armature|book_turn_page"
-length = 1.20833
+length = 1.21
 tracks/0/type = "position_3d"
 tracks/0/imported = true
 tracks/0/enabled = true
@@ -313,8 +313,19 @@ tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = PackedFloat32Array(0, 1, -2.96168e-07, 2.08105e-08, -0.707107, 0.707107)
 
+[sub_resource type="Animation" id="Animation_d2488"]
+length = 0.001
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("book_armature/Skeleton3D:page_turn")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_okx7v"]
 _data = {
+&"RESET": SubResource("Animation_d2488"),
 &"book_armature|book_open": SubResource("Animation_0lyfg"),
 &"book_armature|book_turn_page": SubResource("Animation_pih4s"),
 &"book_armature|idle": SubResource("Animation_uvlvi")
@@ -346,7 +357,7 @@ bones/2/parent = 0
 bones/2/rest = Transform3D(5.96046e-08, 1, 4.48275e-07, -1, 5.96046e-08, 3.89414e-07, 3.89414e-07, -4.48275e-07, 1, -0.00011311, -0.000303034, -1.67161e-10)
 bones/2/enabled = true
 bones/2/position = Vector3(-0.00011311, -0.000303034, -1.67161e-10)
-bones/2/rotation = Quaternion(-1.59753e-07, 2.29517e-07, -0.751579, -0.659644)
+bones/2/rotation = Quaternion(0, 0, 0, 1)
 bones/2/scale = Vector3(1, 1, 1)
 bones/3/name = "page_1-2"
 bones/3/parent = 2
@@ -429,7 +440,7 @@ mesh = SubResource("ArrayMesh_da0br")
 skeleton = NodePath("")
 
 [node name="page_1-2" type="BoneAttachment3D" parent="book_armature/Skeleton3D"]
-transform = Transform3D(-0.126735, 5.5576e-07, -0.991937, 1.32594e-07, 1, 5.43337e-07, 0.991937, -6.26652e-08, -0.126735, -0.00347526, -3.40026e-11, -0.00061681)
+transform = Transform3D(0.999999, -1.3369e-07, 0.00131402, 1.33591e-07, 1, 7.59035e-08, -0.00131399, -7.57279e-08, 0.999999, -0.00346441, -3.85832e-11, -0.000606754)
 bone_name = "page_1-2"
 bone_idx = 3
 

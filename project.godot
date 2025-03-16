@@ -10,10 +10,13 @@ config_version=5
 
 [application]
 
-config/name="delivery-boy"
+config/name="Pasta than lights"
 run/main_scene="uid://l87mq0igmsgr"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://icon.svg"
+boot_splash/bg_color=Color(0.843137, 0.184314, 0.184314, 1)
+boot_splash/fullsize=false
+boot_splash/image="uid://bo3b57wjmkro1"
+config/icon="uid://ds12n5d1rlnbs"
 
 [display]
 
