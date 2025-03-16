@@ -1,0 +1,661 @@
+[gd_scene load_steps=49 format=3 uid="uid://4p1bkum06la0"]
+
+[ext_resource type="Script" uid="uid://bd08io3mejpxx" path="res://scripts/game_handler.gd" id="1_n2a3o"]
+[ext_resource type="Script" uid="uid://c5n7umji3stt" path="res://scripts/book_controls.gd" id="2_qko2w"]
+[ext_resource type="Script" uid="uid://c7hbtyc3jvd43" path="res://scripts/camera_3d.gd" id="3_yi16n"]
+[ext_resource type="PackedScene" uid="uid://8qnhlvs44g0a" path="res://scenes/book.tscn" id="4_0yui4"]
+[ext_resource type="Shader" uid="uid://c8vtjramkh5gu" path="res://retro/display.gdshader" id="5_a4nrk"]
+[ext_resource type="Texture2D" uid="uid://b0gqxb1nbjppw" path="res://display_test.png" id="6_646uv"]
+[ext_resource type="ArrayMesh" uid="uid://15d0a6h2icpa" path="res://3d_assets/new/tv_big.obj" id="7_b4d5j"]
+[ext_resource type="ArrayMesh" uid="uid://bghaaukoptge8" path="res://3d_assets/new/floor.obj" id="8_s1687"]
+[ext_resource type="Texture2D" uid="uid://cs3xqy5waoxcm" path="res://3d_assets/textures/steny.png" id="9_v02m1"]
+[ext_resource type="ArrayMesh" uid="uid://bjf2urd64r4x5" path="res://3d_assets/new/cocpit.obj" id="10_i0xd5"]
+[ext_resource type="ArrayMesh" uid="uid://bnd4proe5jpg1" path="res://3d_assets/new/ceil.obj" id="11_dxxrn"]
+[ext_resource type="ArrayMesh" uid="uid://crrqjf52hkpet" path="res://3d_assets/enviro/stena_1.obj" id="12_kjgvl"]
+[ext_resource type="Material" uid="uid://xub4wyj5ikb6" path="res://materials/3d/stul1.tres" id="13_nxw5x"]
+[ext_resource type="ArrayMesh" uid="uid://bk66opkbtydi0" path="res://3d_assets/new/main_table.obj" id="14_pdk7i"]
+[ext_resource type="Material" uid="uid://cylm7i511jom8" path="res://materials/3d/stul2.tres" id="15_nkkbq"]
+[ext_resource type="ArrayMesh" uid="uid://c6yso8wui2dh0" path="res://3d_assets/new/control_panel_holder.obj" id="16_pvyty"]
+[ext_resource type="Material" uid="uid://cw7uy6il4i7a8" path="res://materials/3d/stul3.tres" id="17_15lsc"]
+[ext_resource type="ArrayMesh" uid="uid://2bamefv28gn0" path="res://3d_assets/new/tv_big_holder.obj" id="18_43lhj"]
+[ext_resource type="Material" uid="uid://nwtjadtjj5j2" path="res://materials/metal.tres" id="19_huteb"]
+[ext_resource type="ArrayMesh" uid="uid://bcwtclhjsmw5e" path="res://3d_assets/new/pipe_01.obj" id="20_wveoc"]
+[ext_resource type="ArrayMesh" uid="uid://0pov20xc2vsy" path="res://3d_assets/new/pipe_02.obj" id="21_bfvxq"]
+[ext_resource type="Material" uid="uid://doq0n3vhob6ud" path="res://materials/light.tres" id="22_tvpng"]
+[ext_resource type="ArrayMesh" uid="uid://c5pjcaosn7twx" path="res://3d_assets/new/light_object_ceil.obj" id="23_omjy2"]
+[ext_resource type="Script" uid="uid://d1bprshwb784p" path="res://scripts/light_object_ceil.gd" id="24_4uwai"]
+[ext_resource type="PackedScene" uid="uid://dgay77gybnsut" path="res://prefabs/light_wall.tscn" id="25_b7qx2"]
+[ext_resource type="Material" uid="uid://cjtp1nmk7bpf2" path="res://materials/tv_box.tres" id="26_fb748"]
+[ext_resource type="ArrayMesh" uid="uid://cgrgyu0qr4f1x" path="res://3d_assets/new/tv_right.obj" id="27_aq8sk"]
+[ext_resource type="ArrayMesh" uid="uid://bf7pukvsulpv1" path="res://3d_assets/new/tv_box.obj" id="28_g6hb5"]
+[ext_resource type="Texture2D" uid="uid://dqw3kjv68d4pv" path="res://3d_assets/textures/kalendar.png" id="29_eandj"]
+[ext_resource type="PackedScene" path="res://prefabs/led.tscn" id="30_ird30"]
+[ext_resource type="PackedScene" path="res://prefabs/fuel_d.tscn" id="31_4qmc1"]
+[ext_resource type="PackedScene" path="res://prefabs/keyboard.tscn" id="32_diroa"]
+[ext_resource type="PackedScene" uid="uid://wym6hw0mljks" path="res://prefabs/button.tscn" id="33_2n8u4"]
+[ext_resource type="PackedScene" uid="uid://djucdvqhspvog" path="res://prefabs/paka.tscn" id="34_i1v2r"]
+[ext_resource type="PackedScene" path="res://prefabs/valve.tscn" id="35_ixlas"]
+[ext_resource type="PackedScene" path="res://prefabs/joystick.tscn" id="36_w1wq6"]
+[ext_resource type="ArrayMesh" uid="uid://cutyjwstpjs7b" path="res://3d_assets/book/book.obj" id="37_6ht4o"]
+[ext_resource type="Material" uid="uid://bg1lrplmdliry" path="res://materials/book_cover.tres" id="38_wthen"]
+[ext_resource type="Material" path="res://materials/paper.tres" id="39_8oirv"]
+[ext_resource type="Environment" uid="uid://kte4spmm34qe" path="res://scenes/lod_test.tres" id="40_avapy"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4fjq2"]
+render_priority = 0
+shader = ExtResource("5_a4nrk")
+shader_parameter/display_source = ExtResource("6_646uv")
+shader_parameter/distort = 0.34
+shader_parameter/scanline_scale = 4.465
+shader_parameter/scanline_strength = 0.325
+shader_parameter/scanline_speed = 4.0
+shader_parameter/emission_intensity = 1.295
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5dk4p"]
+albedo_texture = ExtResource("9_v02m1")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_twkf6"]
+albedo_texture = ExtResource("9_v02m1")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p5o0s"]
+render_priority = 0
+shader = ExtResource("5_a4nrk")
+shader_parameter/display_source = ExtResource("6_646uv")
+shader_parameter/distort = 0.29
+shader_parameter/scanline_scale = 2.0
+shader_parameter/scanline_strength = 0.325
+shader_parameter/scanline_speed = 6.0
+shader_parameter/emission_intensity = 1.295
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rw4oa"]
+albedo_texture = ExtResource("29_eandj")
+clearcoat_enabled = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_r47aq"]
+uv2_padding = 2.65
+size = Vector2(0.925, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_rw4oa"]
+size = Vector3(0.81, 0.225, 0.37)
+
+[sub_resource type="BoxMesh" id="BoxMesh_yhpmq"]
+size = Vector3(0.66, 0.14, 0.435)
+
+[node name="GameScene" type="Node3D"]
+
+[node name="GameHandler" type="Node" parent="." node_paths=PackedStringArray("sequence_text_", "end_text_")]
+script = ExtResource("1_n2a3o")
+sequence_text_ = NodePath("info")
+end_text_ = NodePath("end_game/VBoxContainer/GO_label")
+
+[node name="MarginContainer2" type="MarginContainer" parent="GameHandler"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+script = ExtResource("2_qko2w")
+
+[node name="MarginContainer" type="MarginContainer" parent="GameHandler/MarginContainer2"]
+layout_mode = 2
+theme_override_constants/margin_left = 400
+theme_override_constants/margin_top = 135
+theme_override_constants/margin_right = 400
+theme_override_constants/margin_bottom = 160
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GameHandler/MarginContainer2/MarginContainer"]
+layout_mode = 2
+
+[node name="prew_button" type="Button" parent="GameHandler/MarginContainer2/MarginContainer/HBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(120, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 24
+text = "
+"
+
+[node name="next_button" type="Button" parent="GameHandler/MarginContainer2/MarginContainer/HBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(120, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 24
+
+[node name="Button" type="Button" parent="GameHandler/MarginContainer2"]
+custom_minimum_size = Vector2(150, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+size_flags_stretch_ratio = 2.17
+text = "Manual"
+
+[node name="info" type="Label" parent="GameHandler"]
+offset_right = 1919.0
+offset_bottom = 99.0
+theme_override_font_sizes/font_size = 35
+text = "<palaceholder>"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="end_game" type="Panel" parent="GameHandler"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameHandler/end_game"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="GO_label" type="Label" parent="GameHandler/end_game/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "win/lose"
+horizontal_alignment = 1
+
+[node name="Reset" type="Button" parent="GameHandler/end_game/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 64
+text = "Reset"
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5359, -0.90271)
+fov = 66.1
+far = 41.24
+script = ExtResource("3_yi16n")
+
+[node name="Book" parent="Camera3D" instance=ExtResource("4_0yui4")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.00827837, 0.00660646, -0.726749)
+visible = false
+
+[node name="lod" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.152397, 0.166719)
+
+[node name="tv_big" type="MeshInstance3D" parent="lod"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.363, -3.39071)
+material_override = SubResource("ShaderMaterial_4fjq2")
+mesh = ExtResource("7_b4d5j")
+skeleton = NodePath("../..")
+
+[node name="main_object" type="Node3D" parent="lod"]
+
+[node name="floor" type="MeshInstance3D" parent="lod/main_object"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.55161, 0, 3.12691)
+mesh = ExtResource("8_s1687")
+skeleton = NodePath("../..")
+
+[node name="Cocpit" type="MeshInstance3D" parent="lod/main_object"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.48046, 0, 1.49939)
+visible = false
+material_override = SubResource("StandardMaterial3D_5dk4p")
+mesh = ExtResource("10_i0xd5")
+skeleton = NodePath("../..")
+
+[node name="Ceil" type="MeshInstance3D" parent="lod/main_object"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.48046, 0, 1.49939)
+mesh = ExtResource("11_dxxrn")
+skeleton = NodePath("../..")
+
+[node name="Stena1" type="MeshInstance3D" parent="lod/main_object"]
+transform = Transform3D(0.952706, 0, 0, 0, 1.0471, 0, 0, 0, 1.0471, -0.0203524, 0.479451, -3.63277)
+material_override = SubResource("StandardMaterial3D_twkf6")
+mesh = ExtResource("12_kjgvl")
+skeleton = NodePath("../Cocpit")
+
+[node name="game_space" type="Node3D" parent="lod"]
+
+[node name="MainTable" type="MeshInstance3D" parent="lod/game_space"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, -2.933)
+material_override = ExtResource("13_nxw5x")
+mesh = ExtResource("14_pdk7i")
+skeleton = NodePath("../..")
+
+[node name="ControlPanelHolder" type="MeshInstance3D" parent="lod/game_space"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.628505, -2.91086)
+material_override = ExtResource("15_nkkbq")
+mesh = ExtResource("16_pvyty")
+skeleton = NodePath("../..")
+
+[node name="TvBigHolder" type="MeshInstance3D" parent="lod/game_space"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.08039, -3.44861)
+material_override = ExtResource("17_15lsc")
+mesh = ExtResource("18_43lhj")
+skeleton = NodePath("../../..")
+
+[node name="Pipe01" type="MeshInstance3D" parent="lod/game_space"]
+transform = Transform3D(0.32918, 0, -0.944267, 0, 1, 0, 0.944267, 0, 0.32918, 2.0334, 0.874369, -2.10571)
+material_override = ExtResource("19_huteb")
+mesh = ExtResource("20_wveoc")
+
+[node name="Pipe02" type="MeshInstance3D" parent="lod/game_space"]
+transform = Transform3D(0.0231931, 0, -0.999731, 0, 1, 0, 0.999731, 0, 0.0231931, 1.81763, 0.152397, -2.35365)
+material_override = ExtResource("19_huteb")
+mesh = ExtResource("21_bfvxq")
+
+[node name="lights" type="Node3D" parent="lod"]
+
+[node name="lights_objects" type="Node3D" parent="lod/lights"]
+
+[node name="LightObjectCeil" type="MeshInstance3D" parent="lod/lights/lights_objects"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0010376, 3.3185, -2.80986)
+material_override = ExtResource("22_tvpng")
+mesh = ExtResource("23_omjy2")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = ExtResource("22_tvpng")
+script = ExtResource("24_4uwai")
+use_temperature = true
+color = Color(2, 0.65, 0.079, 1)
+intensity = 0.3
+temperature = 6500.0
+temperature_intensity = 1.136
+
+[node name="Node3D" type="Node3D" parent="lod/lights/lights_objects/LightObjectCeil"]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.115198, -0.125845)
+light_color = Color(0.249244, 0.081541, 0, 1)
+omni_range = 3.41979
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.115198, 0.198371)
+light_color = Color(0.249244, 0.081541, 0, 1)
+omni_range = 3.41979
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.115198, 0.573091)
+light_color = Color(0.249244, 0.081541, 0, 1)
+omni_range = 3.41979
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.115198, 0.962336)
+light_color = Color(0.249244, 0.081541, 0, 1)
+omni_range = 3.41979
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.115198, 1.33996)
+light_color = Color(0.249244, 0.081541, 0, 1)
+omni_range = 3.41979
+
+[node name="OmniLight3D6" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.115198, 1.7263)
+light_color = Color(0.249244, 0.081541, 0, 1)
+omni_range = 3.41979
+
+[node name="OmniLight3D7" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.115198, 2.11264)
+light_color = Color(0.249244, 0.081541, 0, 1)
+omni_range = 3.41979
+
+[node name="OmniLight3D8" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.115198, 2.48155)
+light_color = Color(0.249244, 0.081541, 0, 1)
+omni_range = 3.41979
+
+[node name="OmniLight3D9" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.115198, 2.86499)
+light_color = Color(0.249244, 0.081541, 0, 1)
+omni_range = 3.41979
+
+[node name="OmniLight3D10" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.115198, 3.22518)
+light_color = Color(0.249244, 0.081541, 0, 1)
+omni_range = 3.41979
+
+[node name="OmniLight3D11" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.646212, -0.164304, -0.125845)
+light_color = Color(0.249244, 0.081541, 0, 1)
+omni_range = 3.41979
+
+[node name="OmniLight3D12" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.646212, -0.164304, 0.198371)
+light_color = Color(0.249244, 0.081541, 0, 1)
+omni_range = 3.41979
+
+[node name="OmniLight3D13" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.646212, -0.164304, 0.573091)
+light_color = Color(0.249244, 0.081541, 0, 1)
+omni_range = 3.41979
+
+[node name="OmniLight3D14" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.646212, -0.164304, 0.962336)
+light_color = Color(0.249244, 0.081541, 0, 1)
+omni_range = 3.41979
+
+[node name="OmniLight3D15" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.646212, -0.164304, 1.33996)
+light_color = Color(0.249244, 0.081541, 0, 1)
+omni_range = 3.41979
+
+[node name="OmniLight3D16" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.646212, -0.164304, 1.7263)
+light_color = Color(0.249244, 0.081541, 0, 1)
+omni_range = 3.41979
+
+[node name="OmniLight3D17" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.646212, -0.164304, 2.11264)
+light_color = Color(0.249244, 0.081541, 0, 1)
+omni_range = 3.41979
+
+[node name="OmniLight3D18" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.646212, -0.164304, 2.48155)
+light_color = Color(0.249244, 0.081541, 0, 1)
+omni_range = 3.41979
+
+[node name="OmniLight3D19" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.646212, -0.164304, 2.86499)
+light_color = Color(0.249244, 0.081541, 0, 1)
+omni_range = 3.41979
+
+[node name="OmniLight3D20" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.646212, -0.164304, 3.22518)
+light_color = Color(0.249244, 0.081541, 0, 1)
+omni_range = 3.41979
+
+[node name="OmniLight3D21" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.656313, -0.164304, -0.125845)
+light_color = Color(0.249244, 0.081541, 0, 1)
+omni_range = 3.41979
+
+[node name="OmniLight3D22" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.656313, -0.164304, 0.198371)
+light_color = Color(0.249244, 0.081541, 0, 1)
+omni_range = 3.41979
+
+[node name="OmniLight3D23" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.656313, -0.164304, 0.573091)
+light_color = Color(0.249244, 0.081541, 0, 1)
+omni_range = 3.41979
+
+[node name="OmniLight3D24" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.656313, -0.164304, 0.962336)
+light_color = Color(0.249244, 0.081541, 0, 1)
+omni_range = 3.41979
+
+[node name="OmniLight3D25" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.656313, -0.164304, 1.33996)
+light_color = Color(0.249244, 0.081541, 0, 1)
+omni_range = 3.41979
+
+[node name="OmniLight3D26" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.656313, -0.164304, 1.7263)
+light_color = Color(0.249244, 0.081541, 0, 1)
+omni_range = 3.41979
+
+[node name="OmniLight3D27" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.656313, -0.164304, 2.11264)
+light_color = Color(0.249244, 0.081541, 0, 1)
+omni_range = 3.41979
+
+[node name="OmniLight3D28" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.656313, -0.164304, 2.48155)
+light_color = Color(0.249244, 0.081541, 0, 1)
+omni_range = 3.41979
+
+[node name="OmniLight3D29" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.656313, -0.164304, 2.86499)
+light_color = Color(0.249244, 0.081541, 0, 1)
+omni_range = 3.41979
+
+[node name="OmniLight3D30" type="OmniLight3D" parent="lod/lights/lights_objects/LightObjectCeil/Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.656313, -0.164304, 3.22518)
+light_color = Color(0.249244, 0.081541, 0, 1)
+omni_range = 3.41979
+
+[node name="LightObjectWall2" parent="lod/lights/lights_objects" instance=ExtResource("25_b7qx2")]
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 1.25133, 1.63274, -3.42322)
+intensity = 0.3
+temperature = 3400.0
+temperature_intensity = 0.5
+
+[node name="LightObjectWall3" parent="lod/lights/lights_objects" instance=ExtResource("25_b7qx2")]
+transform = Transform3D(1, 0, -8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -1.2462, 1.63274, -3.42322)
+intensity = 0.3
+temperature = 3400.0
+temperature_intensity = 0.5
+
+[node name="SpotLight3D" type="SpotLight3D" parent="lod/lights"]
+transform = Transform3D(0.94389, 0.254911, 0.209982, -0.330105, 0.747715, 0.576154, -0.0101382, -0.613142, 0.789908, 1.18126, 2.76725, -1.31345)
+light_energy = 2.595
+spot_angle = 26.33
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="lod/lights"]
+transform = Transform3D(0.930182, -0.324943, -0.170805, 0.351739, 0.655725, 0.66806, -0.10508, -0.681496, 0.724239, -0.828884, 2.93887, -1.31345)
+light_energy = 0.658
+spot_range = 7.08039
+spot_angle = 63.3653
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="lod/lights"]
+transform = Transform3D(0.993201, 0.0220757, -0.114297, 0.11543, -0.0596559, 0.991523, 0.0150701, -0.997975, -0.0617985, -2.2257, 2.38313, -1.89444)
+light_color = Color(0.526552, 0.516777, 0.61244, 1)
+light_energy = 1.228
+spot_range = 7.08039
+spot_angle = 25.9725
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="lod/lights"]
+transform = Transform3D(0.993201, 0.0220757, -0.114297, 0.11543, -0.0596559, 0.991523, 0.0150701, -0.997975, -0.0617985, -1.29104, 2.38313, -2.98713)
+light_color = Color(0.526552, 0.516777, 0.61244, 1)
+light_energy = 1.228
+spot_range = 7.08039
+spot_angle = 25.9725
+
+[node name="SpotLight3D5" type="SpotLight3D" parent="lod/lights"]
+transform = Transform3D(0.993201, 0.0220757, -0.114297, 0.11543, -0.0596559, 0.991523, 0.0150701, -0.997975, -0.0617985, 1.38553, 2.38313, -1.95734)
+light_color = Color(0.526552, 0.516777, 0.61244, 1)
+light_energy = 1.228
+spot_range = 7.08039
+spot_angle = 25.9725
+
+[node name="SpotLight3D6" type="SpotLight3D" parent="lod/lights"]
+transform = Transform3D(0.661799, 0.0682105, -0.746572, 0.110226, -0.993883, 0.00690388, -0.741534, -0.0868606, -0.665269, -0.646615, 1.28744, -3.04874)
+light_color = Color(0.946647, 0.945381, 0.96123, 1)
+light_energy = 3.076
+spot_range = 12.5219
+spot_attenuation = 1.44
+spot_angle = 14.34
+
+[node name="TvRight" type="MeshInstance3D" parent="lod"]
+transform = Transform3D(0.621257, 0, -0.322552, 0, 0.7, 0, 0.322552, 0, 0.621257, 1.42223, 2.22798, -2.57309)
+material_override = ExtResource("26_fb748")
+material_overlay = ExtResource("19_huteb")
+mesh = ExtResource("27_aq8sk")
+
+[node name="TvBox" type="MeshInstance3D" parent="lod/TvRight"]
+transform = Transform3D(0.928571, 0, 0.000615835, 0, 0.928571, 0, -0.000615835, 0, 0.928571, -0.00782454, -0.00663662, 0.175539)
+material_override = SubResource("ShaderMaterial_p5o0s")
+mesh = ExtResource("28_g6hb5")
+skeleton = NodePath("../../game_space")
+
+[node name="TvRight2" type="MeshInstance3D" parent="lod"]
+transform = Transform3D(0.573112, 0, 0.401924, 0, 0.7, 0, -0.401924, 0, 0.573112, -1.34841, 2.52489, -2.85791)
+material_override = ExtResource("26_fb748")
+mesh = ExtResource("27_aq8sk")
+
+[node name="TvBox" type="MeshInstance3D" parent="lod/TvRight2"]
+transform = Transform3D(-0.928571, 0, -8.11783e-08, 0, 0.928571, 0, 8.11783e-08, 0, -0.928571, -0.00782454, -0.00663662, 0.175539)
+material_override = SubResource("ShaderMaterial_p5o0s")
+mesh = ExtResource("28_g6hb5")
+skeleton = NodePath("../../game_space")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="lod"]
+transform = Transform3D(0.0531182, 0.0661935, 1.66774, -0.00210652, 1.66914, -0.066138, -1.2976, -9.72104e-11, 0.0683789, -2.29588, 2.14585, -1.43849)
+material_override = SubResource("StandardMaterial3D_rw4oa")
+mesh = SubResource("QuadMesh_r47aq")
+
+[node name="controls" type="Node3D" parent="."]
+
+[node name="Led" parent="controls" instance=ExtResource("30_ird30")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.42011, 1.24956, -2.25406)
+
+[node name="FuelD" parent="controls" instance=ExtResource("31_4qmc1")]
+transform = Transform3D(-4.35218e-08, 0.995662, -0.0930483, -1, -4.37114e-08, 0, -4.06727e-09, 0.0930483, 0.995662, -2.29857, 1.81755, -2.22361)
+drag_speed = 0.025
+drag_limit = 0.43
+step_size = 0.01
+
+[node name="buttons" type="Node3D" parent="controls"]
+
+[node name="Keyboard" parent="controls/buttons" instance=ExtResource("32_diroa")]
+transform = Transform3D(0.767812, -1.51193e-08, 0.208121, -3.72529e-09, 0.795519, 4.38905e-17, -0.208121, -7.30506e-08, 0.767812, -1.08386, 0.77923, -2.62754)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="controls/buttons"]
+transform = Transform3D(0.926272, -0.118074, -0.35788, 0, 0.94965, -0.313313, 0.376855, 0.290213, 0.879634, 1.3125, 0.692455, -2.60739)
+material_override = ExtResource("26_fb748")
+mesh = SubResource("BoxMesh_rw4oa")
+
+[node name="p10" parent="controls/buttons/MeshInstance3D" instance=ExtResource("33_2n8u4")]
+transform = Transform3D(2.27974, 0, 0, 0, 2.27974, 1.78814e-07, 0, -1.78814e-07, 2.27974, -0.301298, 0.112653, -0.0703497)
+id_ = 9
+
+[node name="p8" parent="controls/buttons/MeshInstance3D" instance=ExtResource("33_2n8u4")]
+transform = Transform3D(2.27974, 0, 0, 0, 2.27974, 1.78814e-07, 0, -1.78814e-07, 2.27974, -0.153466, 0.112653, -0.0703487)
+id_ = 7
+
+[node name="p6" parent="controls/buttons/MeshInstance3D" instance=ExtResource("33_2n8u4")]
+transform = Transform3D(2.27974, 0, 0, 0, 2.27974, 1.78814e-07, 0, -1.78814e-07, 2.27974, -0.00647336, 0.112653, -0.0703487)
+id_ = 5
+
+[node name="p4" parent="controls/buttons/MeshInstance3D" instance=ExtResource("33_2n8u4")]
+transform = Transform3D(2.27974, 0, 0, 0, 2.27974, 1.78814e-07, 0, -1.78814e-07, 2.27974, 0.154207, 0.112653, -0.0703487)
+id_ = 3
+
+[node name="p2" parent="controls/buttons/MeshInstance3D" instance=ExtResource("33_2n8u4")]
+transform = Transform3D(2.27974, 0, 0, 0, 2.27974, 1.78814e-07, 0, -1.78814e-07, 2.27974, 0.314617, 0.113184, -0.071234)
+id_ = 1
+
+[node name="p9" parent="controls/buttons/MeshInstance3D" instance=ExtResource("33_2n8u4")]
+transform = Transform3D(2.27974, 0, 0, 0, 2.27974, 1.19209e-07, 0, -1.19209e-07, 2.27974, -0.301298, 0.117813, 0.0859938)
+id_ = 8
+
+[node name="p7" parent="controls/buttons/MeshInstance3D" instance=ExtResource("33_2n8u4")]
+transform = Transform3D(2.27974, 0, 0, 0, 2.27974, 1.19209e-07, 0, -1.19209e-07, 2.27974, -0.153466, 0.117814, 0.085994)
+id_ = 6
+
+[node name="p5" parent="controls/buttons/MeshInstance3D" instance=ExtResource("33_2n8u4")]
+transform = Transform3D(2.27974, 0, 0, 0, 2.27974, 1.19209e-07, 0, -1.19209e-07, 2.27974, -0.00647336, 0.117814, 0.085994)
+id_ = 4
+
+[node name="p3" parent="controls/buttons/MeshInstance3D" instance=ExtResource("33_2n8u4")]
+transform = Transform3D(2.27974, 0, 0, 0, 2.27974, 1.19209e-07, 0, -1.19209e-07, 2.27974, 0.154207, 0.117814, 0.085995)
+id_ = 2
+
+[node name="p1" parent="controls/buttons/MeshInstance3D" instance=ExtResource("33_2n8u4")]
+transform = Transform3D(2.27974, 0, 0, 0, 2.27974, 1.19209e-07, 0, -1.19209e-07, 2.27974, 0.314617, 0.118344, 0.0851099)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="controls/buttons"]
+transform = Transform3D(0.977443, 0.114816, -0.177262, -0.112973, 0.993387, 0.0204879, 0.178442, 1.84072e-09, 0.98395, -1.88906, 0.73027, -1.60843)
+material_override = ExtResource("26_fb748")
+mesh = SubResource("BoxMesh_yhpmq")
+
+[node name="a" parent="controls/buttons/MeshInstance3D2" instance=ExtResource("33_2n8u4")]
+transform = Transform3D(2.372, -1.20367e-09, -2.98023e-08, 5.80279e-08, 2.372, 2.4813e-09, 1.78814e-07, -1.40878e-08, 2.372, 0.239396, 0.0632954, 0.135192)
+id_ = 16
+
+[node name="a2" parent="controls/buttons/MeshInstance3D2" instance=ExtResource("33_2n8u4")]
+transform = Transform3D(2.372, -1.73272e-09, 0, 8.78302e-08, 2.372, -1.24399e-09, 2.08616e-07, -1.7005e-08, 2.372, 0.0948861, 0.0635033, 0.137411)
+id_ = 17
+
+[node name="a3" parent="controls/buttons/MeshInstance3D2" instance=ExtResource("33_2n8u4")]
+transform = Transform3D(2.372, -2.26176e-09, 2.98023e-08, 1.17633e-07, 2.372, -4.96928e-09, 2.38419e-07, -1.99222e-08, 2.372, -0.0486035, 0.0613132, 0.137046)
+id_ = 18
+
+[node name="a4" parent="controls/buttons/MeshInstance3D2" instance=ExtResource("33_2n8u4")]
+transform = Transform3D(2.372, -2.26176e-09, 2.98023e-08, 1.17633e-07, 2.372, -4.96928e-09, 2.38419e-07, -1.99222e-08, 2.372, -0.194893, 0.0594854, 0.13479)
+id_ = 19
+
+[node name="a5" parent="controls/buttons/MeshInstance3D2" instance=ExtResource("33_2n8u4")]
+transform = Transform3D(2.372, -3.31985e-09, 8.9407e-08, 1.77237e-07, 2.372, -1.24199e-08, 2.98023e-07, -2.57567e-08, 2.372, 0.239604, 0.0625131, -0.00397849)
+id_ = 20
+
+[node name="a6" parent="controls/buttons/MeshInstance3D2" instance=ExtResource("33_2n8u4")]
+transform = Transform3D(2.372, -3.84889e-09, 1.19209e-07, 2.07039e-07, 2.372, -1.98704e-08, 3.27826e-07, -2.86739e-08, 2.372, 0.0950942, 0.0627211, -0.00175917)
+id_ = 21
+
+[node name="a7" parent="controls/buttons/MeshInstance3D2" instance=ExtResource("33_2n8u4")]
+transform = Transform3D(2.372, -4.37794e-09, 1.49012e-07, 2.36842e-07, 2.372, -2.35957e-08, 3.27826e-07, -3.15911e-08, 2.372, -0.0483954, 0.060531, -0.00212431)
+id_ = 22
+
+[node name="a8" parent="controls/buttons/MeshInstance3D2" instance=ExtResource("33_2n8u4")]
+transform = Transform3D(2.372, -4.37794e-09, 1.49012e-07, 2.36842e-07, 2.372, -2.35957e-08, 3.27826e-07, -3.15911e-08, 2.372, -0.194685, 0.0587032, -0.00437999)
+id_ = 23
+
+[node name="a9" parent="controls/buttons/MeshInstance3D2" instance=ExtResource("33_2n8u4")]
+transform = Transform3D(2.372, -2.7908e-09, 5.96046e-08, 1.47435e-07, 2.372, -8.69457e-09, 2.68221e-07, -2.28394e-08, 2.372, 0.240331, 0.0645744, -0.138445)
+id_ = 24
+
+[node name="a10" parent="controls/buttons/MeshInstance3D2" instance=ExtResource("33_2n8u4")]
+transform = Transform3D(2.372, -3.31985e-09, 8.9407e-08, 1.77237e-07, 2.372, -1.24199e-08, 2.98023e-07, -2.57567e-08, 2.372, 0.0958221, 0.0647823, -0.136225)
+id_ = 25
+
+[node name="a11" parent="controls/buttons/MeshInstance3D2" instance=ExtResource("33_2n8u4")]
+transform = Transform3D(2.372, -3.84889e-09, 1.19209e-07, 2.07039e-07, 2.372, -1.98704e-08, 3.27826e-07, -2.86739e-08, 2.372, -0.0476682, 0.0625923, -0.13659)
+id_ = 26
+
+[node name="a12" parent="controls/buttons/MeshInstance3D2" instance=ExtResource("33_2n8u4")]
+transform = Transform3D(2.372, -3.84889e-09, 1.19209e-07, 2.07039e-07, 2.372, -1.98704e-08, 3.27826e-07, -2.86739e-08, 2.372, -0.193958, 0.0607645, -0.138846)
+id_ = 27
+
+[node name="PackaB" parent="controls" instance=ExtResource("34_i1v2r")]
+transform = Transform3D(-2.07798, 0.0425571, 0.0243468, 0.039588, 0.847424, 1.89756, 0.0289251, 1.89749, -0.847999, -0.931001, 1.09475, -3.05143)
+id = 10
+
+[node name="Valve" parent="controls" instance=ExtResource("35_ixlas")]
+transform = Transform3D(-1.19209e-07, 1.93249e-08, -1, 2.98023e-08, 1, -4.70318e-08, 1, -2.04891e-08, -1.49012e-07, 1.80511, 1.26249, -1.95679)
+
+[node name="Valve2" parent="controls" instance=ExtResource("35_ixlas")]
+transform = Transform3D(-1.19209e-07, 1.93249e-08, -1, 2.98023e-08, 1, -4.70318e-08, 1, -2.04891e-08, -1.49012e-07, 1.60439, 1.71727, -1.53772)
+
+[node name="Joystick" parent="controls" instance=ExtResource("36_w1wq6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.715316, -2.41113)
+
+[node name="Book" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.687143, 0, 0, 0, 0.146101, -0.671432, 0, 0.671432, 0.146101, 0.604378, 1.05446, -2.96962)
+mesh = ExtResource("37_6ht4o")
+surface_material_override/0 = ExtResource("38_wthen")
+surface_material_override/1 = ExtResource("39_8oirv")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("40_avapy")
+
+[connection signal="button_up" from="GameHandler/MarginContainer2/MarginContainer/HBoxContainer/prew_button" to="Camera3D" method="_on_prew_button_button_up"]
+[connection signal="button_up" from="GameHandler/MarginContainer2/MarginContainer/HBoxContainer/next_button" to="Camera3D" method="_on_next_button_button_up"]
+[connection signal="button_up" from="GameHandler/MarginContainer2/Button" to="GameHandler" method="_on_manual_button_up"]
+[connection signal="button_up" from="GameHandler/end_game/VBoxContainer/Reset" to="GameHandler" method="_on_reset_button_up"]
+[connection signal="visibility_changed" from="Camera3D/Book" to="GameHandler/MarginContainer2" method="_on_book_visibility_changed"]
+[connection signal="paka_clicked" from="controls/buttons/MeshInstance3D/p10" to="GameHandler" method="_on_button_clicked"]
+[connection signal="paka_clicked" from="controls/buttons/MeshInstance3D/p8" to="GameHandler" method="_on_button_clicked"]
+[connection signal="paka_clicked" from="controls/buttons/MeshInstance3D/p6" to="GameHandler" method="_on_button_clicked"]
+[connection signal="paka_clicked" from="controls/buttons/MeshInstance3D/p4" to="GameHandler" method="_on_button_clicked"]
+[connection signal="paka_clicked" from="controls/buttons/MeshInstance3D/p2" to="GameHandler" method="_on_button_clicked"]
+[connection signal="paka_clicked" from="controls/buttons/MeshInstance3D/p9" to="GameHandler" method="_on_button_clicked"]
+[connection signal="paka_clicked" from="controls/buttons/MeshInstance3D/p7" to="GameHandler" method="_on_button_clicked"]
+[connection signal="paka_clicked" from="controls/buttons/MeshInstance3D/p5" to="GameHandler" method="_on_button_clicked"]
+[connection signal="paka_clicked" from="controls/buttons/MeshInstance3D/p3" to="GameHandler" method="_on_button_clicked"]
+[connection signal="paka_clicked" from="controls/buttons/MeshInstance3D/p1" to="GameHandler" method="_on_button_clicked"]
+[connection signal="paka_clicked" from="controls/buttons/MeshInstance3D2/a" to="GameHandler" method="_on_button_clicked"]
+[connection signal="paka_clicked" from="controls/buttons/MeshInstance3D2/a2" to="GameHandler" method="_on_button_clicked"]
+[connection signal="paka_clicked" from="controls/buttons/MeshInstance3D2/a3" to="GameHandler" method="_on_button_clicked"]
+[connection signal="paka_clicked" from="controls/buttons/MeshInstance3D2/a4" to="GameHandler" method="_on_button_clicked"]
+[connection signal="paka_clicked" from="controls/buttons/MeshInstance3D2/a5" to="GameHandler" method="_on_button_clicked"]
+[connection signal="paka_clicked" from="controls/buttons/MeshInstance3D2/a6" to="GameHandler" method="_on_button_clicked"]
+[connection signal="paka_clicked" from="controls/buttons/MeshInstance3D2/a7" to="GameHandler" method="_on_button_clicked"]
+[connection signal="paka_clicked" from="controls/buttons/MeshInstance3D2/a8" to="GameHandler" method="_on_button_clicked"]
+[connection signal="paka_clicked" from="controls/buttons/MeshInstance3D2/a9" to="GameHandler" method="_on_button_clicked"]
+[connection signal="paka_clicked" from="controls/buttons/MeshInstance3D2/a10" to="GameHandler" method="_on_button_clicked"]
+[connection signal="paka_clicked" from="controls/buttons/MeshInstance3D2/a11" to="GameHandler" method="_on_button_clicked"]
+[connection signal="paka_clicked" from="controls/buttons/MeshInstance3D2/a12" to="GameHandler" method="_on_button_clicked"]
+[connection signal="direction_lever" from="controls/PackaB" to="GameHandler" method="_on_button_clicked"]
