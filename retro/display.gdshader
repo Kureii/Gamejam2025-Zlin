@@ -24,7 +24,8 @@ void fragment() {
 	displayUV.x+=super_scanline*.01;
 	float scanlines = sin(displayUV.y*scanline_scale*100.-TIME*scanline_speed);
 	scanlines = scanlines * scanline_strength + 1.-scanline_strength;
-	EMISSION = texture(display_source,displayUV).rgb * emission_intensity * vec3(1.,1.,1.)*scanlines + (scanlines)*.05 + super_scanline * .05;
+	vec4 tex = texture(display_source,displayUV).rgba;
+	EMISSION = tex.rgb *tex.a* emission_intensity * vec3(1.,1.,1.)*scanlines + (scanlines)*.05 + super_scanline * .05;
 	//EMISSION = vec3(super_scanline);
 	// Called for every pixel the material is visible on.
 }

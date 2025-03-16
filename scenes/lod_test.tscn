@@ -104,9 +104,9 @@ shader = ExtResource("19_hiytu")
 shader_parameter/display_source = ExtResource("20_hiytu")
 shader_parameter/distort = 0.325
 shader_parameter/scanline_scale = 3.18
-shader_parameter/scanline_strength = 0.39
+shader_parameter/scanline_strength = 0.255
 shader_parameter/scanline_speed = 4.455
-shader_parameter/emission_intensity = 1.945
+shader_parameter/emission_intensity = 1.48
 
 [node name="Node3D" type="Node3D"]
 
