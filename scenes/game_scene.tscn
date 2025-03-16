@@ -28,7 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://dqw3kjv68d4pv" path="res://3d_assets/textures/kalendar.png" id="26_ttvoq"]
 [ext_resource type="PackedScene" uid="uid://wym6hw0mljks" path="res://prefabs/button.tscn" id="28_r47aq"]
 [ext_resource type="PackedScene" uid="uid://djucdvqhspvog" path="res://prefabs/paka.tscn" id="29_6irsn"]
-[ext_resource type="ArrayMesh" uid="uid://djwcnja2a6uos" path="res://3d_assets/new/fuel_diluter_base.obj" id="30_gqftm"]
+[ext_resource type="PackedScene" uid="uid://ddkth6ge77w1t" path="res://prefabs/fuel_d.tscn" id="30_gqftm"]
 [ext_resource type="Script" uid="uid://c5n7umji3stt" path="res://scripts/book_controls.gd" id="31_5dk4p"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5dk4p"]
@@ -39,6 +39,8 @@ albedo_texture = ExtResource("26_ttvoq")
 clearcoat_enabled = true
 
 [sub_resource type="QuadMesh" id="QuadMesh_r47aq"]
+uv2_padding = 2.65
+size = Vector2(0.925, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_rw4oa"]
 size = Vector3(0.81, 0.275, 0.58)
@@ -50,6 +52,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5359, -0.90271)
 fov = 66.1
 far = 41.24
 script = ExtResource("1_ycayy")
+
+[node name="Book" parent="Camera3D" instance=ExtResource("2_rw4oa")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.00827837, 0.00660646, -0.726749)
+visible = false
 
 [node name="lod" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.152397, 0.166719)
@@ -290,16 +297,13 @@ mesh = SubResource("QuadMesh_r47aq")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 
-[node name="SpotLight3D" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.0865141, 0.455021, -0.663796)
-light_energy = 0.1
-
-[node name="Book" parent="." instance=ExtResource("2_rw4oa")]
-unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.00827837, 1.54251, -1.62946)
-visible = false
-
 [node name="controls" type="Node3D" parent="."]
+
+[node name="FuelD" parent="controls" instance=ExtResource("30_gqftm")]
+transform = Transform3D(-4.35218e-08, 0.995662, -0.0930483, -1, -4.37114e-08, 0, -4.06727e-09, 0.0930483, 0.995662, -2.29857, 1.81755, -2.22361)
+drag_speed = 0.025
+drag_limit = 0.43
+step_size = 0.01
 
 [node name="buttons" type="Node3D" parent="controls"]
 
@@ -350,10 +354,6 @@ transform = Transform3D(2.27974, 0, 0, 0, 2.27974, 5.96046e-08, 0, -5.96046e-08,
 [node name="PackaB" parent="controls" instance=ExtResource("29_6irsn")]
 transform = Transform3D(-2.07798, 0.0425571, 0.0243468, 0.039588, 0.847424, 1.89756, 0.0289251, 1.89749, -0.847999, -0.934426, 1.09475, -3.05143)
 id = 10
-
-[node name="Cube_058Export" type="MeshInstance3D" parent="controls"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.85009, 0.776288, -2.50955)
-mesh = ExtResource("30_gqftm")
 
 [node name="GameHandler" type="Node" parent="." node_paths=PackedStringArray("sequence_text_", "end_text_")]
 script = ExtResource("3_y3j0m")
@@ -442,7 +442,7 @@ size_flags_vertical = 8
 size_flags_stretch_ratio = 2.17
 text = "Manual"
 
-[connection signal="visibility_changed" from="Book" to="GameHandler/MarginContainer2" method="_on_book_visibility_changed"]
+[connection signal="visibility_changed" from="Camera3D/Book" to="GameHandler/MarginContainer2" method="_on_book_visibility_changed"]
 [connection signal="paka_clicked" from="controls/buttons/MeshInstance3D/p10" to="GameHandler" method="_on_button_clicked"]
 [connection signal="paka_clicked" from="controls/buttons/MeshInstance3D/p8" to="GameHandler" method="_on_button_clicked"]
 [connection signal="paka_clicked" from="controls/buttons/MeshInstance3D/p6" to="GameHandler" method="_on_button_clicked"]

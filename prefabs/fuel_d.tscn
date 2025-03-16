@@ -1,0 +1,34 @@
+[gd_scene load_steps=8 format=3 uid="uid://ddkth6ge77w1t"]
+
+[ext_resource type="Script" uid="uid://bgryy1gby0ey2" path="res://scripts/fuel_d.gd" id="1_dmodg"]
+[ext_resource type="Texture2D" uid="uid://byfg0hurt328h" path="res://3d_assets/textures/slider.png" id="1_o5nxo"]
+[ext_resource type="ArrayMesh" uid="uid://djwcnja2a6uos" path="res://3d_assets/new/fuel_diluter_base.obj" id="2_fkn2q"]
+[ext_resource type="ArrayMesh" uid="uid://bqhfp7pqhg3xs" path="res://3d_assets/new/fuel_diluter.obj" id="3_dmodg"]
+[ext_resource type="Material" uid="uid://1xcxah4iuqe3" path="res://materials/interactive.tres" id="3_fkn2q"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_62qk6"]
+diffuse_mode = 3
+specular_mode = 1
+albedo_texture = ExtResource("1_o5nxo")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_62qk6"]
+size = Vector3(0.613281, 0.474365, 1)
+
+[node name="FuelD" type="Node3D"]
+script = ExtResource("1_dmodg")
+
+[node name="fd_base" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_62qk6")
+mesh = ExtResource("2_fkn2q")
+
+[node name="fd" type="MeshInstance3D" parent="fd_base"]
+material_override = ExtResource("3_fkn2q")
+mesh = ExtResource("3_dmodg")
+
+[node name="DragArea3D" type="Area3D" parent="fd_base/fd"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="fd_base/fd/DragArea3D"]
+transform = Transform3D(0.166027, 0, 0, 0, 0.166027, 0, 0, 0, 0.166027, 0.000486406, 0.0817313, 0)
+shape = SubResource("BoxShape3D_62qk6")
+
+[connection signal="input_event" from="fd_base/fd/DragArea3D" to="." method="_on_drag_area_3d_input_event"]
