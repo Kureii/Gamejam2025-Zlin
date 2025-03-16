@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://ba2e5xp2bkxho"]
+[gd_scene load_steps=34 format=3 uid="uid://ba2e5xp2bkxho"]
 
 [ext_resource type="ArrayMesh" uid="uid://da0r2qtnx6v0v" path="res://3d_assets/enviro/podlaha.obj" id="1_cd240"]
 [ext_resource type="ArrayMesh" uid="uid://crrqjf52hkpet" path="res://3d_assets/enviro/stena_1.obj" id="2_in2js"]
@@ -23,6 +23,7 @@
 [ext_resource type="Shader" uid="uid://c8vtjramkh5gu" path="res://retro/display.gdshader" id="19_hiytu"]
 [ext_resource type="ArrayMesh" uid="uid://bjfcqisxv8f6t" path="res://3d_assets/TV_3.obj" id="19_u3h5q"]
 [ext_resource type="Texture2D" uid="uid://b0gqxb1nbjppw" path="res://display_test.png" id="20_hiytu"]
+[ext_resource type="ArrayMesh" uid="uid://cj7uuvn4likba" path="res://3d_assets/enviro/dvere.obj" id="24_qrv7s"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u3h5q"]
 albedo_texture = ExtResource("2_myk7v")
@@ -129,7 +130,7 @@ omni_attenuation = 1.381
 environment = ExtResource("15_sdsmw")
 
 [node name="Podlaha2" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.764674, 0)
+transform = Transform3D(0.746179, 0, 0, 0, 0.746179, 0, 0, 0, 0.548765, -1, 0.342794, 0)
 mesh = ExtResource("1_cd240")
 surface_material_override/0 = ExtResource("8_myk7v")
 
@@ -160,3 +161,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_sdsmw")
 transform = Transform3D(0.719721, 0, 0, 0, 0.719721, 0, 0, 0, 0.719721, -0.745146, 4.11962, -20.1226)
 material_override = SubResource("ShaderMaterial_yh6ax")
 mesh = ExtResource("19_u3h5q")
+
+[node name="Dvere" type="MeshInstance3D" parent="."]
+transform = Transform3D(-2.35151, 0, 2.05576e-07, 0, 2.35151, 0, -2.05576e-07, 0, -2.35151, -1.01496, 2.95739, -5.901)
+mesh = ExtResource("24_qrv7s")
