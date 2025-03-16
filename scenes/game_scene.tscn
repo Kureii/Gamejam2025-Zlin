@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://dyf7m2jdcskx1"]
+[gd_scene load_steps=47 format=3 uid="uid://dyf7m2jdcskx1"]
 
 [ext_resource type="Script" uid="uid://c7hbtyc3jvd43" path="res://scripts/camera_3d.gd" id="1_ycayy"]
 [ext_resource type="PackedScene" uid="uid://8qnhlvs44g0a" path="res://scenes/book.tscn" id="2_rw4oa"]
@@ -20,13 +20,14 @@
 [ext_resource type="Script" uid="uid://d1bprshwb784p" path="res://scripts/light_object_ceil.gd" id="13_103ce"]
 [ext_resource type="PackedScene" uid="uid://dgay77gybnsut" path="res://prefabs/light_wall.tscn" id="14_pb36m"]
 [ext_resource type="Material" uid="uid://cw7uy6il4i7a8" path="res://materials/3d/stul3.tres" id="14_rw4oa"]
-[ext_resource type="Material" uid="uid://bbel5l8ifc4af" path="res://materials/tv.tres" id="18_77hjl"]
 [ext_resource type="ArrayMesh" uid="uid://15d0a6h2icpa" path="res://3d_assets/new/tv_big.obj" id="19_6aqbo"]
 [ext_resource type="ArrayMesh" uid="uid://cgrgyu0qr4f1x" path="res://3d_assets/new/tv_right.obj" id="20_ro0ie"]
 [ext_resource type="ArrayMesh" uid="uid://bf7pukvsulpv1" path="res://3d_assets/new/tv_box.obj" id="21_103ce"]
 [ext_resource type="Material" uid="uid://cjtp1nmk7bpf2" path="res://materials/tv_box.tres" id="23_r47aq"]
 [ext_resource type="Texture2D" uid="uid://dqw3kjv68d4pv" path="res://3d_assets/textures/kalendar.png" id="26_ttvoq"]
+[ext_resource type="Shader" uid="uid://c8vtjramkh5gu" path="res://retro/display.gdshader" id="27_y55j0"]
 [ext_resource type="PackedScene" uid="uid://wym6hw0mljks" path="res://prefabs/button.tscn" id="28_r47aq"]
+[ext_resource type="Texture2D" uid="uid://b0gqxb1nbjppw" path="res://display_test.png" id="28_twkf6"]
 [ext_resource type="PackedScene" path="res://prefabs/keyboard.tscn" id="28_yhpmq"]
 [ext_resource type="PackedScene" uid="uid://djucdvqhspvog" path="res://prefabs/paka.tscn" id="29_6irsn"]
 [ext_resource type="PackedScene" path="res://prefabs/fuel_d.tscn" id="30_gqftm"]
@@ -39,8 +40,28 @@
 [ext_resource type="PackedScene" path="res://prefabs/led.tscn" id="37_lm11r"]
 [ext_resource type="Environment" uid="uid://kte4spmm34qe" path="res://scenes/lod_test.tres" id="38_ct2tn"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4fjq2"]
+render_priority = 0
+shader = ExtResource("27_y55j0")
+shader_parameter/display_source = ExtResource("28_twkf6")
+shader_parameter/distort = 0.34
+shader_parameter/scanline_scale = 4.465
+shader_parameter/scanline_strength = 0.325
+shader_parameter/scanline_speed = 4.0
+shader_parameter/emission_intensity = 1.295
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5dk4p"]
 albedo_texture = ExtResource("5_gqftm")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p5o0s"]
+render_priority = 0
+shader = ExtResource("27_y55j0")
+shader_parameter/display_source = ExtResource("28_twkf6")
+shader_parameter/distort = 0.29
+shader_parameter/scanline_scale = 2.0
+shader_parameter/scanline_strength = 0.325
+shader_parameter/scanline_speed = 6.0
+shader_parameter/emission_intensity = 1.295
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rw4oa"]
 albedo_texture = ExtResource("26_ttvoq")
@@ -163,7 +184,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.152397, 0.166719)
 
 [node name="tv_big" type="MeshInstance3D" parent="lod"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.363, -3.39071)
-material_override = ExtResource("18_77hjl")
+material_override = SubResource("ShaderMaterial_4fjq2")
 mesh = ExtResource("19_6aqbo")
 skeleton = NodePath("../..")
 
@@ -444,7 +465,7 @@ mesh = ExtResource("20_ro0ie")
 
 [node name="TvBox" type="MeshInstance3D" parent="lod/TvRight"]
 transform = Transform3D(0.928571, 0, 0.000615835, 0, 0.928571, 0, -0.000615835, 0, 0.928571, -0.00782454, -0.00663662, 0.175539)
-material_override = ExtResource("18_77hjl")
+material_override = SubResource("ShaderMaterial_p5o0s")
 mesh = ExtResource("21_103ce")
 skeleton = NodePath("../../game_space")
 
@@ -455,12 +476,12 @@ mesh = ExtResource("20_ro0ie")
 
 [node name="TvBox" type="MeshInstance3D" parent="lod/TvRight2"]
 transform = Transform3D(-0.928571, 0, -8.11783e-08, 0, 0.928571, 0, 8.11783e-08, 0, -0.928571, -0.00782454, -0.00663662, 0.175539)
-material_override = ExtResource("18_77hjl")
+material_override = SubResource("ShaderMaterial_p5o0s")
 mesh = ExtResource("21_103ce")
 skeleton = NodePath("../../game_space")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="lod"]
-transform = Transform3D(0.305612, 0, 0.627626, 0, 0.740568, 0, -0.487944, 0, 0.393099, -1.95973, 1.80962, -3.13287)
+transform = Transform3D(0.0531182, 0.0661935, 1.66774, -0.00210652, 1.66914, -0.066138, -1.2976, -9.72104e-11, 0.0683789, -2.29588, 2.14585, -1.43849)
 material_override = SubResource("StandardMaterial3D_rw4oa")
 mesh = SubResource("QuadMesh_r47aq")
 
