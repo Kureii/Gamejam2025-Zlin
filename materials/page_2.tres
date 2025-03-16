@@ -8,6 +8,7 @@
 [resource]
 render_priority = 0
 shader = ExtResource("1_e4y6g")
+shader_parameter/offset_geometry = -0.2
 shader_parameter/Vector2Parameter = Vector2(1.095, 1.615)
 shader_parameter/dots_scale = 50.0
 shader_parameter/dots = ExtResource("3_e4y6g")

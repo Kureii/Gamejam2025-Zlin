@@ -267,7 +267,7 @@ tracks/4/enabled = true
 tracks/4/path = NodePath("book_armature/Skeleton3D:page_turn")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
-tracks/4/keys = PackedFloat32Array(0, 1, -0.00011311, -0.000303034, -1.67161e-10)
+tracks/4/keys = PackedFloat32Array(0, 1, 0, 0, 0)
 tracks/5/type = "rotation_3d"
 tracks/5/imported = true
 tracks/5/enabled = true
@@ -356,7 +356,7 @@ bones/2/name = "page_turn"
 bones/2/parent = 0
 bones/2/rest = Transform3D(5.96046e-08, 1, 4.48275e-07, -1, 5.96046e-08, 3.89414e-07, 3.89414e-07, -4.48275e-07, 1, -0.00011311, -0.000303034, -1.67161e-10)
 bones/2/enabled = true
-bones/2/position = Vector3(-0.00011311, -0.000303034, -1.67161e-10)
+bones/2/position = Vector3(0, 0, 0)
 bones/2/rotation = Quaternion(0, 0, 0, 1)
 bones/2/scale = Vector3(1, 1, 1)
 bones/3/name = "page_1-2"
@@ -440,7 +440,7 @@ mesh = SubResource("ArrayMesh_da0br")
 skeleton = NodePath("")
 
 [node name="page_1-2" type="BoneAttachment3D" parent="book_armature/Skeleton3D"]
-transform = Transform3D(0.999995, 0, 0.00302991, 0, 1, 0, -0.00302988, 0, 0.999995, -0.00346439, -3.94601e-11, -0.000606755)
+transform = Transform3D(0.999999, -1.33997e-07, 0.00131253, 1.93196e-07, 1, -1.62515e-07, -0.00131256, 1.03086e-07, 0.999999, -0.00316137, -2.05744e-10, -0.000719864)
 bone_name = "page_1-2"
 bone_idx = 3
 
@@ -451,7 +451,7 @@ surface_material_override/0 = ExtResource("2_d2488")
 surface_material_override/1 = ExtResource("3_ufdcg")
 
 [node name="page_0" type="BoneAttachment3D" parent="book_armature/Skeleton3D"]
-transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, -0.00345562, 1.99331e-11, -0.000615838)
+transform = Transform3D(-1, 1.19209e-07, 0, 1.19209e-07, 1, 0, 0, 0, -1, -0.00345562, -1.53211e-11, -0.000615838)
 bone_name = "page_0"
 bone_idx = 7
 
@@ -461,6 +461,7 @@ skeleton = NodePath("")
 surface_material_override/0 = ExtResource("4_tdc6r")
 
 [node name="book_cover" type="MeshInstance3D" parent="book_armature/Skeleton3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.27344e-11, -9.53546e-05)
 mesh = SubResource("ArrayMesh_pfh7r")
 skin = SubResource("Skin_fx5xf")
 
