@@ -1,5 +1,6 @@
-[gd_scene load_steps=15 format=3 uid="uid://s0130yfcyrsp"]
+[gd_scene load_steps=23 format=3 uid="uid://s0130yfcyrsp"]
 
+[ext_resource type="Script" uid="uid://cfv11qdrl25wy" path="res://scripts/keyboard.gd" id="1_ma7ab"]
 [ext_resource type="Texture2D" uid="uid://d4l2jha460qym" path="res://3d_assets/textures/keyboard2.png" id="1_u6n5s"]
 [ext_resource type="ArrayMesh" uid="uid://hy30sh0r6yj6" path="res://3d_assets/new/keyboard.obj" id="2_ma7ab"]
 [ext_resource type="ArrayMesh" uid="uid://b232v2202mlh3" path="res://3d_assets/new/keyboard_black.obj" id="3_1t5wo"]
@@ -26,7 +27,29 @@ specular_mode = 1
 albedo_texture = ExtResource("1_u6n5s")
 roughness = 0.3
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_u6n5s"]
+size = Vector3(0.1, 0.05, 0.4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ma7ab"]
+size = Vector3(0.1, 0.05, 0.4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1t5wo"]
+size = Vector3(0.1, 0.05, 0.4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hkdyc"]
+size = Vector3(0.1, 0.05, 0.4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_isdje"]
+size = Vector3(0.1, 0.05, 0.4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t6y58"]
+size = Vector3(0.1, 0.05, 0.4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hbxop"]
+size = Vector3(0.1, 0.05, 0.4)
+
 [node name="Keyboard" type="Node3D"]
+script = ExtResource("1_ma7ab")
 
 [node name="Keyboard" type="MeshInstance3D" parent="."]
 material_override = SubResource("StandardMaterial3D_6mhiy")
@@ -41,35 +64,77 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.386027, 0, -0.000758126)
 material_override = ExtResource("4_hkdyc")
 mesh = ExtResource("5_isdje")
 
+[node name="DArea3D" type="Area3D" parent="KeyboardKeyD"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="KeyboardKeyD/DArea3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0918885)
+shape = SubResource("BoxShape3D_u6n5s")
+
 [node name="KeyboardKeyF" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.165422, 0, 0.000705734)
 material_override = ExtResource("4_hkdyc")
 mesh = ExtResource("6_t6y58")
+
+[node name="FArea3D" type="Area3D" parent="KeyboardKeyF"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="KeyboardKeyF/FArea3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0897854)
+shape = SubResource("BoxShape3D_ma7ab")
 
 [node name="KeyboardKeyG" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0535804, 0, -0.000758126)
 material_override = ExtResource("4_hkdyc")
 mesh = ExtResource("7_hbxop")
 
+[node name="GArea3D" type="Area3D" parent="KeyboardKeyG"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="KeyboardKeyG/GArea3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0912311)
+shape = SubResource("BoxShape3D_1t5wo")
+
 [node name="KeyboardKeyA" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0573032, 0, -0.000758126)
 material_override = ExtResource("4_hkdyc")
 mesh = ExtResource("8_qpdmn")
+
+[node name="AArea3D" type="Area3D" parent="KeyboardKeyA"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="KeyboardKeyA/AArea3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0897037)
+shape = SubResource("BoxShape3D_hkdyc")
 
 [node name="KeyboardKeyH" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.168476, 0, -0.0027497)
 material_override = ExtResource("4_hkdyc")
 mesh = ExtResource("9_cjlk2")
 
+[node name="HArea3D" type="Area3D" parent="KeyboardKeyH"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="KeyboardKeyH/HArea3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.088056)
+shape = SubResource("BoxShape3D_isdje")
+
 [node name="KeyboardKeyC2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.280757, 0, -0.000758126)
 material_override = ExtResource("4_hkdyc")
 mesh = ExtResource("10_ha8yx")
 
+[node name="CArea3D" type="Area3D" parent="KeyboardKeyC2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="KeyboardKeyC2/CArea3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0897848)
+shape = SubResource("BoxShape3D_t6y58")
+
 [node name="KeyboardKeyE2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.506646, 0, -0.000758126)
 material_override = ExtResource("4_hkdyc")
 mesh = ExtResource("11_xef6e")
+
+[node name="EArea3D" type="Area3D" parent="KeyboardKeyE2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="KeyboardKeyE2/EArea3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0863954)
+shape = SubResource("BoxShape3D_hbxop")
 
 [node name="KeyboardKeyBlank" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.275273, 0, 0.00164338)
@@ -77,7 +142,7 @@ material_override = ExtResource("4_hkdyc")
 mesh = ExtResource("12_b0yxc")
 
 [node name="KeyboardKeyBlank3" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.393659, 0, 0.00164338)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.394002, 0.00134593, 0.000341855)
 material_override = ExtResource("4_hkdyc")
 mesh = ExtResource("12_b0yxc")
 
@@ -85,3 +150,13 @@ mesh = ExtResource("12_b0yxc")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.498863, 0, 0.00164338)
 material_override = ExtResource("4_hkdyc")
 mesh = ExtResource("12_b0yxc")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[connection signal="input_event" from="KeyboardKeyD/DArea3D" to="." method="_on_d_area_3d_input_event"]
+[connection signal="input_event" from="KeyboardKeyF/FArea3D" to="." method="_on_f_area_3d_input_event"]
+[connection signal="input_event" from="KeyboardKeyG/GArea3D" to="." method="_on_g_area_3d_input_event"]
+[connection signal="input_event" from="KeyboardKeyA/AArea3D" to="." method="_on_a_area_3d_input_event"]
+[connection signal="input_event" from="KeyboardKeyH/HArea3D" to="." method="_on_h_area_3d_input_event"]
+[connection signal="input_event" from="KeyboardKeyC2/CArea3D" to="." method="_on_c_area_3d_input_event"]
+[connection signal="input_event" from="KeyboardKeyE2/EArea3D" to="." method="_on_e_area_3d_input_event"]

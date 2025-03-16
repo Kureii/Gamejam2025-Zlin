@@ -15,7 +15,6 @@ func _ready() -> void:
 	page_count = count_available_pages()
 	change_page_texture(0,actual_left_page)
 	change_page_texture(3,actual_right_page)
-	
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if page_swap:
@@ -43,7 +42,6 @@ func next_page():
 		actual_right_page += 2
 		page_swap = true
 
-	
 func prew_page():
 	if actual_left_page != 0:
 		change_page_texture(0,actual_left_page-2)
@@ -54,12 +52,8 @@ func prew_page():
 		actual_right_page -= 2
 		page_swap = true
 
-	
-
-
 func _on_next_button_button_up() -> void:
 	next_page()
-
 
 func _on_prew_button_button_up() -> void:
 	prew_page() # Replace with function body.
@@ -141,7 +135,6 @@ func change_page_texture(material_number, texture_number):
 	else:
 		print("Failed to load texture at path: " + texture_path)
 		print("Make sure the file exists and the path is correct!")
-
 
 func _on_book_visibility_changed() -> void:
 	anim.play("book_armature|book_open")
