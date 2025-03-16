@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://ba2e5xp2bkxho"]
+[gd_scene load_steps=39 format=3 uid="uid://ba2e5xp2bkxho"]
 
 [ext_resource type="ArrayMesh" uid="uid://da0r2qtnx6v0v" path="res://3d_assets/enviro/podlaha.obj" id="1_cd240"]
 [ext_resource type="ArrayMesh" uid="uid://crrqjf52hkpet" path="res://3d_assets/enviro/stena_1.obj" id="2_in2js"]
@@ -17,8 +17,11 @@
 [ext_resource type="Material" uid="uid://c6ebar5ko1o5c" path="res://materials/3d/trubky.tres" id="11_sdsmw"]
 [ext_resource type="ArrayMesh" uid="uid://ce8n85utnva2k" path="res://3d_assets/enviro/strop_1.obj" id="13_cwshr"]
 [ext_resource type="Texture2D" uid="uid://dqw3kjv68d4pv" path="res://3d_assets/textures/kalendar.png" id="17_hg206"]
+[ext_resource type="Texture2D" uid="uid://bo3b57wjmkro1" path="res://pasta_logo_alpha.png" id="17_yh6ax"]
 [ext_resource type="Texture2D" uid="uid://dfkgpyxsx7u1u" path="res://3d_assets/textures/stul3.png" id="18_myk7v"]
+[ext_resource type="Shader" uid="uid://c8vtjramkh5gu" path="res://retro/display.gdshader" id="19_hiytu"]
 [ext_resource type="ArrayMesh" uid="uid://bjfcqisxv8f6t" path="res://3d_assets/TV_3.obj" id="19_u3h5q"]
+[ext_resource type="Texture2D" uid="uid://b0gqxb1nbjppw" path="res://display_test.png" id="20_hiytu"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u3h5q"]
 albedo_texture = ExtResource("2_myk7v")
@@ -62,12 +65,22 @@ background_color = Color(1, 1, 1, 1)
 background_energy_multiplier = 0.0
 sky = SubResource("Sky_cxm10")
 ambient_light_source = 2
-ambient_light_color = Color(0.260018, 0.0984778, 0.230034, 1)
+ambient_light_color = Color(0.274981, 0.112757, 0.250522, 1)
 ambient_light_energy = 5.6
 tonemap_mode = 3
+ssao_enabled = true
+glow_enabled = true
+glow_strength = 0.81
+glow_blend_mode = 1
+glow_hdr_threshold = 0.44
+fog_light_color = Color(0.481855, 0.500528, 0.896412, 1)
+fog_sun_scatter = 6.5
+volumetric_fog_density = 0.1411
+volumetric_fog_anisotropy = 0.3
 adjustment_enabled = true
 adjustment_brightness = 0.75
 adjustment_contrast = 0.9
+adjustment_saturation = 1.12
 adjustment_color_correction = SubResource("CurveXYZTexture_uxws4")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_sdsmw"]
@@ -75,8 +88,25 @@ adjustment_color_correction = SubResource("CurveXYZTexture_uxws4")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qrv7s"]
 albedo_texture = ExtResource("17_hg206")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cwshr"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("17_yh6ax")
+grow_amount = 2.56
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sdsmw"]
 albedo_texture = ExtResource("18_myk7v")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yh6ax"]
+render_priority = 0
+shader = ExtResource("19_hiytu")
+shader_parameter/display_source = ExtResource("20_hiytu")
+shader_parameter/distort = 0.325
+shader_parameter/scanline_scale = 3.18
+shader_parameter/scanline_strength = 0.255
+shader_parameter/scanline_speed = 4.455
+shader_parameter/emission_intensity = 1.48
 
 [node name="Node3D" type="Node3D"]
 
@@ -151,10 +181,22 @@ mesh = ExtResource("1_cd240")
 surface_material_override/0 = ExtResource("8_myk7v")
 
 [node name="Plakat" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.0845896, 0.91031, 0.0135289, -0.0820733, 0.020074, -1.13296, -0.824767, 0.0913667, 0.11413, -5.6716, 3.86295, -15.4146)
+transform = Transform3D(0.10445, 1.25683, -0.147853, -0.124722, -0.106203, -1.56265, -1.14258, 0.126489, 0.157061, -5.98803, 3.62844, -15.4146)
 mesh = SubResource("PlaneMesh_sdsmw")
 skeleton = NodePath("../Svetla3")
 surface_material_override/0 = SubResource("StandardMaterial3D_qrv7s")
+
+[node name="Plakat2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.679104, -0.745683, -0.0639823, -0.156502, 0.0181369, -1.02322, 1.42767, 0.356687, -0.0817311, 3.93978, 4.1005, -16.9545)
+mesh = SubResource("PlaneMesh_sdsmw")
+skeleton = NodePath("../Svetla3")
+surface_material_override/0 = SubResource("StandardMaterial3D_cwshr")
+
+[node name="Plakat3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.696839, 0.0142043, 0.00600148, 0.00855277, 0.00959494, -0.451306, -0.0275277, 0.362561, 0.0117084, -0.630612, 5.90489, -18.3626)
+mesh = SubResource("PlaneMesh_sdsmw")
+skeleton = NodePath("../Svetla3")
+surface_material_override/0 = SubResource("StandardMaterial3D_cwshr")
 
 [node name="Stul3" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.663399, 0, 0, 0, 0.663399, 0, 0, 0, 0.663399, -0.771419, 3.59362, -18.6798)
@@ -163,4 +205,5 @@ surface_material_override/0 = SubResource("StandardMaterial3D_sdsmw")
 
 [node name="Tv3" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.719721, 0, 0, 0, 0.719721, 0, 0, 0, 0.719721, -0.745146, 4.11962, -20.1226)
+material_override = SubResource("ShaderMaterial_yh6ax")
 mesh = ExtResource("19_u3h5q")
