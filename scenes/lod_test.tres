@@ -1,21 +1,21 @@
 [gd_resource type="Environment" load_steps=7 format=3 uid="uid://kte4spmm34qe"]
 
-[sub_resource type="Curve" id="Curve_2m51a"]
-_data = [Vector2(0, 0.134832), 0.0, 0.0, 0, 0, Vector2(0.975, 1), 0.0, 0.0, 0, 0]
+[sub_resource type="Curve" id="Curve_4lge2"]
+_data = [Vector2(0, 0), 0.0, 1.0, 0, 1, Vector2(1, 1), 1.0, 0.0, 1, 0]
 point_count = 2
 
-[sub_resource type="Curve" id="Curve_ayxyd"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.90625, 1), 0.0, 0.0, 0, 0]
+[sub_resource type="Curve" id="Curve_2rn8l"]
+_data = [Vector2(0, 0), 0.0, 1.0, 0, 1, Vector2(1, 1), 1.0, 0.0, 1, 0]
 point_count = 2
 
-[sub_resource type="Curve" id="Curve_b1jpx"]
-_data = [Vector2(0, 0.258427), 0.0, 0.0, 0, 0, Vector2(0.95, 0.550562), 0.0, 0.0, 0, 0]
-point_count = 2
+[sub_resource type="Curve" id="Curve_jc1lf"]
+_data = [Vector2(0, 0), 0.0, 0.830091, 0, 1, Vector2(0.527897, 0.438202), 0.484811, 0.484811, 0, 0, Vector2(1, 1), 1.18999, 0.0, 1, 0]
+point_count = 3
 
-[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_uxws4"]
-curve_x = SubResource("Curve_2m51a")
-curve_y = SubResource("Curve_ayxyd")
-curve_z = SubResource("Curve_b1jpx")
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_j4nm8"]
+curve_x = SubResource("Curve_4lge2")
+curve_y = SubResource("Curve_2rn8l")
+curve_z = SubResource("Curve_jc1lf")
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rh8wj"]
 sky_top_color = Color(0.86767, 0.501352, 0.891237, 1)
@@ -31,9 +31,10 @@ background_energy_multiplier = 0.0
 sky = SubResource("Sky_cxm10")
 ambient_light_source = 2
 ambient_light_color = Color(0.27, 0.189, 0.25785, 1)
-ambient_light_energy = 5.71
+ambient_light_energy = 4.61
 tonemap_mode = 3
-tonemap_exposure = 1.37
+tonemap_exposure = 0.63
+tonemap_white = 0.51
 ssao_enabled = true
 glow_enabled = true
 glow_strength = 0.81
@@ -44,7 +45,6 @@ fog_sun_scatter = 6.5
 volumetric_fog_density = 0.1411
 volumetric_fog_anisotropy = 0.3
 adjustment_enabled = true
-adjustment_brightness = 0.81
-adjustment_contrast = 0.9
-adjustment_saturation = 1.12
-adjustment_color_correction = SubResource("CurveXYZTexture_uxws4")
+adjustment_contrast = 0.7
+adjustment_saturation = 1.49
+adjustment_color_correction = SubResource("CurveXYZTexture_j4nm8")

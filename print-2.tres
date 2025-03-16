@@ -784,12 +784,12 @@ void fragment() {
 
 }
 "
-graph_offset = Vector2(-288.668, 48.1486)
+graph_offset = Vector2(3819.23, -3032.06)
 preview_params/dots_smooth = "0.55"
 nodes/vertex/2/node = SubResource("VisualShaderNodeInput_ua020")
 nodes/vertex/2/position = Vector2(-260, 200)
 nodes/vertex/3/node = SubResource("VisualShaderNodeMultiplyAdd_acele")
-nodes/vertex/3/position = Vector2(200, 180)
+nodes/vertex/3/position = Vector2(80, 180)
 nodes/vertex/4/node = SubResource("VisualShaderNodeInput_kt415")
 nodes/vertex/4/position = Vector2(-900, 160)
 nodes/vertex/5/node = SubResource("VisualShaderNodeFloatParameter_uatwl")

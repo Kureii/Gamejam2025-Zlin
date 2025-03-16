@@ -1,13 +1,14 @@
 [gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://u4bro5rokmyu"]
 
 [ext_resource type="Shader" uid="uid://jiehhhtsbxp8" path="res://print-2.tres" id="1_ak186"]
-[ext_resource type="Texture2D" uid="uid://cq1s6fbdcldyl" path="res://pages/page_3.png" id="2_ak186"]
+[ext_resource type="Texture2D" path="res://pages/page_3.png" id="2_ak186"]
 [ext_resource type="Texture2D" uid="uid://beltx7eptk08o" path="res://dots.png" id="3_ak186"]
 [ext_resource type="Texture2D" uid="uid://w4oqam4ceg" path="res://paper-tex.png" id="4_r2re7"]
 
 [resource]
 render_priority = 0
 shader = ExtResource("1_ak186")
+shader_parameter/offset_geometry = 0.0
 shader_parameter/Vector2Parameter = Vector2(1.095, 1.615)
 shader_parameter/dots_scale = 50.0
 shader_parameter/dots = ExtResource("3_ak186")
