@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://brdttvf4uf4nt"]
+
+[ext_resource type="ArrayMesh" uid="uid://b10llu13w0m5d" path="res://3d_assets/new/joistic_base.obj" id="1_0s7ww"]
+[ext_resource type="ArrayMesh" uid="uid://b732tsgcb24ev" path="res://3d_assets/new/joystic.obj" id="2_wtkjn"]
+
+[node name="Joystick" type="Node3D"]
+
+[node name="j_base" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.154086, 0)
+mesh = ExtResource("1_0s7ww")
+
+[node name="j" type="MeshInstance3D" parent="j_base"]
+mesh = ExtResource("2_wtkjn")

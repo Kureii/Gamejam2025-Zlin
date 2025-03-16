@@ -1,0 +1,87 @@
+[gd_scene load_steps=15 format=3 uid="uid://s0130yfcyrsp"]
+
+[ext_resource type="Texture2D" uid="uid://d4l2jha460qym" path="res://3d_assets/textures/keyboard2.png" id="1_u6n5s"]
+[ext_resource type="ArrayMesh" uid="uid://hy30sh0r6yj6" path="res://3d_assets/new/keyboard.obj" id="2_ma7ab"]
+[ext_resource type="ArrayMesh" uid="uid://b232v2202mlh3" path="res://3d_assets/new/keyboard_black.obj" id="3_1t5wo"]
+[ext_resource type="Material" uid="uid://c3mad3604t88q" path="res://materials/piano.tres" id="4_hkdyc"]
+[ext_resource type="ArrayMesh" uid="uid://vye17obc2ja7" path="res://3d_assets/new/keyboard_key_d.obj" id="5_isdje"]
+[ext_resource type="ArrayMesh" uid="uid://c6vjpnrqk2txv" path="res://3d_assets/new/keyboard_key _f.obj" id="6_t6y58"]
+[ext_resource type="ArrayMesh" uid="uid://b66clulmspwrd" path="res://3d_assets/new/keyboard_key_g.obj" id="7_hbxop"]
+[ext_resource type="ArrayMesh" uid="uid://cxh3l40854ve0" path="res://3d_assets/new/keyboard_key_a.obj" id="8_qpdmn"]
+[ext_resource type="ArrayMesh" uid="uid://nfsggnymseyw" path="res://3d_assets/new/keyboard_key_h.obj" id="9_cjlk2"]
+[ext_resource type="ArrayMesh" uid="uid://dy5j84cct3iik" path="res://3d_assets/new/keyboard_key_c.obj" id="10_ha8yx"]
+[ext_resource type="ArrayMesh" uid="uid://50uophv8ypkv" path="res://3d_assets/new/keyboard_key_e.obj" id="11_xef6e"]
+[ext_resource type="ArrayMesh" uid="uid://ctrhud7gx3c1m" path="res://3d_assets/new/keyboard_key_blank.obj" id="12_b0yxc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6mhiy"]
+diffuse_mode = 3
+specular_mode = 1
+albedo_texture = ExtResource("1_u6n5s")
+metallic = 0.63
+roughness = 0.31
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1m7tg"]
+diffuse_mode = 3
+specular_mode = 1
+albedo_texture = ExtResource("1_u6n5s")
+roughness = 0.3
+
+[node name="Keyboard" type="Node3D"]
+
+[node name="Keyboard" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_6mhiy")
+mesh = ExtResource("2_ma7ab")
+
+[node name="Keyboard2" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_1m7tg")
+mesh = ExtResource("3_1t5wo")
+
+[node name="KeyboardKeyD" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.386027, 0, -0.000758126)
+material_override = ExtResource("4_hkdyc")
+mesh = ExtResource("5_isdje")
+
+[node name="KeyboardKeyF" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.165422, 0, 0.000705734)
+material_override = ExtResource("4_hkdyc")
+mesh = ExtResource("6_t6y58")
+
+[node name="KeyboardKeyG" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0535804, 0, -0.000758126)
+material_override = ExtResource("4_hkdyc")
+mesh = ExtResource("7_hbxop")
+
+[node name="KeyboardKeyA" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0573032, 0, -0.000758126)
+material_override = ExtResource("4_hkdyc")
+mesh = ExtResource("8_qpdmn")
+
+[node name="KeyboardKeyH" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.168476, 0, -0.0027497)
+material_override = ExtResource("4_hkdyc")
+mesh = ExtResource("9_cjlk2")
+
+[node name="KeyboardKeyC2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.280757, 0, -0.000758126)
+material_override = ExtResource("4_hkdyc")
+mesh = ExtResource("10_ha8yx")
+
+[node name="KeyboardKeyE2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.506646, 0, -0.000758126)
+material_override = ExtResource("4_hkdyc")
+mesh = ExtResource("11_xef6e")
+
+[node name="KeyboardKeyBlank" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.275273, 0, 0.00164338)
+material_override = ExtResource("4_hkdyc")
+mesh = ExtResource("12_b0yxc")
+
+[node name="KeyboardKeyBlank3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.393659, 0, 0.00164338)
+material_override = ExtResource("4_hkdyc")
+mesh = ExtResource("12_b0yxc")
+
+[node name="KeyboardKeyBlank2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.498863, 0, 0.00164338)
+material_override = ExtResource("4_hkdyc")
+mesh = ExtResource("12_b0yxc")

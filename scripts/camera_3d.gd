@@ -4,10 +4,12 @@ extends Camera3D
 @export var lock_mouse: bool = true;
 @export var lock_rotation: bool = false;
 
+var camera_can_move: bool = true
 var rot_vector_ : Vector3 = Vector3(0,0,0)
 
 func _process(delta: float) -> void:
-	cam_rotate(delta)
+	if camera_can_move:
+		cam_rotate(delta)
 	
 	
 func cam_rotate(delta: float) -> void:
@@ -29,5 +31,9 @@ func _input(event):
 
 
 
-func _on_button_clicked(id: int) -> void:
-	pass # Replace with function body.
+func _on_prew_button_button_up() -> void:
+	%Book.get_child(0).prew_page()
+
+
+func _on_next_button_button_up() -> void:
+	%Book.get_child(0).next_page()
